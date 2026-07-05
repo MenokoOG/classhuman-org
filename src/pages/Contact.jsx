@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-24">
-      <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">
+      <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">
         GET IN TOUCH
       </p>
       <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">

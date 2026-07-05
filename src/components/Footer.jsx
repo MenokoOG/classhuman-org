@@ -5,8 +5,8 @@ export default function Footer() {
     <footer className="border-t border-border-brand">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-10">
         <Wordmark />
-        <p className="text-sm text-muted">driven by LAHA — Love All Humans Always</p>
-        <p className="font-mono text-xs text-muted">
+        <p className="text-sm text-muted-safe">driven by LAHA — Love All Humans Always</p>
+        <p className="font-mono text-xs text-muted-safe">
           classHuman AI · LLC registration planned August 2026.
         </p>
         <p>
@@ -14,7 +14,7 @@ export default function Footer() {
             href="https://github.com/classHuman"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-xs font-bold tracking-widest text-cool underline underline-offset-4 hover:text-accent"
+            className="font-mono text-xs font-bold tracking-widest text-cool-safe underline underline-offset-4 hover:text-accent-safe"
           >
             GITHUB
           </a>

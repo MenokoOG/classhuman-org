@@ -11,9 +11,9 @@ function P({ children }) {
 export default function Story() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-24">
-      <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">OUR STORY</p>
+      <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">OUR STORY</p>
       <h1 className="mt-3 text-4xl font-extrabold tracking-tight">In memory of Tonya.</h1>
-      <p className="mt-2 text-lg text-muted">LAHA: Love All Humans Always</p>
+      <p className="mt-2 text-lg text-muted-safe">LAHA: Love All Humans Always</p>
 
       <figure className="mt-12">
         <img
@@ -21,7 +21,7 @@ export default function Story() {
           alt="Tonya"
           className="mx-auto w-full max-w-sm rounded-lg"
         />
-        <figcaption className="mt-3 text-center font-mono text-xs text-muted">
+        <figcaption className="mt-3 text-center font-mono text-xs text-muted-safe">
           Tonya — our foundation.
         </figcaption>
       </figure>

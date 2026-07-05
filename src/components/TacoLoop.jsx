@@ -49,7 +49,7 @@ export default function TacoLoop() {
               >
                 <span
                   className={`inline-flex h-8 w-8 items-center justify-center rounded-full font-mono text-sm font-bold ${
-                    isActive ? "bg-accent text-on-accent" : "bg-sage/20 text-sage"
+                    isActive ? "bg-accent text-on-accent" : "bg-sage/20 text-sage-safe"
                   }`}
                 >
                   {key}
@@ -59,7 +59,7 @@ export default function TacoLoop() {
               {i < stages.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className="absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-muted sm:block"
+                  className="absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-muted-safe sm:block"
                 >
                   →
                 </span>
@@ -75,7 +75,7 @@ export default function TacoLoop() {
         role="tabpanel"
         className="mt-6 rounded-lg border-l-4 border-accent bg-card p-6"
       >
-        <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">
+        <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">
           STAGE {String(active + 1).padStart(2, "0")} · THE TEST
         </p>
         <p className="mt-3 text-lg font-semibold">{stage.test}</p>
@@ -96,7 +96,7 @@ export default function TacoLoop() {
         >
           NEXT →
         </button>
-        <p className="font-mono text-xs text-muted">
+        <p className="font-mono text-xs text-muted-safe">
           Operate feeds the next loop — the trace never ends.
         </p>
       </div>

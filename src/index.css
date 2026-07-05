@@ -21,6 +21,13 @@
   --color-on-surface: var(--ch-on-surface);
   --color-border-brand: var(--ch-surface-border);
 
+  /* Text-safe variants — same brand hues, mixed toward Ink/Bone per mode
+     so small text always clears WCAG AA (≥4.5:1) in every season. */
+  --color-muted-safe: var(--ch-muted-text);
+  --color-sage-safe: var(--ch-sage-text);
+  --color-cool-safe: var(--ch-cool-text);
+  --color-accent-safe: var(--ch-accent-text);
+
   --font-sans: var(--ch-font-sans);
   --font-mono: var(--ch-font-mono);
 
@@ -39,6 +46,10 @@
   --ch-surface-card: color-mix(in srgb, var(--ch-paper) 92%, var(--ch-ink));
   --ch-surface-border: color-mix(in srgb, var(--ch-paper) 78%, var(--ch-ink));
   --ch-on-surface: var(--ch-text);
+  --ch-muted-text: color-mix(in srgb, var(--ch-muted) 55%, var(--ch-ink));
+  --ch-sage-text: color-mix(in srgb, var(--ch-sage) 60%, var(--ch-ink));
+  --ch-cool-text: color-mix(in srgb, var(--ch-cool) 55%, var(--ch-ink));
+  --ch-accent-text: color-mix(in srgb, var(--ch-accent) 50%, var(--ch-ink));
 }
 
 [data-mode="dark"] {
@@ -46,11 +57,21 @@
   --ch-surface-card: var(--ch-card);
   --ch-surface-border: var(--ch-border);
   --ch-on-surface: var(--ch-bone);
+  --ch-muted-text: color-mix(in srgb, var(--ch-muted) 80%, var(--ch-bone));
+  --ch-sage-text: color-mix(in srgb, var(--ch-sage) 78%, var(--ch-bone));
+  --ch-cool-text: color-mix(in srgb, var(--ch-cool) 85%, var(--ch-bone));
+  --ch-accent-text: var(--ch-accent);
 }
 
 /* Wordmark: on dark, "Human" shifts to Amber for contrast (brand rule). */
 [data-mode="dark"] .ch-wordmark .human {
   color: var(--ch-accent);
+}
+
+/* Wordmark "class" half: tokens.css binds it to raw Stone, which misses
+   4.5:1 on light paper — use the mode-aware safe variant instead. */
+.ch-wordmark .class {
+  color: var(--ch-muted-text);
 }
 
 html {

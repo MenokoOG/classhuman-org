@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Eyebrow({ children }) {
   return (
-    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">{children}</p>
+    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">{children}</p>
   );
 }
 
@@ -33,7 +33,7 @@ export default function About() {
               />
             </div>
             <h2 className="mt-5 text-2xl font-extrabold">Lawrence Jefferson II</h2>
-            <p className="font-mono text-xs font-bold tracking-widest text-accent">
+            <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
               MENOKO OG · “ORIGINAL GEEK”
             </p>
             <p className="mt-3 font-semibold">CEO, CTO, Architect.</p>
@@ -47,7 +47,7 @@ export default function About() {
                   href="https://ljefferson-menoko-site.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cool underline underline-offset-4 hover:text-accent"
+                  className="text-cool-safe underline underline-offset-4 hover:text-accent-safe"
                 >
                   PORTFOLIO
                 </a>
@@ -57,7 +57,7 @@ export default function About() {
                   href="https://linkedin.com/in/lawrence-jefferson-ii-46497075"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cool underline underline-offset-4 hover:text-accent"
+                  className="text-cool-safe underline underline-offset-4 hover:text-accent-safe"
                 >
                   LINKEDIN
                 </a>
@@ -67,7 +67,7 @@ export default function About() {
                   href="https://github.com/MenokoOG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cool underline underline-offset-4 hover:text-accent"
+                  className="text-cool-safe underline underline-offset-4 hover:text-accent-safe"
                 >
                   GITHUB
                 </a>
@@ -82,7 +82,7 @@ export default function About() {
               className="h-24 w-24 rounded-lg object-cover"
             />
             <h2 className="mt-5 text-2xl font-extrabold">Nicale Jefferson</h2>
-            <p className="font-mono text-xs font-bold tracking-widest text-accent">
+            <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
               LUXGIRLOG
             </p>
             <p className="mt-3 font-semibold">
@@ -93,7 +93,7 @@ export default function About() {
         <p className="mt-8">
           <Link
             to="/story"
-            className="font-semibold text-cool underline underline-offset-4 hover:text-accent"
+            className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
           >
             Read our story — in memory of Tonya
           </Link>
@@ -108,7 +108,7 @@ export default function About() {
             Accessibility-first design, ethical AI systems, and humans maintaining final
             authority over major decisions.
           </p>
-          <p className="mt-6 inline-block rounded-md border border-accent px-4 py-2 font-mono text-xs font-bold tracking-widest text-accent">
+          <p className="mt-6 inline-block rounded-md border border-accent px-4 py-2 font-mono text-xs font-bold tracking-widest text-accent-safe">
             SCRIMBA “PORTFOLIO OF THE WEEK” · MAY 2026
           </p>
         </div>

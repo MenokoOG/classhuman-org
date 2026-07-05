@@ -3,7 +3,7 @@ import TacoLoop from "../components/TacoLoop.jsx";
 
 function Eyebrow({ children }) {
   return (
-    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">{children}</p>
+    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">{children}</p>
   );
 }
 
@@ -52,7 +52,7 @@ export default function Product() {
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight">On the record</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <div className="rounded-lg border border-border-brand p-5">
-            <p className="font-mono text-xs font-bold tracking-widest text-accent">
+            <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
               WHITE PAPER v1.0
             </p>
             <p className="mt-2 text-sm leading-relaxed text-on-surface/85">
@@ -60,7 +60,7 @@ export default function Product() {
             </p>
           </div>
           <div className="rounded-lg border border-border-brand p-5">
-            <p className="font-mono text-xs font-bold tracking-widest text-accent">
+            <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
               MATHEMATICAL MODEL v0.1
             </p>
             <p className="mt-2 text-sm leading-relaxed text-on-surface/85">
@@ -69,7 +69,7 @@ export default function Product() {
             </p>
           </div>
           <div className="rounded-lg border border-border-brand p-5">
-            <p className="font-mono text-xs font-bold tracking-widest text-accent">
+            <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
               TACO-UDD
             </p>
             <p className="mt-2 text-sm leading-relaxed text-on-surface/85">

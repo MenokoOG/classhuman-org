@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Eyebrow({ children }) {
   return (
-    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage">{children}</p>
+    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">{children}</p>
   );
 }
 
@@ -33,7 +33,7 @@ export default function Home() {
           </Link>
           <Link
             to="/about"
-            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool hover:border-accent hover:text-accent"
+            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
           >
             Meet the team
           </Link>
@@ -54,7 +54,7 @@ export default function Home() {
             treat them with care?
           </p>
           <p className="mt-6">
-            <Link to="/story" className="font-semibold text-cool underline underline-offset-4 hover:text-accent">
+            <Link to="/story" className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe">
               Where LAHA comes from — our story
             </Link>
           </p>
@@ -78,7 +78,7 @@ export default function Home() {
         <p className="mt-8">
           <Link
             to="/product"
-            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool hover:border-accent hover:text-accent"
+            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
           >
             See the four stages
           </Link>
@@ -98,7 +98,7 @@ export default function Home() {
                   active ? "border-accent" : "border-border-brand"
                 }`}
               >
-                <p className="font-mono text-xs font-bold tracking-widest text-muted">
+                <p className="font-mono text-xs font-bold tracking-widest text-muted-safe">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-2 text-xl font-bold">
@@ -131,7 +131,7 @@ export default function Home() {
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool hover:border-accent hover:text-accent"
+              className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
               Get in touch
             </Link>

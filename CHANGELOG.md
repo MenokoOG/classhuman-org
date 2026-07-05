@@ -7,6 +7,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-07-05
+### Fixed
+- WCAG AA contrast: added mode-aware text-safe tokens (`--ch-*-text`, derived from brand
+  tokens via `color-mix` — no hardcoded hex) for Stone/Sage/Cool/Amber small text on both
+  light and dark surfaces, including the wordmark's "class" half. Lighthouse on the
+  production build: performance 99, accessibility 100, best-practices 100, SEO 100.
+
 ## [1.0.0] — 2026-07-05
 ### Added
 - SEO: per-page `<title>` + meta description, Open Graph + canonical tags,
