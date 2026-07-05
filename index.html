@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-season="autumn" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classHuman AI — driven by LAHA</title>
+    <meta
+      name="description"
+      content="classHuman AI builds TACO Loop, a decision-control architecture for unknown-data environments. Humans hold final authority. LAHA — Love All Humans Always."
+    />
+    <link rel="canonical" href="https://classhuman.org/" />
+    <meta property="og:site_name" content="classHuman AI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="classHuman AI — driven by LAHA" />
+    <meta
+      property="og:description"
+      content="Decision-control for human-agentic collaboration. Humans hold final authority. LAHA — Love All Humans Always."
+    />
+    <meta property="og:url" content="https://classhuman.org/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <script>
+      // Restore saved UI mode before paint (light is the default).
+      try {
+        var m = localStorage.getItem("ch-mode");
+        if (m === "dark" || m === "light")
+          document.documentElement.setAttribute("data-mode", m);
+      } catch (e) {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

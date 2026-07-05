@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------
+   Map brand tokens (brand/tokens.css) into Tailwind theme vars.
+   `inline` keeps them live — they re-resolve when data-season
+   or data-mode changes on <html>. Never hardcode seasonal hex.
+   ------------------------------------------------------------ */
+@theme inline {
+  --color-ink: var(--ch-ink);
+  --color-bone: var(--ch-bone);
+  --color-stone: var(--ch-stone);
+  --color-sage: var(--ch-sage);
+  --color-primary: var(--ch-primary);
+  --color-accent: var(--ch-accent);
+  --color-cool: var(--ch-cool);
+  --color-muted: var(--ch-muted);
+  --color-on-primary: var(--ch-on-primary);
+  --color-on-accent: var(--ch-on-accent);
+  --color-surface: var(--ch-surface);
+  --color-card: var(--ch-surface-card);
+  --color-on-surface: var(--ch-on-surface);
+  --color-border-brand: var(--ch-surface-border);
+
+  --font-sans: var(--ch-font-sans);
+  --font-mono: var(--ch-font-mono);
+
+  --radius-sm: var(--ch-radius-sm);
+  --radius-md: var(--ch-radius-md);
+  --radius-lg: var(--ch-radius-lg);
+}
+
+/* ------------------------------------------------------------
+   UI mode (Ink ↔ Bone). Forced via data-mode on <html>;
+   toggled in the Header. Light is the default.
+   ------------------------------------------------------------ */
+:root,
+[data-mode="light"] {
+  --ch-surface: var(--ch-paper);
+  --ch-surface-card: color-mix(in srgb, var(--ch-paper) 92%, var(--ch-ink));
+  --ch-surface-border: color-mix(in srgb, var(--ch-paper) 78%, var(--ch-ink));
+  --ch-on-surface: var(--ch-text);
+}
+
+[data-mode="dark"] {
+  --ch-surface: var(--ch-bg);
+  --ch-surface-card: var(--ch-card);
+  --ch-surface-border: var(--ch-border);
+  --ch-on-surface: var(--ch-bone);
+}
+
+/* Wordmark: on dark, "Human" shifts to Amber for contrast (brand rule). */
+[data-mode="dark"] .ch-wordmark .human {
+  color: var(--ch-accent);
+}
+
+html {
+  background: var(--ch-surface);
+  color: var(--ch-on-surface);
+  font-family: var(--ch-font-sans);
+}
+
+/* Visible Amber focus for keyboard nav (WCAG) */
+:focus-visible {
+  outline: 2px solid var(--ch-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

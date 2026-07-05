@@ -1,0 +1,105 @@
+/* ============================================================
+   classHuman AI — Brand & Seasonal Theme Tokens
+   Driven by LAHA (Love All Humans Always)
+   ------------------------------------------------------------
+   Usage: import this file, then set a season on <html>:
+     <html data-season="autumn">   (default)
+   Switch by date with the snippet in season-switch.js, or
+   toggle data-season manually. Every var re-resolves live.
+   ============================================================ */
+
+:root {
+  /* --- Core brand (season-independent) --- */
+  --ch-ink:        #1C1813;  /* darkest neutral — body text on light, dark surface */
+  --ch-bone:       #F4EDE1;  /* lightest neutral — light surface, reversed text   */
+  --ch-stone:      #8B7F6E;  /* muted — the "class" half, borders, captions       */
+  --ch-sage:       #6F8A78;  /* secondary — machine-discipline accents            */
+
+  /* --- Type --- */
+  --ch-font-sans: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --ch-font-mono: "Space Mono", ui-monospace, monospace;
+
+  /* --- Radius / elevation --- */
+  --ch-radius-sm: 6px;
+  --ch-radius-md: 11px;
+  --ch-radius-lg: 16px;
+  --ch-radius-icon: 26px;     /* app-icon squircle */
+  --ch-shadow-icon: 0 10px 26px rgba(0,0,0,0.35);
+
+  /* --- Default season = Autumn (the core warm system) --- */
+  --ch-bg:         #1C1813;
+  --ch-card:       #241D16;
+  --ch-border:     #33291F;
+  --ch-paper:      #F4EDE1;
+  --ch-text:       #1C1813;
+  --ch-primary:    #C0492C;  /* Ember — brand, the "Human" half, primary buttons */
+  --ch-accent:     #E39A3B;  /* Amber — nodes, highlights, agentic signal        */
+  --ch-cool:       #6FA6AE;  /* the seasonal blue/teal — links, secondary        */
+  --ch-muted:      #8B7F6E;
+  --ch-on-primary: #FFFFFF;
+  --ch-on-accent:  #1C1813;
+}
+
+/* ============================================================
+   SEASONAL PALETTES
+   Each pairs a warm primary with a cool blue so the brand
+   never reads as a cold tech company — even in Winter.
+   ============================================================ */
+
+[data-season="spring"] {
+  --ch-bg: #20211C;  --ch-card: #282A22;  --ch-border: #3A3B31;
+  --ch-paper: #F3EFE6;  --ch-text: #1B1A17;
+  --ch-primary: #D0654A;  --ch-accent: #E8A54B;  --ch-cool: #7FB0D8;
+  --ch-muted: #9AA089;  --ch-on-primary: #FFFFFF;  --ch-on-accent: #1B1A17;
+}
+
+[data-season="summer"] {
+  --ch-bg: #1E1B14;  --ch-card: #272319;  --ch-border: #39321F;
+  --ch-paper: #F6F0E2;  --ch-text: #17140F;
+  --ch-primary: #C64A2E;  --ch-accent: #F0B23C;  --ch-cool: #5FA3D6;
+  --ch-muted: #A2937B;  --ch-on-primary: #FFFFFF;  --ch-on-accent: #17140F;
+}
+
+[data-season="autumn"] {
+  --ch-bg: #1C1813;  --ch-card: #241D16;  --ch-border: #33291F;
+  --ch-paper: #F4EDE1;  --ch-text: #1C1813;
+  --ch-primary: #C0492C;  --ch-accent: #E39A3B;  --ch-cool: #6FA6AE;
+  --ch-muted: #8B7F6E;  --ch-on-primary: #FFFFFF;  --ch-on-accent: #1C1813;
+}
+
+[data-season="winter"] {
+  --ch-bg: #141821;  --ch-card: #1B202B;  --ch-border: #2A303D;
+  --ch-paper: #EEF1F4;  --ch-text: #14171C;
+  --ch-primary: #5A88BE;  --ch-accent: #DE8A3C;  --ch-cool: #8FAAC9;
+  --ch-muted: #8792A3;  --ch-on-primary: #0F131A;  --ch-on-accent: #14171C;
+}
+
+/* ============================================================
+   EXAMPLE COMPONENT BINDINGS (delete / adapt to your codebase)
+   ============================================================ */
+
+.ch-btn-primary {
+  background: var(--ch-primary);
+  color: var(--ch-on-primary);
+  border: none;
+  border-radius: var(--ch-radius-md);
+  font-family: var(--ch-font-sans);
+  font-weight: 700;
+  padding: 11px 20px;
+  cursor: pointer;
+}
+
+.ch-btn-secondary {
+  background: transparent;
+  color: var(--ch-cool);
+  border: 1px solid var(--ch-cool);
+  border-radius: var(--ch-radius-md);
+  font-family: var(--ch-font-sans);
+  font-weight: 600;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.ch-wordmark { font-family: var(--ch-font-sans); font-weight: 800; letter-spacing: -0.03em; }
+.ch-wordmark .class { color: var(--ch-muted); }   /* structure / machine */
+.ch-wordmark .human { color: var(--ch-primary); } /* warmth / authority  */

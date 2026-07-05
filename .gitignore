@@ -1,0 +1,20 @@
+# --- SECRETS — never commit ---
+env.txt
+.env
+.env.*
+!.env.example
+
+# --- deps / build ---
+node_modules/
+dist/
+.vite/
+*.local
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+*.log
+
+# --- netlify ---
+.netlify/

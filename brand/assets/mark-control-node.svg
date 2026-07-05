@@ -1,0 +1,18 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="classHuman AI control-node mark">
+  
+  <circle cx="60" cy="60" r="34" fill="none" stroke="#C0492C" stroke-width="6"></circle>
+  <circle cx="60" cy="60" r="20" fill="none" stroke="#6F8A78" stroke-width="3"></circle>
+  <g stroke="#6F8A78" stroke-width="4" stroke-linecap="round">
+    <line x1="74.14" y1="45.86" x2="82.63" y2="37.37"></line>
+    <line x1="45.86" y1="45.86" x2="37.37" y2="37.37"></line>
+    <line x1="45.86" y1="74.14" x2="37.37" y2="82.63"></line>
+    <line x1="74.14" y1="74.14" x2="82.63" y2="82.63"></line>
+  </g>
+  <g fill="#C0492C">
+    <circle cx="82.63" cy="37.37" r="4"></circle><circle cx="37.37" cy="37.37" r="4"></circle>
+    <circle cx="37.37" cy="82.63" r="4"></circle><circle cx="82.63" cy="82.63" r="4"></circle>
+  </g>
+  <line x1="60" y1="40" x2="60" y2="22" stroke="#C0492C" stroke-width="6" stroke-linecap="round"></line>
+  <circle cx="60" cy="19" r="6" fill="#E39A3B"></circle>
+  <circle cx="60" cy="60" r="11" fill="#E39A3B"></circle>
+</svg>

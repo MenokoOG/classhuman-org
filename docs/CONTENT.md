@@ -1,0 +1,90 @@
+# Content — classHuman.org (approved copy)
+
+Use this copy. Don't invent metrics, testimonials, or claims not here. Tone: warm,
+confident, tactical. Lead with the human. LAHA underneath everything.
+
+**Privacy rule:** any reference to accessibility says only **"accessibility-first design."**
+Never mention health details.
+
+---
+
+## Global
+- **Name:** classHuman AI
+- **Wordmark:** `class` (Stone) + `Human` (Ember) + `AI`
+- **Tagline:** driven by LAHA — Love All Humans Always
+- **One-liner:** Decision-control for human-agentic collaboration.
+- **Status line (footer):** classHuman AI · LLC registration planned August 2026.
+- **GitHub org (footer):** https://github.com/classHuman
+
+---
+
+## Home / Hero
+- **Headline:** Decision-control for human-agentic collaboration.
+- **Sub:** classHuman AI builds the control layer where human warmth meets machine
+  discipline — so humans keep final authority over their agents.
+- **Primary CTA:** Explore TACO Loop → `/product`
+- **Secondary CTA:** Meet the team → `/about`
+
+## LAHA section
+- **Eyebrow:** OUR LAW
+- **Heading:** Love All Humans Always.
+- **Body:** LAHA is the reason the company exists. We build human-AI collaboration where
+  people, not models, hold final authority over the decisions that matter. Every system we
+  ship is measured against it: does it keep humans in command, and treat them with care?
+
+## Product — TACO Loop (only active product)
+- **Eyebrow:** PRODUCT · TACO LOOP
+- **Heading:** Take In → Assess → Choose → Operate.
+- **Definition:** TACO Loop is a decision-control architecture for unknown-data
+  environments — a control layer for agents, humans, and workflows. **Not another agent.**
+- **Core law:** *Unknown data must increase decision discipline, not model confidence.*
+- **Thesis:** A decision is proper only when made from bounded uncertainty, environmental
+  awareness, rule compliance, and observable outcome.
+- **The four stages (with their tests):**
+  1. **Take In Unknowns** — did the system state what it knows and does not know?
+  2. **Assess & Align** — did the system slow down when evidence was weak?
+  3. **Choose Correctly** — was the action bounded, reversible, traceable?
+  4. **Operate & Observe Outcome** — did outcome evidence feed the next loop?
+- **Credentials:** White Paper v1.0 (published July 2026, LinkedIn + Facebook).
+  Mathematical Model v0.1 — state model, guardrail function G(a), QRF escalation, drift
+  model, audit hash-chain, nested loops, master equation.
+- **Benchmark:** TACO-UDD — the Unknown-Data Decision Benchmark.
+
+## Roadmap (show as "what's next" — do not reorder)
+1. **TACO Loop** — active now.
+2. **Ag3nt24** — agent infrastructure. Later build layer.
+3. **HADES** — agent diagnosis, correction, accountability. Later build layer.
+
+> Website rule (Handler, 2026-07-05): keep the public roadmap to software — do **not**
+> mention the Art line on the site. It remains on the internal company roadmap.
+
+## Story (In Memory of Tonya)
+- **Eyebrow:** OUR STORY
+- **Heading:** In memory of Tonya.
+- **Source:** `docs/FOUNDERS-STORY.md` — **use verbatim.** Do not paraphrase or market-ify.
+- **Placement:** its own section/page (e.g. `/story` or a prominent About block). Present it
+  plainly, with dignity and quiet — generous spacing, no hype, no stock imagery over it.
+- This is where LAHA comes from. It anchors the whole site; link to it from Home and About.
+
+## About / Team
+- **Eyebrow:** WHO WE ARE
+- **Heading:** A two-person company with a spine.
+- **Lawrence Jefferson II** (Menoko OG — "Original Geek") — CEO, CTO, Architect.
+  24 years U.S. Army; senior backend + full-stack engineer; AI systems builder.
+  - Portfolio: https://ljefferson-menoko-site.netlify.app/
+  - LinkedIn: https://linkedin.com/in/lawrence-jefferson-ii-46497075
+  - GitHub: https://github.com/MenokoOG
+- **Nicale Jefferson** (LuxgirlOG) — CFO, Head of HR & Operations, Admin for AI ethics
+  and governance.
+- **How we work:** accessibility-first design, ethical AI systems, and humans maintaining
+  final authority over major decisions.
+- **Credential to surface:** Scrimba "Portfolio of the Week," May 2026.
+
+## Contact
+- **Eyebrow:** GET IN TOUCH
+- **Heading:** Talk to classHuman AI.
+- **Email:** lawrencejefferson@classhuman.org (confirmed by Lawrence, 2026-07-05).
+- Keep it simple: short form or a mailto. No trackers.
+
+---
+*LAHA — Love All Humans Always.*
