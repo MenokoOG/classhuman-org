@@ -1,0 +1,14 @@
+flowchart LR
+    O[Observe<br/>Collect evidence] --> R[Orient<br/>Context, risk, identity, rights]
+    R --> D[Decide<br/>Authorize or deny]
+    D --> A[Act<br/>Execute reversible action]
+    A --> AU[Audit and Appeal<br/>Record, challenge, restore]
+    AU --> O
+
+    SSOT[SSOT Truth Check] --> O
+    SSOT --> R
+    SSOT --> D
+    CIPSE[CIPSE(D²) Moral Constraints] --> R
+    CIPSE --> D
+    ZT[Zero Trust Gate] --> D
+    ZT --> A

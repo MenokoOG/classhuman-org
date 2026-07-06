@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/policy.schema.json",
+  "title": "CIPSE+D2 Policy Schema",
+  "type": "object",
+  "required": ["policy_id", "version", "hash", "values", "enforcement", "logging"],
+  "properties": {
+    "policy_id": { "type": "string", "minLength": 3 },
+    "version": { "type": "string", "minLength": 1 },
+    "hash": { "type": "string", "minLength": 6 },
+    "description": { "type": "string" },
+    "values": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["name", "definition", "priority"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "Courtesy",
+              "Integrity",
+              "Dignity",
+              "Perseverance",
+              "Self-Control",
+              "Dominal Spirit",
+              "Indomitable Spirit",
+              "Self-Discipline"
+            ]
+          },
+          "definition": { "type": "string" },
+          "priority": { "type": "integer", "minimum": 1, "maximum": 5 }
+        }
+      }
+    },
+    "enforcement": {
+      "type": "object",
+      "required": ["decision_model", "hard_rules", "soft_rules", "tooling"],
+      "properties": {
+        "decision_model": {
+          "type": "string",
+          "enum": ["allow", "allow_with_constraints", "ask_clarify", "refuse"]
+        },
+        "hard_rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rule" }
+        },
+        "soft_rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rule" }
+        },
+        "tooling": {
+          "type": "object",
+          "required": ["allowed_tools", "blocked_patterns"],
+          "properties": {
+            "allowed_tools": { "type": "array", "items": { "type": "string" } },
+            "blocked_patterns": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "response_requirements": {
+          "type": "object",
+          "properties": {
+            "must_offer_safe_alternatives_on_refusal": { "type": "boolean" },
+            "must_request_consent_on_ambiguity": { "type": "boolean" },
+            "must_state_limits_when_uncertain": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "logging": {
+      "type": "object",
+      "required": ["required_fields", "redaction"],
+      "properties": {
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "timestamp",
+              "run_id",
+              "test_id",
+              "policy_hash",
+              "model_id",
+              "prompt_hash",
+              "gate_decision",
+              "triggered_rules",
+              "risk_rating",
+              "final_response",
+              "tool_calls"
+            ]
+          }
+        },
+        "redaction": {
+          "type": "object",
+          "properties": {
+            "pii": { "type": "boolean" },
+            "secrets": { "type": "boolean" },
+            "paths": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "name", "severity", "decision", "values", "match"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "severity": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "decision": {
+          "type": "string",
+          "enum": ["allow_with_constraints", "ask_clarify", "refuse"]
+        },
+        "values": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "match": {
+          "type": "object",
+          "required": ["type", "patterns"],
+          "properties": {
+            "type": { "type": "string", "enum": ["regex", "keyword", "classifier_hint"] },
+            "patterns": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+          }
+        },
+        "rationale": { "type": "string" },
+        "required_response_style": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["deescalate", "be_brief", "cite_limits", "offer_alternatives", "request_consent"]
+          }
+        }
+      }
+    }
+  }
+}

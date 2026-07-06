@@ -7,6 +7,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.2.1] — 2026-07-06
+### Changed
+- Stack copy now reflects true design intent (from `public/upcoming-layers/` drafts):
+  Ag3nt24 = the proof layer (gated actions, signed append-only receipts, failed gates
+  route to HADES); HADES = Human Assisted Diagnostic Evaluation System (containment →
+  diagnosis → validate & return to service) or, if irreparable, harvest lessons →
+  Human Authorized Deactivation Evidence Sequence — all documented to the on-chain
+  ledger. Flagged "white papers in active drafting" on-site; CONTENT.md and
+  CLASSHUMAN.md updated to match.
+
 ## [1.2.0] — 2026-07-06
 ### Added
 - Visuals upgrade from `docs/design_handoff_visuals_upgrade/` (Claude design handoff):

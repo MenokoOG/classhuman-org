@@ -26,8 +26,12 @@
 ## Product Roadmap (in order — do not reorder)
 
 1. **TACO Loop** — only active product right now
-2. **Ag3nt24** — renamed from Aurora 24 / A-24. Later build layer.
-3. **HADES** — agent diagnosis, correction, accountability. Later build layer.
+2. **Ag3nt24** — renamed from Aurora 24 / A-24. The proof layer: gated agent actions with
+   signed, append-only receipts. Later build layer; white paper in drafting.
+3. **HADES** — **Human Assisted Diagnostic Evaluation System** (rehabilitation path):
+   containment sandbox → diagnosis → validate & return to service. If irreparable:
+   harvest experience/lessons, then **Human Authorized Deactivation Evidence Sequence**
+   (deactivation path). All documented to the on-chain ledger. White paper in drafting.
 4. **Art line** — name TBD. Theme: human-agentic coexistence (human life + programming) expressed through art.
 
 ## TACO Loop — Product Definition

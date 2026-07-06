@@ -52,8 +52,17 @@ Never mention health details.
 
 ## Roadmap (show as "what's next" — do not reorder)
 1. **TACO Loop** — active now.
-2. **Ag3nt24** — agent infrastructure. Later build layer.
-3. **HADES** — agent diagnosis, correction, accountability. Later build layer.
+2. **Ag3nt24** — the proof layer. Agent actions pass through gates that produce signed,
+   append-only receipts — provable, not just logged. Inherits TACO guardrails; failed
+   gates route the agent to HADES. White paper in drafting.
+3. **HADES** — **Human Assisted Diagnostic Evaluation System.** On failure, the agent is
+   contained (sandbox), diagnosed, and — if it passes — validated and returned to service.
+   If irreparable, experience/lessons are harvested and HADES becomes the
+   **Human Authorized Deactivation Evidence Sequence.** Everything is documented to the
+   on-chain ledger. White paper in drafting.
+
+> Drafting rule (Handler, 2026-07-06): Ag3nt24/HADES papers are NOT final — site copy must
+> flag "in drafting" and may evolve. Source docs: `public/upcoming-layers/`.
 
 > Website rule (Handler, 2026-07-05): keep the public roadmap to software — do **not**
 > mention the Art line on the site. It remains on the internal company roadmap.

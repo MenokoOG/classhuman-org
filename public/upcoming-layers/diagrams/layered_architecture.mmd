@@ -1,0 +1,12 @@
+flowchart TB
+    L1[L1 — Moral and Human Constraints<br/>CIPSE(D²), dignity, capacity, rights]
+    L2[L2 — Truth and Governance<br/>SSOT, transparency, dispute lifecycle]
+    L3[L3 — Decision Control<br/>OODA loop, 10-pass validation]
+    L4[L4 — Security and Authorization<br/>Zero Trust, ICAM, audit, reversibility]
+    L5[L5 — Domain Systems<br/>AI, law, finance, infrastructure, health, logistics]
+    L6[L6 — Execution and Operations<br/>Humans, agents, machines, processes]
+
+    L1 --> L2 --> L3 --> L4 --> L5 --> L6
+    L6 -. feedback .-> L3
+    L6 -. audit evidence .-> L2
+    L3 -. escalation .-> L1

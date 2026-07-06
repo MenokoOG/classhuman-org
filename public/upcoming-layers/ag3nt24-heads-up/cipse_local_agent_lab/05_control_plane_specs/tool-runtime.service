@@ -1,0 +1,42 @@
+[Unit]
+Description=Tool Runtime (Sandboxed) - CIPSE Lab
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=tool_user
+Group=tool_user
+WorkingDirectory=/opt/cipse-lab/apps/tool-runtime
+ExecStart=/usr/bin/node /opt/cipse-lab/apps/tool-runtime/dist/server.js --unix-socket=/lab/ipc/tool-runtime.sock
+Restart=on-failure
+RestartSec=2
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectClock=true
+LockPersonality=true
+ReadWritePaths=/lab/sandbox /lab/runs /lab/ipc
+ReadOnlyPaths=/opt/cipse-lab
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictSUIDSGID=true
+PrivateNetwork=true
+RestrictAddressFamilies=AF_UNIX
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+LimitNOFILE=1024
+LimitNPROC=256
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

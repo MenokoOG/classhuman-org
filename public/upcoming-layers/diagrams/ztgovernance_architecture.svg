@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<style>
+  .title { font: 700 28px Arial, sans-serif; fill: #111; }
+  .box { fill: #f8f9fb; stroke: #222; stroke-width: 2; rx: 14; }
+  .label { font: 600 18px Arial, sans-serif; fill: #111; }
+  .sub { font: 14px Arial, sans-serif; fill: #333; }
+  .edge { stroke: #222; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  .dash { stroke-dasharray: 8 6; }
+</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#222" /></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="45" class="title">Zero Trust Governance Architecture — Full Link Map</text>
+
+<path class="edge" d="M600.0,150 C600.0,165.0 600.0,165.0 600.0,180"/>
+<path class="edge" d="M600.0,250 C600.0,265.0 600.0,265.0 600.0,280"/>
+<path class="edge" d="M600.0,350 C600.0,365.0 600.0,365.0 600.0,380"/>
+<path class="edge" d="M600.0,450 C600.0,465.0 600.0,465.0 600.0,480"/>
+<path class="edge" d="M600.0,550 C600.0,565.0 600.0,565.0 600.0,580"/>
+<path class="edge" d="M600.0,650 C600.0,665.0 600.0,665.0 600.0,680"/>
+<path class="edge dash" d="M600.0,680 C600.0,465.0 600.0,465.0 600.0,250"/>
+<path class="edge" d="M160.0,250 C160.0,215.0 600.0,215.0 600.0,180"/>
+<path class="edge" d="M600.0,250 C600.0,215.0 1040.0,215.0 1040.0,180"/>
+<path class="edge" d="M600.0,450 C600.0,415.0 1040.0,415.0 1040.0,380"/>
+<path class="edge" d="M160.0,550 C160.0,515.0 600.0,515.0 600.0,480"/>
+<path class="edge" d="M600.0,550 C600.0,515.0 1040.0,515.0 1040.0,480"/>
+<rect class="box" x="350" y="80" width="500" height="70" rx="14"/>
+<text x="600.0" y="112" text-anchor="middle" class="label">Human and Moral Constraints</text>
+<text x="600.0" y="134" text-anchor="middle" class="sub">CIPSE(D²), dignity, rights, capacity</text>
+<rect class="box" x="350" y="180" width="500" height="70" rx="14"/>
+<text x="600.0" y="212" text-anchor="middle" class="label">Truth and Governance Layer</text>
+<text x="600.0" y="234" text-anchor="middle" class="sub">SSOT, transparency, dispute lifecycle</text>
+<rect class="box" x="350" y="280" width="500" height="70" rx="14"/>
+<text x="600.0" y="312" text-anchor="middle" class="label">Decision Control Layer</text>
+<text x="600.0" y="334" text-anchor="middle" class="sub">OODA loop, 10-pass validation</text>
+<rect class="box" x="350" y="380" width="500" height="70" rx="14"/>
+<text x="600.0" y="412" text-anchor="middle" class="label">Security and Authorization Layer</text>
+<text x="600.0" y="434" text-anchor="middle" class="sub">Zero Trust, ICAM, audit, reversibility</text>
+<rect class="box" x="350" y="480" width="500" height="70" rx="14"/>
+<text x="600.0" y="512" text-anchor="middle" class="label">Domain Systems</text>
+<text x="600.0" y="534" text-anchor="middle" class="sub">AI, law, finance, infrastructure, health, logistics</text>
+<rect class="box" x="350" y="580" width="500" height="70" rx="14"/>
+<text x="600.0" y="612" text-anchor="middle" class="label">Execution and Operations</text>
+<text x="600.0" y="634" text-anchor="middle" class="sub">Humans, agents, machines, processes</text>
+<rect class="box" x="350" y="680" width="500" height="70" rx="14"/>
+<text x="600.0" y="712" text-anchor="middle" class="label">Audit, Appeal, Restoration</text>
+<text x="600.0" y="734" text-anchor="middle" class="sub">Record, challenge, rollback, repair</text>
+<rect class="box" x="40" y="180" width="240" height="70" rx="14"/>
+<text x="160.0" y="212" text-anchor="middle" class="label">Reputation Repair</text>
+<text x="160.0" y="234" text-anchor="middle" class="sub">Restoration path</text>
+<rect class="box" x="920" y="180" width="240" height="70" rx="14"/>
+<text x="1040.0" y="212" text-anchor="middle" class="label">Transparency Kill-Switch</text>
+<text x="1040.0" y="234" text-anchor="middle" class="sub">Abuse containment</text>
+<rect class="box" x="920" y="380" width="240" height="70" rx="14"/>
+<text x="1040.0" y="412" text-anchor="middle" class="label">Incident Response</text>
+<text x="1040.0" y="434" text-anchor="middle" class="sub">Contain, recover, learn</text>
+<rect class="box" x="40" y="480" width="240" height="70" rx="14"/>
+<text x="160.0" y="512" text-anchor="middle" class="label">Critical Infrastructure</text>
+<text x="160.0" y="534" text-anchor="middle" class="sub">Power, water, shipping</text>
+<rect class="box" x="920" y="480" width="240" height="70" rx="14"/>
+<text x="1040.0" y="512" text-anchor="middle" class="label">AI Moral Drift Simulation</text>
+<text x="1040.0" y="534" text-anchor="middle" class="sub">Bounded autonomy audits</text>
+</svg>

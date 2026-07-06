@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<style>.title{font:700 28px Arial;fill:#111}.box{fill:#f8f9fb;stroke:#222;stroke-width:2}.gate{fill:#fff7e6;stroke:#222;stroke-width:2}.label{font:600 18px Arial;fill:#111}.sub{font:14px Arial;fill:#333}.edge{stroke:#222;stroke-width:2;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 6}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#222" /></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="40" y="45" class="title">OODA Accountability Loop with Governance Gates</text>
+<rect class="box" x="70" y="270" width="190" height="90" rx="14"/><text class="label" x="165" y="305" text-anchor="middle">Observe</text><text class="sub" x="165" y="330" text-anchor="middle">Collect evidence</text>
+<rect class="box" x="330" y="270" width="190" height="90" rx="14"/><text class="label" x="425" y="305" text-anchor="middle">Orient</text><text class="sub" x="425" y="330" text-anchor="middle">Context, risk, rights</text>
+<rect class="box" x="590" y="270" width="190" height="90" rx="14"/><text class="label" x="685" y="305" text-anchor="middle">Decide</text><text class="sub" x="685" y="330" text-anchor="middle">Authorize or deny</text>
+<rect class="box" x="850" y="270" width="190" height="90" rx="14"/><text class="label" x="945" y="305" text-anchor="middle">Act</text><text class="sub" x="945" y="330" text-anchor="middle">Reversible execution</text>
+<rect class="box" x="460" y="500" width="280" height="90" rx="14"/><text class="label" x="600" y="535" text-anchor="middle">Audit and Appeal</text><text class="sub" x="600" y="560" text-anchor="middle">Record, challenge, restore</text>
+<path class="edge" d="M260,315 L330,315"/><path class="edge" d="M520,315 L590,315"/><path class="edge" d="M780,315 L850,315"/><path class="edge" d="M945,360 C945,455 740,455 700,500"/><path class="edge" d="M500,500 C280,455 165,430 165,360"/>
+<rect class="gate" x="110" y="105" width="250" height="80" rx="14"/><text class="label" x="235" y="138" text-anchor="middle">SSOT Truth Check</text><text class="sub" x="235" y="162" text-anchor="middle">Evidence integrity</text>
+<rect class="gate" x="475" y="105" width="250" height="80" rx="14"/><text class="label" x="600" y="138" text-anchor="middle">CIPSE(D²)</text><text class="sub" x="600" y="162" text-anchor="middle">Moral constraints</text>
+<rect class="gate" x="840" y="105" width="250" height="80" rx="14"/><text class="label" x="965" y="138" text-anchor="middle">Zero Trust Gate</text><text class="sub" x="965" y="162" text-anchor="middle">Identity and access</text>
+<path class="edge dash" d="M235,185 C235,215 165,235 165,270"/><path class="edge dash" d="M235,185 C280,220 425,230 425,270"/><path class="edge dash" d="M235,185 C400,220 685,230 685,270"/>
+<path class="edge dash" d="M600,185 C540,215 425,235 425,270"/><path class="edge dash" d="M600,185 C630,220 685,235 685,270"/>
+<path class="edge dash" d="M965,185 C900,215 685,235 685,270"/><path class="edge dash" d="M965,185 C965,220 945,235 945,270"/>
+</svg>

@@ -1,6 +1,7 @@
 /* The product stack — TACO is the root layer. Shared by Home + Product.
-   Ag3nt24 & HADES copy is PLACEHOLDER per Handler (2026-07-06) until the
-   real briefs/white papers land in public/upcoming-layers/. */
+   Ag3nt24 & HADES white papers are IN DRAFTING (Handler, 2026-07-06) — copy
+   below reflects the true design intent from public/upcoming-layers/ but
+   details may evolve until the papers are final. */
 
 export const STACK = [
   {
@@ -16,20 +17,21 @@ export const STACK = [
     layer: "Layer 1",
     pill: "NEXT",
     color: "#5A88BE",
-    desc: "The agentic layer that operates on top of TACO — agents that inherit its guardrails and audit by default. Details to come.",
+    desc: "The proof layer. Agent actions pass through gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Agents inherit TACO's guardrails; a failed gate routes the agent to HADES.",
   },
   {
     name: "HADES",
     layer: "Layer 2",
     pill: "HORIZON",
     color: "#8B7F6E",
-    desc: "The horizon layer. Scope defined after TACO and Ag3nt24 are proven.",
+    desc: "Human Assisted Diagnostic Evaluation System. A failing agent is contained in a sandbox, diagnosed, and — if it passes — validated and returned to service. If it can't be, its experience and lessons are harvested and HADES becomes the Human Authorized Deactivation Evidence Sequence. Either way, every step is documented to the on-chain ledger.",
   },
 ];
 
 export default function StackRows() {
   return (
-    <ol className="mt-8 space-y-3.5">
+    <>
+      <ol className="mt-8 space-y-3.5">
       {STACK.map(({ name, layer, pill, color, emphasis, desc }) => (
         <li
           key={name}
@@ -59,6 +61,10 @@ export default function StackRows() {
           </p>
         </li>
       ))}
-    </ol>
+      </ol>
+      <p className="mt-4 font-mono text-xs text-muted-safe">
+        Ag3nt24 and HADES white papers are in active drafting — details may evolve.
+      </p>
+    </>
   );
 }
