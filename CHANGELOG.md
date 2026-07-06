@@ -7,6 +7,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.0.2] — 2026-07-06
+### Added
+- TACO Decision Loop diagram (infographic, lazy-loaded) on the Product page’s four-stages
+  section, from `public/whitepaper-models/`.
+- Credential links on Product page: White Paper v1.0 PDF (“READ THE PDF”) and
+  Mathematical Model v0.1 (“READ THE MODEL”).
+
 ## [1.0.1] — 2026-07-05
 ### Fixed
 - WCAG AA contrast: added mode-aware text-safe tokens (`--ch-*-text`, derived from brand

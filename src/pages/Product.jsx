@@ -43,6 +43,17 @@ export default function Product() {
             One loop. Four gates. Each with a test.
           </h2>
           <TacoLoop />
+          <figure className="mt-12">
+            <img
+              src="/whitepaper-models/The_TACO_Decision_Loop_Diagram.png"
+              alt="The TACO Decision Loop diagram: Take In Unknowns, Assess and Align, Choose Correctly, Operate and Observe Outcome — outcome evidence feeding the next loop"
+              loading="lazy"
+              className="mx-auto w-full max-w-2xl rounded-lg border border-border-brand"
+            />
+            <figcaption className="mt-3 text-center font-mono text-xs text-muted-safe">
+              The TACO Decision Loop — from White Paper v1.0.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -58,6 +69,16 @@ export default function Product() {
             <p className="mt-2 text-sm leading-relaxed text-on-surface/85">
               Published July 2026, LinkedIn + Facebook.
             </p>
+            <p className="mt-4">
+              <a
+                href="/whitepaper-models/TACO_Loop_Whitepaper_v1_classHuman.pdf"
+                target="_blank"
+                rel="noopener"
+                className="font-mono text-xs font-bold tracking-widest text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                READ THE PDF →
+              </a>
+            </p>
           </div>
           <div className="rounded-lg border border-border-brand p-5">
             <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">
@@ -66,6 +87,16 @@ export default function Product() {
             <p className="mt-2 text-sm leading-relaxed text-on-surface/85">
               State model, guardrail function G(a), QRF escalation, drift model, audit
               hash-chain, nested loops, master equation.
+            </p>
+            <p className="mt-4">
+              <a
+                href="/whitepaper-models/TACO_Math_Models_v1.md"
+                target="_blank"
+                rel="noopener"
+                className="font-mono text-xs font-bold tracking-widest text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                READ THE MODEL →
+              </a>
             </p>
           </div>
           <div className="rounded-lg border border-border-brand p-5">
