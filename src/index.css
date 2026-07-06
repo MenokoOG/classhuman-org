@@ -27,6 +27,7 @@
   --color-sage-safe: var(--ch-sage-text);
   --color-cool-safe: var(--ch-cool-text);
   --color-accent-safe: var(--ch-accent-text);
+  --color-primary-safe: var(--ch-primary-text);
 
   --font-sans: var(--ch-font-sans);
   --font-mono: var(--ch-font-mono);
@@ -46,10 +47,11 @@
   --ch-surface-card: color-mix(in srgb, var(--ch-paper) 92%, var(--ch-ink));
   --ch-surface-border: color-mix(in srgb, var(--ch-paper) 78%, var(--ch-ink));
   --ch-on-surface: var(--ch-text);
-  --ch-muted-text: color-mix(in srgb, var(--ch-muted) 55%, var(--ch-ink));
-  --ch-sage-text: color-mix(in srgb, var(--ch-sage) 60%, var(--ch-ink));
-  --ch-cool-text: color-mix(in srgb, var(--ch-cool) 55%, var(--ch-ink));
-  --ch-accent-text: color-mix(in srgb, var(--ch-accent) 50%, var(--ch-ink));
+  --ch-muted-text: color-mix(in srgb, var(--ch-muted) 50%, var(--ch-ink));
+  --ch-sage-text: color-mix(in srgb, var(--ch-sage) 52%, var(--ch-ink));
+  --ch-cool-text: color-mix(in srgb, var(--ch-cool) 50%, var(--ch-ink));
+  --ch-accent-text: color-mix(in srgb, var(--ch-accent) 45%, var(--ch-ink));
+  --ch-primary-text: color-mix(in srgb, var(--ch-primary) 65%, var(--ch-ink));
 }
 
 [data-mode="dark"] {
@@ -61,6 +63,7 @@
   --ch-sage-text: color-mix(in srgb, var(--ch-sage) 78%, var(--ch-bone));
   --ch-cool-text: color-mix(in srgb, var(--ch-cool) 85%, var(--ch-bone));
   --ch-accent-text: var(--ch-accent);
+  --ch-primary-text: var(--ch-accent);
 }
 
 /* Wordmark: on dark, "Human" shifts to Amber for contrast (brand rule). */
@@ -98,6 +101,60 @@ html {
 }
 .ch-pulse {
   animation: ch-pulse 3.2s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------
+   Interactive TACO pieces (design handoff: visuals upgrade).
+   Stage color arrives via the --stage custom property from
+   taco-controls.ts; light mode darkens it for text contrast.
+   ------------------------------------------------------------ */
+.ch-stage-text {
+  color: var(--stage);
+}
+[data-mode="light"] .ch-stage-text {
+  color: color-mix(in srgb, var(--stage) 45%, var(--ch-ink));
+}
+[data-mode="dark"] .ch-stage-text {
+  color: color-mix(in srgb, var(--stage) 80%, var(--ch-bone));
+}
+
+.ch-bar-track {
+  height: 12px;
+  border-radius: 8px;
+  background: var(--ch-surface-border);
+  overflow: hidden;
+}
+.ch-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ch-slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #5a88be 0%, #6fa6ae 40%, #e39a3b 70%, #d9603f 100%);
+  outline-offset: 4px;
+  cursor: pointer;
+}
+.ch-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ch-bone);
+  border: 3px solid var(--ch-primary);
+}
+.ch-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ch-bone);
+  border: 3px solid var(--ch-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {

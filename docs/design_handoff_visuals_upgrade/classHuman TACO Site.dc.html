@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0E1117;}
+  *{box-sizing:border-box;}
+  ::selection{background:#C0492C;color:#F4EDE1;}
+  .lnk:hover{color:#F4EDE1 !important;}
+  .stg{transition:transform .16s ease, border-color .16s ease, background .16s ease;}
+  .stg:hover{transform:translateY(-2px);}
+  .cta:hover{filter:brightness(1.08);}
+  input[type=range].taco{-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;outline:none;}
+  input[type=range].taco::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#F4EDE1;border:3px solid #C0492C;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4);}
+  input[type=range].taco::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#F4EDE1;border:3px solid #C0492C;cursor:pointer;}
+  .bar{transition:width .28s cubic-bezier(.4,0,.2,1), background .28s;}
+  @keyframes pulseNode{0%,100%{opacity:.35;}50%{opacity:1;}}
+  @keyframes dashmove{to{stroke-dashoffset:-24;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:radial-gradient(1200px 600px at 78% -8%, rgba(90,136,190,.14), transparent 60%), radial-gradient(900px 500px at 8% 4%, rgba(192,73,44,.10), transparent 55%), #0E1117;color:#F4EDE1;font-family:'Hanken Grotesk',system-ui,sans-serif;">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(14,17,23,.82);border-bottom:1px solid #1E2530;">
+    <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:14px 32px;">
+      <div style="display:flex;align-items:center;gap:11px;flex:none;">
+        <svg viewBox="0 0 120 120" width="30" height="30"><path d="M54.9 38.7 A26 26 0 1 1 54.9 81.3" fill="none" stroke="#C0492C" stroke-width="12" stroke-linecap="round"/><path d="M80 36 L80 84 M108 36 L108 84 M80 60 L108 60" fill="none" stroke="#F4EDE1" stroke-width="12" stroke-linecap="round"/></svg>
+        <span style="font-size:18px;font-weight:800;letter-spacing:-0.02em;"><span style="color:#8792A3;">class</span><span style="color:#D9603F;">Human</span> <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#E39A3B;vertical-align:2px;">AI</span></span>
+      </div>
+      <div style="display:flex;gap:24px;font-size:14px;font-weight:600;color:#8792A3;">
+        <span class="lnk" style="color:#F4EDE1;cursor:pointer;">TACO Loop</span>
+        <span class="lnk" style="cursor:pointer;">Architecture</span>
+        <span class="lnk" style="cursor:pointer;">Benchmark</span>
+        <span class="lnk" style="cursor:pointer;">Roadmap</span>
+        <span class="lnk" style="cursor:pointer;">Docs</span>
+      </div>
+      <div style="flex:1;"></div>
+      <div style="display:flex;align-items:center;gap:14px;flex:none;">
+        <button style="border:1px solid #2A303D;background:transparent;color:#DCE6F2;font-family:inherit;font-weight:600;font-size:14px;padding:9px 16px;border-radius:9px;cursor:pointer;">Read the white paper</button>
+        <button class="cta" style="border:none;background:#C0492C;color:#fff;font-family:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:9px;cursor:pointer;">Request access</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="max-width:1320px;margin:0 auto;padding:66px 32px 30px;">
+    <div style="display:flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6FA6AE;margin-bottom:22px;">
+      <span style="width:7px;height:7px;border-radius:50%;background:#E39A3B;animation:pulseNode 2.4s infinite;"></span>
+      Decision-control architecture · driven by LAHA
+    </div>
+    <h1 style="margin:0 0 22px;font-size:60px;line-height:1.02;font-weight:800;letter-spacing:-0.03em;max-width:960px;text-wrap:balance;">
+      The <span style="color:#D9603F;">TACO Loop</span> — a control layer for decisions made <span style="color:#8792A3;">in the unknown.</span>
+    </h1>
+    <p style="margin:0 0 30px;font-size:19px;line-height:1.55;color:#A9B4C2;max-width:680px;">
+      TACO is not another agent. It wraps agents, humans, and workflows in a discipline layer that slows premature action, bounds uncertainty, and routes every consequential call to a person.
+    </p>
+
+    <!-- CORE PRODUCT LAW -->
+    <div style="display:flex;align-items:stretch;gap:0;max-width:820px;border:1px solid #2A303D;border-radius:14px;overflow:hidden;background:#12161F;margin-bottom:30px;">
+      <div style="background:#C0492C;width:6px;flex:none;"></div>
+      <div style="padding:20px 24px;display:flex;flex-direction:column;gap:5px;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#E39A3B;">Core product law</span>
+        <span style="font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F4EDE1;">Unknown data must increase decision discipline — not model confidence.</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:34px;flex-wrap:wrap;">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:22px;font-weight:800;color:#F4EDE1;">{{ s.value }}</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B7686;">{{ s.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TACO LOOP (interactive) -->
+  <section style="max-width:1320px;margin:0 auto;padding:56px 32px 20px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px;">
+      <h2 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.02em;">The loop</h2>
+      <span style="font-size:15px;color:#7C8696;">Take In Unknowns → Assess &amp; Align → Choose Correctly → Operate &amp; Observe</span>
+    </div>
+    <p style="margin:0 0 28px;font-size:15px;color:#8792A3;">Click a stage.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;">
+      <sc-for list="{{ stages }}" as="st" hint-placeholder-count="4">
+        <button class="stg" onClick="{{ st.onClick }}" style="{{ st.style }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span style="width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:18px;background:{{ st.badgeBg }};color:{{ st.badgeFg }};">{{ st.letter }}</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;color:#5B6474;">0{{ st.num }}</span>
+          </div>
+          <span style="font-size:16px;font-weight:700;text-align:left;color:#EDE7DC;">{{ st.name }}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <!-- detail -->
+    <div style="margin-top:16px;border:1px solid #232A36;border-left:4px solid {{ activeColor }};border-radius:14px;background:#12161F;padding:26px 28px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:{{ activeColor }};">{{ activeLetter }} · {{ activeName }}</span>
+        <p style="margin:0;font-size:18px;line-height:1.55;color:#DCE6F2;">{{ activeFunction }}</p>
+        <span style="font-size:14px;color:#8792A3;">Prevents: <span style="color:#E39A3B;">{{ activePrevents }}</span></span>
+      </div>
+      <div style="border-left:1px solid #232A36;padding-left:28px;display:flex;flex-direction:column;gap:8px;">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6B7686;">Operational test</span>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:#BFC9D6;font-style:italic;">“{{ activeTest }}”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVERSE SPEED RULE (interactive) -->
+  <section style="border-top:1px solid #1E2530;margin-top:56px;background:linear-gradient(180deg, rgba(20,24,33,.5), transparent);">
+    <div style="max-width:1320px;margin:0 auto;padding:60px 32px;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px;">
+        <h2 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.02em;">The Inverse Speed Rule</h2>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:#6FA6AE;">the core control law</span>
+      </div>
+      <p style="margin:0 0 34px;font-size:16px;line-height:1.55;color:#A9B4C2;max-width:680px;">As total uncertainty rises, decision speed falls, verification deepens, and action scope shrinks — provably, not as a slogan. Drag the uncertainty.</p>
+
+      <div style="display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:center;">
+        <!-- control -->
+        <div style="border:1px solid #232A36;border-radius:16px;background:#12161F;padding:26px;display:flex;flex-direction:column;gap:22px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;">
+              <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8792A3;">U_total</span>
+              <span style="font-size:34px;font-weight:800;font-family:'Space Mono',monospace;color:{{ uColor }};">{{ uDisplay }}</span>
+            </div>
+            <input type="range" class="taco" min="0" max="100" value="{{ uRaw }}" onInput="{{ onSlide }}" style="width:100%;background:{{ trackGradient }};"/>
+            <div style="display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:10px;color:#5B6474;"><span>CERTAIN</span><span>UNKNOWN</span></div>
+          </div>
+          <div style="border-top:1px solid #232A36;padding-top:18px;display:flex;align-items:center;gap:12px;">
+            <span style="width:10px;height:10px;border-radius:50%;background:{{ modeColor }};flex:none;"></span>
+            <div style="display:flex;flex-direction:column;">
+              <span style="font-family:'Space Mono',monospace;font-size:11px;color:#6B7686;">LOOP MODE</span>
+              <span style="font-size:16px;font-weight:700;color:{{ modeColor }};">{{ modeLabel }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- outputs -->
+        <div style="display:flex;flex-direction:column;gap:22px;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:15px;font-weight:600;color:#DCE6F2;">Decision speed <span style="font-family:'Space Mono',monospace;font-size:11px;color:#6B7686;">v = (1−u)²</span></span><span style="font-family:'Space Mono',monospace;font-size:14px;color:#8FB2DE;">{{ speedPct }}</span></div>
+            <div style="height:12px;border-radius:8px;background:#1A1F2A;overflow:hidden;"><div class="bar" style="height:100%;width:{{ speedW }};background:#5A88BE;border-radius:8px;"></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:15px;font-weight:600;color:#DCE6F2;">Verification depth <span style="font-family:'Space Mono',monospace;font-size:11px;color:#6B7686;">r = 1 + 4u</span></span><span style="font-family:'Space Mono',monospace;font-size:14px;color:#6FA6AE;">{{ verifyPasses }} passes</span></div>
+            <div style="height:12px;border-radius:8px;background:#1A1F2A;overflow:hidden;"><div class="bar" style="height:100%;width:{{ verifyW }};background:#6FA6AE;border-radius:8px;"></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:15px;font-weight:600;color:#DCE6F2;">Action scope <span style="font-family:'Space Mono',monospace;font-size:11px;color:#6B7686;">s = s_max(1−u)</span></span><span style="font-family:'Space Mono',monospace;font-size:14px;color:#E39A3B;">{{ scopePct }}</span></div>
+            <div style="height:12px;border-radius:8px;background:#1A1F2A;overflow:hidden;"><div class="bar" style="height:100%;width:{{ scopeW }};background:#E39A3B;border-radius:8px;"></div></div>
+          </div>
+          <div style="border-top:1px solid #232A36;padding-top:16px;font-size:15px;line-height:1.5;color:#BFC9D6;">{{ ruleVerdict }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT STACK / ROADMAP -->
+  <section style="max-width:1320px;margin:0 auto;padding:60px 32px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px;">
+      <h2 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.02em;">The stack</h2>
+      <span style="font-size:15px;color:#7C8696;">TACO is the root layer. Everything above builds on its discipline.</span>
+    </div>
+    <p style="margin:0 0 30px;font-size:15px;color:#8792A3;">Shipping in sequence — foundation first.</p>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <sc-for list="{{ stack }}" as="lyr" hint-placeholder-count="3">
+        <div style="display:flex;align-items:center;gap:24px;border:1px solid {{ lyr.border }};border-radius:16px;background:{{ lyr.bg }};padding:24px 28px;{{ lyr.dim }}">
+          <div style="display:flex;flex-direction:column;gap:2px;width:150px;flex:none;">
+            <span style="font-size:22px;font-weight:800;letter-spacing:-0.01em;color:{{ lyr.nameColor }};">{{ lyr.name }}</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B7686;">Layer {{ lyr.tier }}</span>
+          </div>
+          <span style="flex:1;font-size:15.5px;line-height:1.5;color:#B4BFCD;">{{ lyr.desc }}</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:20px;background:{{ lyr.badgeBg }};color:{{ lyr.badgeFg }};flex:none;">{{ lyr.status }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- GUARDRAIL / HUMAN AUTHORITY -->
+  <section style="border-top:1px solid #1E2530;background:linear-gradient(180deg, rgba(20,24,33,.6), transparent);">
+    <div style="max-width:1320px;margin:0 auto;padding:60px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6FA6AE;">Guardrail gate · risk routing</span>
+        <h2 style="margin:0;font-size:36px;line-height:1.1;font-weight:800;letter-spacing:-0.02em;text-wrap:balance;">Above 0.50 risk, a human signs.</h2>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#A9B4C2;">The guardrail is an AND-gate: if permission, scope, safety, or reversibility hits zero, the action is blocked or escalated. Risk is scored, classed, and routed — the mathematical form of humans holding final authority.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+          <sc-for list="{{ riskClasses }}" as="rc" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:14px;padding:11px 14px;border:1px solid #232A36;border-radius:10px;background:#12161F;">
+              <span style="width:9px;height:9px;border-radius:50%;background:{{ rc.color }};flex:none;"></span>
+              <span style="font-family:'Space Mono',monospace;font-size:12px;color:#8792A3;width:96px;flex:none;">{{ rc.range }}</span>
+              <span style="font-size:14px;font-weight:700;color:{{ rc.color }};width:82px;flex:none;">{{ rc.label }}</span>
+              <span style="font-size:13.5px;color:#A9B4C2;">{{ rc.action }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- decision queue mock -->
+      <div style="border:1px solid #232A36;border-radius:18px;background:#131722;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #1E2530;">
+          <span style="font-weight:700;font-size:14px;">Escalation queue</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;background:#E39A3B;color:#1C1813;">3 awaiting a human</span>
+        </div>
+        <div style="display:flex;flex-direction:column;">
+          <sc-for list="{{ queue }}" as="q" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:14px;padding:15px 20px;border-bottom:1px solid #171C27;">
+              <span style="width:9px;height:9px;border-radius:50%;background:{{ q.dot }};flex:none;"></span>
+              <div style="display:flex;flex-direction:column;gap:2px;flex:1;">
+                <span style="font-size:14px;font-weight:600;color:#EDE7DC;">{{ q.title }}</span>
+                <span style="font-family:'Space Mono',monospace;font-size:11px;color:#6B7686;">Risk {{ q.risk }} · {{ q.cls }}</span>
+              </div>
+              <span style="font-family:'Space Mono',monospace;font-size:11px;color:{{ q.stateColor }};">{{ q.state }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="border-top:1px solid #1E2530;">
+    <div style="max-width:1320px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg viewBox="0 0 120 120" width="22" height="22"><path d="M54.9 38.7 A26 26 0 1 1 54.9 81.3" fill="none" stroke="#D9603F" stroke-width="13" stroke-linecap="round"/><path d="M80 36 L80 84 M108 36 L108 84 M80 60 L108 60" fill="none" stroke="#8792A3" stroke-width="13" stroke-linecap="round"/></svg>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6B7686;">classHuman AI · Love All Humans Always</span>
+      </div>
+      <span style="font-family:'Space Mono',monospace;font-size:12px;color:#4E5766;">TACO Loop · White Paper v1.0</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1320, &quot;height&quot;: 1700 }
+}">
+class Component extends DCLogic {
+  state = { stage: "T", u: 34 };
+
+  stageData = [
+    { letter: "T", num: 1, name: "Take In Unknowns", color: "#5A88BE",
+      fn: "Capture unknown data, weak signals, anomalies, environmental inputs, and declared goals — and state plainly what is known and what is not.",
+      prevents: "False certainty & hidden assumptions",
+      test: "Did the system state what it knows and does not know?" },
+    { letter: "A", num: 2, name: "Assess & Align", color: "#6FA6AE",
+      fn: "Fuse unknowns with decision memory, rules, environmental factors, and the six uncertainty classes to judge whether it knows enough to act.",
+      prevents: "Context loss & environment-blind decisions",
+      test: "Did the system slow down when evidence was weak?" },
+    { letter: "C", num: 3, name: "Choose Correctly", color: "#E39A3B",
+      fn: "Score candidate actions by utility, risk, uncertainty, reversibility, and rule compliance — only guardrail-passing actions are feasible.",
+      prevents: "Premature or high-blast-radius action",
+      test: "Was the decision bounded, reversible, and traceable?" },
+    { letter: "O", num: 4, name: "Operate & Observe", color: "#C0492C",
+      fn: "Execute or recommend a bounded action, observe the outcome, write a hash-chained audit record, and consolidate the lesson into memory.",
+      prevents: "Unlearned failure & untraceable decisions",
+      test: "Did outcome evidence feed the next loop?" },
+  ];
+
+  renderVals() {
+    const active = this.stageData.find((s) => s.letter === this.state.stage) || this.stageData[0];
+
+    const stages = this.stageData.map((s) => {
+      const on = s.letter === this.state.stage;
+      return {
+        letter: s.letter, num: s.num, name: s.name,
+        onClick: () => this.setState({ stage: s.letter }),
+        badgeBg: on ? s.color : "rgba(255,255,255,.06)",
+        badgeFg: on ? (s.letter === "C" ? "#1C1813" : "#fff") : "#9AA6B4",
+        style: {
+          display: "flex", flexDirection: "column", gap: "18px",
+          padding: "20px", borderRadius: "14px", cursor: "pointer",
+          textAlign: "left", fontFamily: "inherit",
+          background: on ? "#161C27" : "#12161F",
+          border: on ? ("1px solid " + s.color) : "1px solid #232A36",
+        },
+      };
+    });
+
+    // Inverse Speed Rule
+    const u = this.state.u / 100;
+    const speed = Math.pow(1 - u, 2);
+    const passes = Math.round(1 + 4 * u);
+    const scope = 1 - u;
+    const uColor = u < 0.4 ? "#8FB2DE" : (u < 0.7 ? "#E39A3B" : "#D9603F");
+    const slow = u >= 0.4;
+    const pct = (x) => Math.round(x * 100) + "%";
+
+    let verdict;
+    if (u < 0.25) verdict = "Low uncertainty — the loop moves fast, one verification pass, near-full scope. Reversible, well-understood action.";
+    else if (u < 0.6) verdict = "Rising uncertainty — the loop throttles speed and adds verification passes before committing.";
+    else verdict = "High uncertainty — speed collapses, scope is clamped to a small blast radius, and consequential actions route to a human.";
+
+    return {
+      stats: [
+        { value: "4 stages", label: "One disciplined loop" },
+        { value: "SHA-256", label: "Hash-chained audit trail" },
+        { value: "Risk > 0.50", label: "Routes to a human" },
+      ],
+
+      stages,
+      activeLetter: active.letter, activeName: active.name,
+      activeFunction: active.fn, activePrevents: active.prevents, activeTest: active.test,
+      activeColor: active.color,
+
+      uRaw: this.state.u,
+      uDisplay: (this.state.u / 100).toFixed(2),
+      uColor,
+      onSlide: (e) => this.setState({ u: parseInt(e.target.value, 10) }),
+      trackGradient: "linear-gradient(90deg, #5A88BE 0%, #6FA6AE 40%, #E39A3B 70%, #D9603F 100%)",
+      modeLabel: slow ? "SLOW · gather context" : "NORMAL",
+      modeColor: slow ? "#E39A3B" : "#6FA6AE",
+      speedW: pct(speed), speedPct: pct(speed),
+      verifyW: pct(passes / 5), verifyPasses: passes,
+      scopeW: pct(scope), scopePct: pct(scope),
+      ruleVerdict: verdict,
+
+      stack: [
+        { name: "TACO", tier: "0 · root", desc: "The decision-control loop. Take in unknowns, bound uncertainty, gate every action, keep a tamper-evident trace.", status: "Building · MVP", nameColor: "#D9603F",
+          border: "#3A2A24", bg: "linear-gradient(90deg, rgba(192,73,44,.10), #12161F 60%)", badgeBg: "#C0492C", badgeFg: "#fff", dim: "" },
+        { name: "Ag3nt24", tier: "1", desc: "The agentic layer that operates on top of TACO — agents that inherit its guardrails and audit by default. Details to come.", status: "Next", nameColor: "#DCE6F2",
+          border: "#232A36", bg: "#12161F", badgeBg: "rgba(90,136,190,.18)", badgeFg: "#8FB2DE", dim: "opacity:.9;" },
+        { name: "HADES", tier: "2", desc: "The horizon layer. Scope defined after TACO and Ag3nt24 are proven.", status: "Horizon", nameColor: "#B4BFCD",
+          border: "#1E2530", bg: "#10141C", badgeBg: "rgba(135,146,163,.15)", badgeFg: "#8792A3", dim: "opacity:.72;" },
+      ],
+
+      riskClasses: [
+        { range: "0.00–0.25", label: "LOW", color: "#6FA6AE", action: "Proceed, audit." },
+        { range: "0.26–0.50", label: "MEDIUM", color: "#8FB2DE", action: "Proceed, validate + trace." },
+        { range: "0.51–0.75", label: "HIGH", color: "#E39A3B", action: "Human review required." },
+        { range: "0.76–1.00", label: "CRITICAL", color: "#D9603F", action: "Stop unless explicitly authorized." },
+      ],
+
+      queue: [
+        { title: "Approve $2,400 refund — order #48812", risk: "0.61", cls: "HIGH", state: "HELD", stateColor: "#E39A3B", dot: "#E39A3B" },
+        { title: "Send redlined MSA to Acme Corp", risk: "0.68", cls: "HIGH", state: "HELD", stateColor: "#E39A3B", dot: "#E39A3B" },
+        { title: "Roll back deploy 7f3a on api-gw", risk: "0.82", cls: "CRITICAL", state: "HELD", stateColor: "#D9603F", dot: "#D9603F" },
+        { title: "Closed ticket #9921 — billing", risk: "0.14", cls: "LOW", state: "DONE", stateColor: "#6FA6AE", dot: "#5A88BE" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

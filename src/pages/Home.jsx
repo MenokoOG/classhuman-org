@@ -1,17 +1,12 @@
 import { Link } from "react-router-dom";
 import { ControlNode, TraceLine } from "../components/marks.jsx";
+import StackRows from "../components/Stack.jsx";
 
 function Eyebrow({ children }) {
   return (
     <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">{children}</p>
   );
 }
-
-const roadmap = [
-  { name: "TACO Loop", note: "Active now.", active: true },
-  { name: "Ag3nt24", note: "Agent infrastructure. Later build layer." },
-  { name: "HADES", note: "Agent diagnosis, correction, accountability. Later build layer." },
-];
 
 export default function Home() {
   return (
@@ -92,34 +87,15 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Roadmap */}
+      {/* The stack */}
       <section className="border-t border-border-brand">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <Eyebrow>WHAT&apos;S NEXT</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">Roadmap</h2>
-          <ol className="mt-8 grid gap-4 sm:grid-cols-3">
-            {roadmap.map(({ name, note, active }, i) => (
-              <li
-                key={name}
-                className={`rounded-lg border p-5 ${
-                  active ? "border-accent" : "border-border-brand"
-                }`}
-              >
-                <p className="font-mono text-xs font-bold tracking-widest text-muted-safe">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-2 text-xl font-bold">
-                  {name}
-                  {active && (
-                    <span className="ml-3 rounded-sm bg-accent px-2 py-0.5 align-middle font-mono text-xs font-bold text-on-accent">
-                      ACTIVE
-                    </span>
-                  )}
-                </h3>
-                <p className="mt-2 text-sm text-on-surface/80">{note}</p>
-              </li>
-            ))}
-          </ol>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">The stack</h2>
+          <p className="mt-2 text-sm text-muted-safe">
+            TACO is the root layer. Everything above builds on its discipline.
+          </p>
+          <StackRows />
         </div>
       </section>
 

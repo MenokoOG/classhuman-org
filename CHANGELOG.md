@@ -7,6 +7,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-07-06
+### Added
+- Visuals upgrade from `docs/design_handoff_visuals_upgrade/` (Claude design handoff):
+  - `src/lib/taco-controls.ts` — canonical stage data, Inverse Speed Rule math, risk
+    classes, guardrail AND-gate (framework-agnostic, from Math Models v1.0).
+  - Upgraded TACO stage selector: per-stage colors, letter badges, function +
+    “Prevents” + operational test detail panel.
+  - Inverse Speed Rule interactive demo (uncertainty slider → speed/verification/scope
+    bars + verdict) on Product.
+  - Guardrail gate section: risk-class routing table + illustrative escalation queue.
+  - Core Product Law card + stat row (4 stages · SHA-256 · Risk > 0.50) on Product.
+  - Product stack rows (TACO Building·MVP / Ag3nt24 Next / HADES Horizon) shared by
+    Home + Product. Ag3nt24/HADES copy is placeholder per Handler until real briefs land.
+
+### Fixed
+- Contrast: stronger safe-text mixes, `--ch-primary-text` for nav active state (Amber on
+  dark, deepened Ember on light), dark-mode stage-text guard. Product page a11y 100.
+- Replaced invalid ARIA tablist pattern on stage selector with `aria-pressed` buttons +
+  `aria-live` detail panel.
+
 ## [1.1.0] — 2026-07-06
 ### Added
 - Brand graphics (canonical geometry, colors via `var(--ch-*)` so they re-theme with

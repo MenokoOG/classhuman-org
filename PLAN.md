@@ -16,6 +16,10 @@ live URL.
 - [ ] 6. Netlify config, `_redirects`, SEO/meta, favicon, Lighthouse pass
 
 ## Decisions / open questions
+- `public/upcoming-layers/` staged for future Ag3nt24 / HADES white papers + models
+  (Handler, 2026-07-06). When files land: link from Product "Later layers" cards,
+  same pattern as the TACO credential links. Note: empty dirs aren't committed by git.
+- Handler is preparing design work in Claude design — deliverables incoming.
 - Contact email: **lawrencejefferson@classhuman.org** (confirmed by Handler, 2026-07-05).
 - UI mode: **forced default + toggle** (no system-pref auto). Default = **light (Bone)**
   per Handler, 2026-07-05. `data-mode` on `<html>`, persisted in localStorage.

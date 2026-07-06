@@ -25,7 +25,7 @@ export default function Header() {
               to={to}
               className={({ isActive }) =>
                 `rounded-md px-2.5 py-1.5 text-sm font-semibold sm:px-3 ${
-                  isActive ? "text-primary" : "text-on-surface hover:text-primary"
+                  isActive ? "text-primary-safe" : "text-on-surface hover:text-primary-safe"
                 }`
               }
             >
