@@ -1,6 +1,6 @@
 /* The product stack — TACO is the root layer. Shared by Home + Product.
    Ag3nt24 & HADES white papers are IN DRAFTING (Handler, 2026-07-06) — copy
-   below reflects the true design intent from public/upcoming-layers/ but
+   below reflects the true design intent from docs/upcoming-layers/ but
    details may evolve until the papers are final. */
 
 export const STACK = [

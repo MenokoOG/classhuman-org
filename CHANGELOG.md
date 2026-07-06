@@ -6,6 +6,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 **Every PR includes a CHANGELOG entry. Non-negotiable.**
 
 ## [Unreleased]
+### Security
+- Moved internal draft docs (Ag3nt24 / HADES / CIPSE, `upcoming-layers/`) out of `public/`
+  into `docs/` so they are no longer web-served or downloadable from the live site.
 
 ## [1.2.1] — 2026-07-06
 ### Changed

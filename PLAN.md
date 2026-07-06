@@ -16,9 +16,9 @@ live URL.
 - [ ] 6. Netlify config, `_redirects`, SEO/meta, favicon, Lighthouse pass
 
 ## Decisions / open questions
-- `public/upcoming-layers/` staged for future Ag3nt24 / HADES white papers + models
-  (Handler, 2026-07-06). When files land: link from Product "Later layers" cards,
-  same pattern as the TACO credential links. Note: empty dirs aren't committed by git.
+- `docs/upcoming-layers/` holds Ag3nt24 / HADES / CIPSE draft docs — **internal**, moved
+  out of `public/` (2026-07-06) so they are not web-served. When papers are FINAL and
+  Handler approves, move chosen files to `public/` and link from the stack rows.
 - Handler is preparing design work in Claude design — deliverables incoming.
 - Contact email: **lawrencejefferson@classhuman.org** (confirmed by Handler, 2026-07-05).
 - UI mode: **forced default + toggle** (no system-pref auto). Default = **light (Bone)**

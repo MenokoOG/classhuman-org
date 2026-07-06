@@ -62,7 +62,8 @@ Never mention health details.
    on-chain ledger. White paper in drafting.
 
 > Drafting rule (Handler, 2026-07-06): Ag3nt24/HADES papers are NOT final — site copy must
-> flag "in drafting" and may evolve. Source docs: `public/upcoming-layers/`.
+> flag "in drafting" and may evolve. Source docs: `docs/upcoming-layers/` (internal — NOT
+> in `public/`, must never be web-served until Handler approves publication).
 
 > Website rule (Handler, 2026-07-05): keep the public roadmap to software — do **not**
 > mention the Art line on the site. It remains on the internal company roadmap.
