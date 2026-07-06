@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 **Every PR includes a CHANGELOG entry. Non-negotiable.**
 
 ## [Unreleased]
+
+## [1.2.2] — 2026-07-06
+### Added
+- Visitor hook lines on the stack rows: Ag3nt24 (“How do you prove what an AI agent said
+  it did is what it actually did?”) and HADES (“It doesn't punish. It gates authority and
+  preserves truth.”).
+
 ### Security
 - Moved internal draft docs (Ag3nt24 / HADES / CIPSE, `upcoming-layers/`) out of `public/`
   into `docs/` so they are no longer web-served or downloadable from the live site.
