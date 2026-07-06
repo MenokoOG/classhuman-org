@@ -86,6 +86,20 @@ html {
   outline-offset: 2px;
 }
 
+/* Slow pulse on amber nodes — the agentic signal. Killed by reduced-motion. */
+@keyframes ch-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.ch-pulse {
+  animation: ch-pulse 3.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

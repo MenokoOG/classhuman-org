@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ControlNode, TraceLine } from "../components/marks.jsx";
 
 function Eyebrow({ children }) {
   return (
@@ -17,27 +18,33 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 pb-20 pt-24 sm:pt-32">
-        <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">
-          Decision-control for human-agentic collaboration.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-on-surface/85">
-          classHuman AI builds the control layer where human warmth meets machine
-          discipline — so humans keep final authority over their agents.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            to="/product"
-            className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90"
-          >
-            Explore TACO Loop
-          </Link>
-          <Link
-            to="/about"
-            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
-          >
-            Meet the team
-          </Link>
+        <div className="flex flex-col items-start gap-10 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+              Decision-control for human-agentic collaboration.
+            </h1>
+            <p className="mt-6 text-lg text-on-surface/85">
+              classHuman AI builds the control layer where human warmth meets machine
+              discipline — so humans keep final authority over their agents.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/product"
+                className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90"
+              >
+                Explore TACO Loop
+              </Link>
+              <Link
+                to="/about"
+                className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+              >
+                Meet the team
+              </Link>
+            </div>
+          </div>
+          <ControlNode className="hidden h-52 w-52 shrink-0 md:block lg:h-64 lg:w-64" />
         </div>
+        <TraceLine className="mt-16 h-8 w-full" />
       </section>
 
       {/* LAHA */}
@@ -119,6 +126,7 @@ export default function Home() {
       {/* CTA */}
       <section className="border-t border-border-brand bg-card/60">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center">
+          <TraceLine className="mx-auto mb-10 h-6 w-full max-w-lg" />
           <h2 className="text-3xl font-extrabold tracking-tight">
             Humans hold final authority.
           </h2>

@@ -7,6 +7,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-07-06
+### Added
+- Brand graphics (canonical geometry, colors via `var(--ch-*)` so they re-theme with
+  season/mode): cH monogram in Header + Footer, control-node mark as Home hero graphic,
+  decorative trace-line accents (Home hero/CTA, Product definition). Slow amber-node
+  pulse animation, disabled under `prefers-reduced-motion`.
+
 ## [1.0.2] — 2026-07-06
 ### Added
 - TACO Decision Loop diagram (infographic, lazy-loaded) on the Product page’s four-stages

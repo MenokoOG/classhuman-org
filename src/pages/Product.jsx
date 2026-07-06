@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TacoLoop from "../components/TacoLoop.jsx";
+import { TraceLine } from "../components/marks.jsx";
 
 function Eyebrow({ children }) {
   return (
@@ -33,6 +34,7 @@ export default function Product() {
           A decision is proper only when made from bounded uncertainty, environmental
           awareness, rule compliance, and observable outcome.
         </p>
+        <TraceLine className="mt-14 h-8 w-full" />
       </section>
 
       {/* The four stages */}
