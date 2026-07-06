@@ -25,6 +25,10 @@ live URL.
 - 2026-07-05 · Step 1 shipped. Vite + React + Tailwind v4 + Router scaffold; tokens.css
   imported globally with live `@theme inline` mapping; five placeholder routes; favicon
   from trace monogram; `npm run build` passes clean.
+- 2026-07-06 · v1.0.2 shipped. Product page: TACO Decision Loop diagram (lazy-loaded
+  infographic) + links to White Paper v1.0 PDF and Math Models v1 from the credential
+  cards (`public/whitepaper-models/`). Agent deferred (cost control) — key already in
+  Netlify env, spec preserved in session plan.
 - 2026-07-05 · Step 2 shipped. Layout with sticky Header (wordmark, nav, mode toggle) and
   Footer (tagline + status line). Default flipped to light (Bone); mode persisted in
   localStorage, restored pre-paint. Dark mode shifts "Human" to Amber per brand rule.
