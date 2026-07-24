@@ -1,6 +1,6 @@
 # CLASSHUMAN.md — Canonical Context (Source of Truth)
 
-**Version:** 1.0 · **Updated:** 2026-07-01
+**Version:** 1.2 · **Updated:** 2026-07-19
 **Read this first. This file overrides any older COIL/OKO Forge context.**
 
 ---
@@ -8,6 +8,7 @@
 ## Company
 
 - **Name:** classHuman AI
+- **What we are:** a **Generative Software Engineering firm.** We build our own software for the agentic systems we create — TACO Loop, Ag3nt24, HADES all flow from this identity. This is the public positioning to use everywhere.
 - **Tagline:** classHuman AI — driven by LAHA (Love All Humans Always)
 - **Status:** LLC registration planned August 2026
 - **Prior entity:** OKO Forge LLC d/b/a Crimson Obsidian Industries and Labs (COIL) — **paused. Do not plan or build around COIL products.**
@@ -48,8 +49,19 @@
 - **Credentials:** White Paper v1.0 published (Facebook + LinkedIn, July 2026). Mathematical Model v0.1 exists (state model, guardrail function G(a), QRF escalation, drift model, audit hash-chain, nested loops, master equation).
 - **Benchmark concept:** TACO-UDD (Unknown-Data Decision Benchmark).
 
+## Prompt & Agent Library — ALWAYS USE
+
+- **Location:** `C:\Users\jefft\OneDrive\Desktop\Reference\Prompt-Agent-mds-library`
+- **Rule:** when working with Lawrence's prompts, agents, or CLAUDE.md files, pull from this library first — don't reinvent what's already there.
+- Key spots inside:
+  - `classHuman-forge/` — skills, starters, SOUL personas (the forge)
+  - `claude-mds/library/` — full library, start at `INDEX.md`
+  - `plan.md`, `review.md`, `ship.md` — workflow prompts
+  - `core-context.md`, `claude-md-template.md` — context + template
+
 ## Pending Business Tasks
 
+- [ ] Publicize "Generative Software Engineering firm" positioning (site, LinkedIn, socials)
 - [ ] Color palette
 - [ ] Logos
 - [ ] Brand identity

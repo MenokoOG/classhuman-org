@@ -1,121 +1,175 @@
 import { Link } from "react-router-dom";
-import { ControlNode, TraceLine } from "../components/marks.jsx";
 import StackRows from "../components/Stack.jsx";
-
-function Eyebrow({ children }) {
-  return (
-    <p className="font-mono text-xs font-bold tracking-[0.25em] text-sage-safe">{children}</p>
-  );
-}
+import { Eyebrow, GradientText, Reveal, TraceField, StatusPill } from "../components/ui.jsx";
+import { PRODUCTS } from "../lib/products.js";
 
 export default function Home() {
   return (
     <main>
-      {/* Hero */}
-      <section className="mx-auto max-w-5xl px-6 pb-20 pt-24 sm:pt-32">
-        <div className="flex flex-col items-start gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Decision-control for human-agentic collaboration.
-            </h1>
-            <p className="mt-6 text-lg text-on-surface/85">
-              classHuman AI builds the control layer where human warmth meets machine
-              discipline — so humans keep final authority over their agents.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                to="/product"
-                className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90"
-              >
-                Explore TACO Loop
-              </Link>
-              <Link
-                to="/about"
-                className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
-              >
-                Meet the team
-              </Link>
-            </div>
+      {/* ── Hero ───────────────────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        <div className="ch-aurora pointer-events-none absolute inset-0 -z-20" aria-hidden="true" />
+        <div className="ch-grid pointer-events-none absolute inset-0 -z-10 opacity-70" aria-hidden="true" />
+        <TraceField className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-60" />
+
+        <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 sm:pt-28">
+          <div className="ch-identity inline-flex items-center gap-2 rounded-full border border-border-brand bg-surface/70 px-4 py-1.5 backdrop-blur">
+            <span aria-hidden="true" className="ch-pulse inline-block h-2 w-2 rounded-full bg-accent" />
+            <span className="font-mono text-[11px] font-bold tracking-[0.18em] text-on-surface/80">
+              GENERATIVE AI SOFTWARE ENGINEERING · DEVELOPMENT · RESEARCH — LLC
+            </span>
           </div>
-          <ControlNode className="hidden h-52 w-52 shrink-0 md:block lg:h-64 lg:w-64" />
-        </div>
-        <TraceLine className="mt-16 h-8 w-full" />
-      </section>
 
-      {/* LAHA */}
-      <section className="border-y border-border-brand bg-card/60">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <Eyebrow>OUR LAW</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Love All Humans Always.
-          </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/85">
-            LAHA is the reason the company exists. We build human-AI collaboration where
-            people, not models, hold final authority over the decisions that matter. Every
-            system we ship is measured against it: does it keep humans in command, and
-            treat them with care?
+          <h1 className="mt-7 max-w-4xl text-5xl font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
+            We build the <GradientText>control layer</GradientText> where humans keep final
+            authority over their agents.
+          </h1>
+
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-on-surface/85 sm:text-xl">
+            classHuman AI is a Generative AI Software Engineering, Development &amp; Research firm.
+            We write our own software for the agentic systems we create — human warmth, machine
+            discipline, and a spine of accountability under every decision.
           </p>
-          <p className="mt-6">
-            <Link to="/story" className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe">
-              Where LAHA comes from — our story
+
+          <div className="mt-9 flex flex-wrap gap-4">
+            <Link
+              to="/product"
+              className="rounded-md bg-primary px-6 py-3 font-bold text-on-primary shadow-lg shadow-primary/20 hover:opacity-90"
+            >
+              Explore TACO Loop
             </Link>
-          </p>
+            <Link
+              to="/demos"
+              className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+            >
+              See it working — Demos
+            </Link>
+          </div>
+
+          <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+            {[
+              ["4", "products in the stack"],
+              ["v0.1", "Asymptote shipped"],
+              ["> 0.50", "risk routes to a human"],
+              ["SHA-256", "hash-chained audit"],
+            ].map(([v, l]) => (
+              <div key={l}>
+                <dt className="text-2xl font-extrabold sm:text-3xl">{v}</dt>
+                <dd className="mt-1 font-mono text-[10px] font-bold uppercase tracking-widest text-muted-safe">
+                  {l}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      {/* TACO teaser */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <Eyebrow>PRODUCT · TACO LOOP</Eyebrow>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Take In → Assess → Choose → Operate.
-        </h2>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/85">
-          TACO Loop is a decision-control architecture for unknown-data environments — a
-          control layer for agents, humans, and workflows.{" "}
-          <strong>Not another agent.</strong>
-        </p>
-        <blockquote className="mt-6 max-w-2xl border-l-4 border-accent pl-5 text-lg font-semibold italic">
-          Unknown data must increase decision discipline, not model confidence.
-        </blockquote>
-        <p className="mt-8">
-          <Link
-            to="/product"
-            className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
-          >
-            See the four stages
-          </Link>
-        </p>
+      {/* ── LAHA ───────────────────────────────────────────── */}
+      <section className="border-y border-border-brand bg-card/60">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal>
+            <Eyebrow>OUR LAW</Eyebrow>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <GradientText>Love All Humans Always.</GradientText>
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/85">
+              LAHA is the reason the company exists. We build human-AI collaboration where
+              people, not models, hold final authority over the decisions that matter. Every
+              system we ship is measured against it: does it keep humans in command, and treat
+              them with care?
+            </p>
+            <p className="mt-6">
+              <Link
+                to="/story"
+                className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                Where LAHA comes from — our story
+              </Link>
+            </p>
+          </Reveal>
+        </div>
       </section>
 
-      {/* The stack */}
-      <section className="border-t border-border-brand">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <Eyebrow>WHAT&apos;S NEXT</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">The stack</h2>
-          <p className="mt-2 text-sm text-muted-safe">
-            TACO is the root layer. Everything above builds on its discipline.
+      {/* ── Products constellation ─────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <Reveal>
+          <Eyebrow>THE STACK · FOUR PRODUCTS</Eyebrow>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            One discipline, built in layers.
+          </h2>
+          <p className="mt-3 max-w-2xl text-on-surface/85">
+            TACO is the root. Everything above inherits its guardrails — proof, diagnosis,
+            and the tools that keep the whole thing honest.
           </p>
+        </Reveal>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          {PRODUCTS.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 70}>
+              <Link
+                to={`/${p.slug}`}
+                className="ch-card group block h-full rounded-lg border border-border-brand bg-card p-6"
+                style={{ "--stage": p.color }}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-extrabold" style={{ color: p.color }}>
+                      {p.name}
+                    </h3>
+                    <p className="mt-0.5 font-mono text-[11px] tracking-widest text-muted-safe">
+                      {p.layer}
+                    </p>
+                  </div>
+                  <StatusPill color={p.color}>{p.status}</StatusPill>
+                </div>
+                <p className="mt-4 text-sm font-semibold text-on-surface">
+                  &ldquo;{p.hook}&rdquo;
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-on-surface/80">{p.blurb}</p>
+                <p className="mt-4 font-mono text-xs font-bold tracking-widest text-cool-safe group-hover:text-accent-safe">
+                  OPEN {p.name.toUpperCase()} →
+                </p>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TACO law ───────────────────────────────────────── */}
+      <section className="border-t border-border-brand">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal>
+            <Eyebrow>CORE PRODUCT LAW</Eyebrow>
+            <blockquote className="mt-4 max-w-3xl border-l-4 border-accent pl-6 text-2xl font-bold leading-snug sm:text-3xl">
+              Unknown data must increase decision discipline — <GradientText>not model
+              confidence.</GradientText>
+            </blockquote>
+            <p className="mt-6 max-w-2xl text-on-surface/85">
+              It&apos;s the law behind every product: bound the uncertainty, slow down when the
+              evidence is weak, and route every consequential call to a person.
+            </p>
+          </Reveal>
           <StackRows />
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-border-brand bg-card/60">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center">
-          <TraceLine className="mx-auto mb-10 h-6 w-full max-w-lg" />
-          <h2 className="text-3xl font-extrabold tracking-tight">
-            Humans hold final authority.
+      {/* ── CTA ────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-t border-border-brand bg-card/60">
+        <div className="ch-aurora pointer-events-none absolute inset-0 -z-10 opacity-60" aria-hidden="true" />
+        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Humans hold <GradientText>final authority.</GradientText>
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/product"
-              className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90"
+              className="rounded-md bg-primary px-6 py-3 font-bold text-on-primary hover:opacity-90"
             >
               Explore TACO Loop
             </Link>
             <Link
               to="/contact"
-              className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+              className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
               Get in touch
             </Link>

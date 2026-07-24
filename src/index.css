@@ -157,6 +157,132 @@ html {
   border: 3px solid var(--ch-primary);
 }
 
+/* ------------------------------------------------------------
+   LAHA "wild mode" — signature motion + surfaces.
+   All built on brand tokens; frozen by the reduced-motion block below.
+   ------------------------------------------------------------ */
+
+/* Warm→amber→cool gradient headline. Solid fallback keeps it legible if
+   background-clip:text is unsupported. */
+.ch-gradient-text {
+  color: var(--ch-primary);
+  background-image: linear-gradient(
+    100deg,
+    var(--ch-primary) 0%,
+    var(--ch-accent) 48%,
+    var(--ch-cool) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .ch-gradient-text {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Full-bleed aurora: three slow-drifting seasonal blobs behind the hero. */
+.ch-aurora {
+  background:
+    radial-gradient(38% 44% at 18% 22%, color-mix(in srgb, var(--ch-primary) 34%, transparent) 0%, transparent 70%),
+    radial-gradient(34% 40% at 82% 30%, color-mix(in srgb, var(--ch-cool) 30%, transparent) 0%, transparent 70%),
+    radial-gradient(46% 50% at 50% 92%, color-mix(in srgb, var(--ch-accent) 26%, transparent) 0%, transparent 72%);
+  filter: blur(8px);
+  animation: ch-aurora-drift 18s ease-in-out infinite alternate;
+}
+
+/* Softer single-hue wash for product-page heroes (color via --stage). */
+.ch-aurora-soft {
+  background:
+    radial-gradient(40% 60% at 80% 0%, color-mix(in srgb, var(--stage, var(--ch-accent)) 22%, transparent) 0%, transparent 70%),
+    radial-gradient(50% 60% at 0% 10%, color-mix(in srgb, var(--ch-cool) 14%, transparent) 0%, transparent 70%);
+}
+
+@keyframes ch-aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(0, -3%, 0) scale(1.08); }
+}
+
+/* Faint engineered grid — the circuit substrate. */
+.ch-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--ch-on-surface) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--ch-on-surface) 6%, transparent) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 30%, #000 0%, transparent 100%);
+  mask-image: radial-gradient(70% 70% at 50% 30%, #000 0%, transparent 100%);
+}
+
+/* Reveal-on-scroll. */
+.ch-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ch-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card lift + amber authority-glow on hover. */
+.ch-card {
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.ch-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--stage, var(--ch-accent)) 70%, transparent);
+  box-shadow: 0 18px 44px -18px color-mix(in srgb, var(--stage, var(--ch-accent)) 55%, transparent);
+}
+
+/* Trace-field animation: dashes stream toward the core; nodes and core breathe. */
+.ch-trace {
+  stroke-dasharray: 7 10;
+  animation: ch-trace-flow 2.6s linear infinite;
+}
+@keyframes ch-trace-flow {
+  to { stroke-dashoffset: -34; }
+}
+.ch-node {
+  animation: ch-pulse 2.6s ease-in-out infinite;
+}
+.ch-breathe {
+  transform-origin: 400px 220px;
+  animation: ch-breathe 5.5s ease-in-out infinite;
+}
+@keyframes ch-breathe {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.06); }
+}
+
+/* Animated conic ring for the LLC identity badge. */
+.ch-identity {
+  position: relative;
+  isolation: isolate;
+}
+.ch-identity::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    var(--ch-primary),
+    var(--ch-accent),
+    var(--ch-cool),
+    var(--ch-primary)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ch-spin 6s linear infinite;
+  z-index: -1;
+}
+@keyframes ch-spin {
+  to { transform: rotate(1turn); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -165,5 +291,10 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  /* Ensure revealed content is never left hidden when motion is off. */
+  .ch-reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

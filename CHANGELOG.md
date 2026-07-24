@@ -7,6 +7,32 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-07-24
+### Added
+- **Positioning refactor.** Public identity is now "a Generative AI Software Engineering,
+  Development & Research LLC" — applied to the hero, `index.html` meta/OG, and the footer.
+- **Asymptote product page** (`/asymptote`): static Big-O estimator for Python, built for
+  agents. Covers the undecidability/"unknowns" rationale, sample report, the Cost algebra,
+  CLI/agent-tool/MCP usage, and known limits. Links to github.com/MenokoOG/asymptote.
+- **Ag3nt24 product page** (`/ag3nt24`): the proof layer — Act → Gate → Receipt → Route.
+- **HADES product page** (`/hades`): rehabilitation and deactivation paths, both to ledger.
+- **Demos page** (`/demos`): Willow Bend Family Clinic — human-approved appointments, an AI
+  assistant safe by construction, graceful offline degradation. Links to the live demo.
+- **Products menu** in the header + a products/company footer, driven by a single catalog
+  (`src/lib/products.js`).
+- **LAHA "wild mode" visual system**: animated trace-field hero backdrop, aurora + circuit
+  grid, gradient headlines, scroll-reveal, and card authority-glow — all on brand tokens.
+- Shared UI kit (`src/components/ui.jsx`): Eyebrow, GradientText, Reveal, TraceField,
+  StatusPill, ProductHero.
+- Nicale Jefferson's About card now links to her LuxGirl OG page (luxgirlog.netlify.app)
+  and names her governance-framework authorship.
+- `docs/BANSHEE-SPEC.md`: product + technical spec for the Banshee site agent (spec only).
+- Sitemap updated with the new routes.
+
+### Changed
+- Home page rebuilt around the four-product stack and the LLC positioning.
+- All new motion respects `prefers-reduced-motion`; reveals never stay hidden.
+
 ## [1.2.2] — 2026-07-06
 ### Added
 - Visitor hook lines on the stack rows: Ag3nt24 (“How do you prove what an AI agent said
