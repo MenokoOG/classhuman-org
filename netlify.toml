@@ -1,6 +1,11 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  # esbuild follows the relative import into src/banshee (shared knowledge pack).
+  node_bundler = "esbuild"
 
 # SPA fallback so React Router routes don't 404 on refresh
 [[redirects]]

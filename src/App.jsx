@@ -11,6 +11,7 @@ import Demos from "./pages/Demos.jsx";
 import Story from "./pages/Story.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import BansheeWidget from "./banshee/BansheeWidget.jsx";
 
 const SITE = "classHuman AI";
 
@@ -80,6 +81,7 @@ function Layout() {
         <Outlet />
       </div>
       <Footer />
+      <BansheeWidget />
     </div>
   );
 }

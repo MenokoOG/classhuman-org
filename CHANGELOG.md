@@ -7,6 +7,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-07-24
+### Added
+- **Banshee** — the classHuman.org site agent (frontier model, server-side).
+  - `netlify/functions/banshee.mjs`: serverless chat function holding `OPENAI_API_KEY`
+    server-side (never in the browser bundle). Guardrailed system prompt grounded in a
+    curated knowledge pack; graceful degradation to a deterministic offline answer on
+    no-key/timeout/upstream-error. Model via `BANSHEE_MODEL` (default `gpt-4o-mini`).
+  - `src/banshee/knowledge.js`: public-only knowledge pack (single source of ground truth).
+  - `src/banshee/offline.js`: isomorphic keyword retriever + deterministic offline engine
+    (no vector DB, no new deps). Powers server fallback and the in-browser fallback.
+  - `src/banshee/BansheeWidget.jsx`: accessible launcher + chat panel (dialog semantics,
+    focus management, ESC to close, polite live region, suggested questions, source links).
+    Mounted site-wide; falls back to the browser offline engine if the function is unreachable.
+  - `docs/adr/0002-banshee-site-agent.md`: grounded + offline-fallback agent decision.
+  - `netlify.toml`: functions dir + esbuild bundler. `.env.example`: documents the
+    server-only `OPENAI_API_KEY` / `BANSHEE_MODEL` (never committed).
+- Guardrails: guide only — takes no actions, makes no commitments (price/timeline/legal
+  route to a human); never discloses private founder details ("accessibility-first design").
+
 ## [1.3.0] — 2026-07-24
 ### Added
 - **Positioning refactor.** Public identity is now "a Generative AI Software Engineering,
