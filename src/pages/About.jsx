@@ -54,7 +54,7 @@ export default function About() {
               <h2 className="mt-5 text-2xl font-extrabold">Nicale Jefferson</h2>
               <p className="font-mono text-xs font-bold tracking-widest text-accent-safe">LUXGIRLOG</p>
               <p className="mt-3 font-semibold">
-                CFO, Head of HR &amp; Operations, Admin for AI ethics and governance.
+                UX/UI Designer, Head of HR &amp; Operations, Admin for AI ethics and governance.
               </p>
               <p className="mt-2 leading-relaxed text-on-surface/85">
                 Author of the governance framework behind classHuman — the rules, ethics, and
