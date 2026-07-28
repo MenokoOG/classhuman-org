@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-border-brand">
         <p className="mx-auto max-w-6xl px-6 py-5 font-mono text-xs text-muted-safe">
-          classHuman AI · LLC registration planned August 2026. — LAHA.
+          classHuman AI · LLC registration 2026. — LAHA.
         </p>
       </div>
     </footer>
