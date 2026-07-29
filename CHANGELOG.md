@@ -7,6 +7,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.4.1] — 2026-07-28
+### Changed
+- **Story page rewrite.** Tougher, clearer, less sentimental. Removed the vending-machine
+  scene and the black-belt passage; kept Tonya as the dedication. Added two sections: "The
+  future we're building for" (humans + agents coexistence, humans keep final authority) and
+  "Why telemetry — as a team" (honest continuous signal as the LAHA discipline, human or
+  agent). Reframed around toughness / never-quit.
+
 ## [1.4.0] — 2026-07-24
 ### Added
 - **Banshee** — the classHuman.org site agent (frontier model, server-side).
