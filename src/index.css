@@ -2,8 +2,8 @@
 
 /* ------------------------------------------------------------
    Map brand tokens (brand/tokens.css) into Tailwind theme vars.
-   `inline` keeps them live — they re-resolve when data-season
-   or data-mode changes on <html>. Never hardcode seasonal hex.
+   `inline` keeps them live — they re-resolve when data-season,
+   data-mode, or data-theme changes on <html>. Never hardcode hex.
    ------------------------------------------------------------ */
 @theme inline {
   --color-ink: var(--ch-ink);
@@ -11,8 +11,11 @@
   --color-stone: var(--ch-stone);
   --color-sage: var(--ch-sage);
   --color-primary: var(--ch-primary);
+  --color-primary-bright: var(--ch-primary-bright);
   --color-accent: var(--ch-accent);
   --color-cool: var(--ch-cool);
+  --color-cool-alt: var(--ch-cool-alt);
+  --color-cool-bright: var(--ch-cool-bright);
   --color-muted: var(--ch-muted);
   --color-on-primary: var(--ch-on-primary);
   --color-on-accent: var(--ch-on-accent);
@@ -21,8 +24,8 @@
   --color-on-surface: var(--ch-on-surface);
   --color-border-brand: var(--ch-surface-border);
 
-  /* Text-safe variants — same brand hues, mixed toward Ink/Bone per mode
-     so small text always clears WCAG AA (≥4.5:1) in every season. */
+  /* Text-safe variants — same hues, mixed toward Ink/Bone per mode so small
+     text always clears WCAG AA (>=4.5:1). Cosmic themes set them directly. */
   --color-muted-safe: var(--ch-muted-text);
   --color-sage-safe: var(--ch-sage-text);
   --color-cool-safe: var(--ch-cool-text);
@@ -37,9 +40,18 @@
   --radius-lg: var(--ch-radius-lg);
 }
 
+/* Derived brand tokens the classic (season/mode) system doesn't define.
+   Cosmic themes override these directly below. */
+:root {
+  --ch-cool-alt: var(--ch-sage);
+  --ch-cool-bright: var(--ch-cool);
+  --ch-primary-bright: var(--ch-primary);
+}
+
 /* ------------------------------------------------------------
-   UI mode (Ink ↔ Bone). Forced via data-mode on <html>;
-   toggled in the Header. Light is the default.
+   UI mode (Ink <-> Bone) for the CLASSIC brand system. Forced via
+   data-mode on <html>; toggled in the Header. Light is the default.
+   Cosmic themes (data-theme) override all of this.
    ------------------------------------------------------------ */
 :root,
 [data-mode="light"] {
@@ -66,13 +78,90 @@
   --ch-primary-text: var(--ch-accent);
 }
 
-/* Wordmark: on dark, "Human" shifts to Amber for contrast (brand rule). */
-[data-mode="dark"] .ch-wordmark .human {
-  color: var(--ch-accent);
+/* ============================================================
+   COSMIC THEMES (opt-in via data-theme on <html>).
+   Each fully overrides the --ch-* set with a dark palette from the
+   design handoff, so every page + Banshee recolors from one swap.
+   Selector html[data-theme=...] outranks [data-mode] regardless of order.
+   ============================================================ */
+html[data-theme="nebula"] {
+  --ch-ink: #120B22; --ch-bone: #F2EAFB;
+  --ch-surface: #120B22;
+  --ch-surface-card: #1A1030;
+  --ch-surface-border: #2E2049;
+  --ch-on-surface: #F2EAFB;
+  --ch-primary: #E0502C; --ch-primary-bright: #F0603C;
+  --ch-accent: #FFB84D; --ch-on-accent: #120B22; --ch-on-primary: #FFFFFF;
+  --ch-cool: #9B7BF5; --ch-cool-bright: #B49AFA; --ch-cool-alt: #62CFE0;
+  --ch-sage: #62CFE0; --ch-muted: #9C8FB8;
+  --ch-muted-text: #BCAFD4;
+  --ch-sage-text: #62CFE0;
+  --ch-cool-text: #B49AFA;
+  --ch-accent-text: #FFB84D;
+  --ch-primary-text: #F0603C;
+  --ch-shell:
+    radial-gradient(900px 420px at 82% -12%, rgba(155, 123, 245, 0.30), transparent 62%),
+    radial-gradient(700px 380px at 6% 8%, rgba(240, 96, 60, 0.20), transparent 58%),
+    radial-gradient(560px 320px at 45% 108%, rgba(255, 184, 77, 0.14), transparent 60%), #120B22;
+}
+html[data-theme="aurora"] {
+  --ch-ink: #08161A; --ch-bone: #E8F7F4;
+  --ch-surface: #08161A;
+  --ch-surface-card: #0E2027;
+  --ch-surface-border: #1B333B;
+  --ch-on-surface: #E8F7F4;
+  --ch-primary: #EE5B39; --ch-primary-bright: #FF6A45;
+  --ch-accent: #FFC65C; --ch-on-accent: #08161A; --ch-on-primary: #FFFFFF;
+  --ch-cool: #4FE0C0; --ch-cool-bright: #7CEBD3; --ch-cool-alt: #9B7BF5;
+  --ch-sage: #4FE0C0; --ch-muted: #85A7A6;
+  --ch-muted-text: #A6C4C2;
+  --ch-sage-text: #7CEBD3;
+  --ch-cool-text: #7CEBD3;
+  --ch-accent-text: #FFC65C;
+  --ch-primary-text: #FF6A45;
+  --ch-shell:
+    radial-gradient(820px 400px at 14% -10%, rgba(79, 224, 192, 0.26), transparent 60%),
+    radial-gradient(680px 360px at 88% 12%, rgba(155, 123, 245, 0.18), transparent 58%),
+    radial-gradient(560px 320px at 60% 106%, rgba(255, 106, 69, 0.16), transparent 62%), #08161A;
+}
+html[data-theme="horizon"] {
+  --ch-ink: #0A0710; --ch-bone: #F6EFEA;
+  --ch-surface: #0A0710;
+  --ch-surface-card: #130D1C;
+  --ch-surface-border: #241A31;
+  --ch-on-surface: #F6EFEA;
+  --ch-primary: #EF4F2E; --ch-primary-bright: #FF5E3A;
+  --ch-accent: #FFD166; --ch-on-accent: #0A0710; --ch-on-primary: #FFFFFF;
+  --ch-cool: #C86BF0; --ch-cool-bright: #D992F5; --ch-cool-alt: #7BA7F5;
+  --ch-sage: #7BA7F5; --ch-muted: #9B8D9C;
+  --ch-muted-text: #BCAEBC;
+  --ch-sage-text: #7BA7F5;
+  --ch-cool-text: #D992F5;
+  --ch-accent-text: #FFD166;
+  --ch-primary-text: #FF5E3A;
+  --ch-shell:
+    radial-gradient(760px 420px at 50% -16%, rgba(200, 107, 240, 0.30), transparent 60%),
+    radial-gradient(620px 340px at 10% 92%, rgba(255, 94, 58, 0.20), transparent 58%),
+    radial-gradient(520px 300px at 92% 78%, rgba(255, 209, 102, 0.12), transparent 60%), #0A0710;
 }
 
-/* Wordmark "class" half: tokens.css binds it to raw Stone, which misses
-   4.5:1 on light paper — use the mode-aware safe variant instead. */
+/* Cosmic shell background — the classic system uses a flat surface. */
+html[data-theme="nebula"],
+html[data-theme="aurora"],
+html[data-theme="horizon"] {
+  background: var(--ch-shell);
+  background-attachment: fixed;
+}
+
+/* Wordmark: on dark UI + cosmic, "Human" shifts to the bright primary. */
+[data-mode="dark"] .ch-wordmark .human,
+html[data-theme="nebula"] .ch-wordmark .human,
+html[data-theme="aurora"] .ch-wordmark .human,
+html[data-theme="horizon"] .ch-wordmark .human {
+  color: var(--ch-primary-bright);
+}
+
+/* Wordmark "class" half: use the mode-aware safe muted variant. */
 .ch-wordmark .class {
   color: var(--ch-muted-text);
 }
@@ -104,9 +193,9 @@ html {
 }
 
 /* ------------------------------------------------------------
-   Interactive TACO pieces (design handoff: visuals upgrade).
-   Stage color arrives via the --stage custom property from
-   taco-controls.ts; light mode darkens it for text contrast.
+   Interactive TACO pieces. Stage color arrives via the --stage
+   custom property; light mode darkens it for text contrast, dark
+   and cosmic keep it bright.
    ------------------------------------------------------------ */
 .ch-stage-text {
   color: var(--stage);
@@ -116,6 +205,11 @@ html {
 }
 [data-mode="dark"] .ch-stage-text {
   color: color-mix(in srgb, var(--stage) 80%, var(--ch-bone));
+}
+html[data-theme="nebula"] .ch-stage-text,
+html[data-theme="aurora"] .ch-stage-text,
+html[data-theme="horizon"] .ch-stage-text {
+  color: color-mix(in srgb, var(--stage) 82%, var(--ch-bone));
 }
 
 .ch-bar-track {
@@ -136,7 +230,13 @@ html {
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: linear-gradient(90deg, #5a88be 0%, #6fa6ae 40%, #e39a3b 70%, #d9603f 100%);
+  background: linear-gradient(
+    90deg,
+    var(--ch-cool) 0%,
+    var(--ch-cool-alt) 40%,
+    var(--ch-accent) 70%,
+    var(--ch-primary) 100%
+  );
   outline-offset: 4px;
   cursor: pointer;
 }
@@ -158,12 +258,8 @@ html {
 }
 
 /* ------------------------------------------------------------
-   LAHA "wild mode" — signature motion + surfaces.
-   All built on brand tokens; frozen by the reduced-motion block below.
+   LAHA "wild mode" — signature motion + surfaces. Brand tokens only.
    ------------------------------------------------------------ */
-
-/* Warm→amber→cool gradient headline. Solid fallback keeps it legible if
-   background-clip:text is unsupported. */
 .ch-gradient-text {
   color: var(--ch-primary);
   background-image: linear-gradient(
@@ -181,7 +277,6 @@ html {
   }
 }
 
-/* Full-bleed aurora: three slow-drifting seasonal blobs behind the hero. */
 .ch-aurora {
   background:
     radial-gradient(38% 44% at 18% 22%, color-mix(in srgb, var(--ch-primary) 34%, transparent) 0%, transparent 70%),
@@ -191,7 +286,6 @@ html {
   animation: ch-aurora-drift 18s ease-in-out infinite alternate;
 }
 
-/* Softer single-hue wash for product-page heroes (color via --stage). */
 .ch-aurora-soft {
   background:
     radial-gradient(40% 60% at 80% 0%, color-mix(in srgb, var(--stage, var(--ch-accent)) 22%, transparent) 0%, transparent 70%),
@@ -203,7 +297,6 @@ html {
   100% { transform: translate3d(0, -3%, 0) scale(1.08); }
 }
 
-/* Faint engineered grid — the circuit substrate. */
 .ch-grid {
   background-image:
     linear-gradient(to right, color-mix(in srgb, var(--ch-on-surface) 6%, transparent) 1px, transparent 1px),
@@ -213,7 +306,6 @@ html {
   mask-image: radial-gradient(70% 70% at 50% 30%, #000 0%, transparent 100%);
 }
 
-/* Reveal-on-scroll. */
 .ch-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -224,7 +316,6 @@ html {
   transform: none;
 }
 
-/* Card lift + amber authority-glow on hover. */
 .ch-card {
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.28s ease, box-shadow 0.28s ease;
@@ -235,7 +326,6 @@ html {
   box-shadow: 0 18px 44px -18px color-mix(in srgb, var(--stage, var(--ch-accent)) 55%, transparent);
 }
 
-/* Trace-field animation: dashes stream toward the core; nodes and core breathe. */
 .ch-trace {
   stroke-dasharray: 7 10;
   animation: ch-trace-flow 2.6s linear infinite;
@@ -255,7 +345,6 @@ html {
   50%      { opacity: 1; transform: scale(1.06); }
 }
 
-/* Animated conic ring for the LLC identity badge. */
 .ch-identity {
   position: relative;
   isolation: isolate;
@@ -283,6 +372,16 @@ html {
   to { transform: rotate(1turn); }
 }
 
+/* Theme-switcher glowing dot. */
+.ch-theme-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 8px var(--dot);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -292,7 +391,6 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  /* Ensure revealed content is never left hidden when motion is off. */
   .ch-reveal {
     opacity: 1 !important;
     transform: none !important;

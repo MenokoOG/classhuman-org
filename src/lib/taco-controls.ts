@@ -7,6 +7,10 @@
  * These mirror the formulas in "TACO Loop — Formal Mathematical Models v1.0"
  * (§4 Inverse Speed Rule, §7 Risk classes). They are framework-agnostic — wire
  * them to React state, Vue refs, signals, whatever the codebase uses.
+ *
+ * Colors are theme vars (never hardcoded hex) so the whole page recolors from a
+ * single data-theme / data-mode swap. Semantic mapping: T -> cool, A -> cool-alt,
+ * C -> accent, O -> primary; risk LOW/MED/HIGH/CRIT -> cool-alt/cool/accent/primary-bright.
  * -----------------------------------------------------------------------------
  */
 
@@ -26,25 +30,25 @@ export interface Stage {
 
 export const STAGES: Stage[] = [
   {
-    letter: "T", num: 1, name: "Take In Unknowns", color: "#5A88BE",
+    letter: "T", num: 1, name: "Take In Unknowns", color: "var(--ch-cool)",
     fn: "Capture unknown data, weak signals, anomalies, environmental inputs, and declared goals — and state plainly what is known and what is not.",
     prevents: "False certainty & hidden assumptions",
     test: "Did the system state what it knows and does not know?",
   },
   {
-    letter: "A", num: 2, name: "Assess & Align", color: "#6FA6AE",
+    letter: "A", num: 2, name: "Assess & Align", color: "var(--ch-cool-alt)",
     fn: "Fuse unknowns with decision memory, rules, environmental factors, and the six uncertainty classes to judge whether it knows enough to act.",
     prevents: "Context loss & environment-blind decisions",
     test: "Did the system slow down when evidence was weak?",
   },
   {
-    letter: "C", num: 3, name: "Choose Correctly", color: "#E39A3B",
+    letter: "C", num: 3, name: "Choose Correctly", color: "var(--ch-accent)",
     fn: "Score candidate actions by utility, risk, uncertainty, reversibility, and rule compliance — only guardrail-passing actions are feasible.",
     prevents: "Premature or high-blast-radius action",
     test: "Was the decision bounded, reversible, and traceable?",
   },
   {
-    letter: "O", num: 4, name: "Operate & Observe", color: "#C0492C",
+    letter: "O", num: 4, name: "Operate & Observe", color: "var(--ch-primary)",
     fn: "Execute or recommend a bounded action, observe the outcome, write a hash-chained audit record, and consolidate the lesson into memory.",
     prevents: "Unlearned failure & untraceable decisions",
     test: "Did outcome evidence feed the next loop?",
@@ -92,10 +96,10 @@ export interface RiskClass {
 }
 
 export const RISK_CLASSES: RiskClass[] = [
-  { min: 0.00, max: 0.25, label: "LOW",      color: "#6FA6AE", action: "Proceed, audit.",                       routesToHuman: false },
-  { min: 0.25, max: 0.50, label: "MEDIUM",   color: "#8FB2DE", action: "Proceed, validate + trace.",           routesToHuman: false },
-  { min: 0.50, max: 0.75, label: "HIGH",     color: "#E39A3B", action: "Human review required.",               routesToHuman: true  },
-  { min: 0.75, max: 1.01, label: "CRITICAL", color: "#D9603F", action: "Stop unless explicitly authorized.",   routesToHuman: true  },
+  { min: 0.00, max: 0.25, label: "LOW",      color: "var(--ch-cool-alt)", action: "Proceed, audit.",                       routesToHuman: false },
+  { min: 0.25, max: 0.50, label: "MEDIUM",   color: "var(--ch-cool)", action: "Proceed, validate + trace.",           routesToHuman: false },
+  { min: 0.50, max: 0.75, label: "HIGH",     color: "var(--ch-accent)", action: "Human review required.",               routesToHuman: true  },
+  { min: 0.75, max: 1.01, label: "CRITICAL", color: "var(--ch-primary-bright)", action: "Stop unless explicitly authorized.",   routesToHuman: true  },
 ];
 
 export function classifyRisk(risk: number): RiskClass {

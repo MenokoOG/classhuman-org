@@ -28,8 +28,11 @@
   </head>
   <body>
     <script>
-      // Restore saved UI mode before paint (light is the default).
+      // Restore saved theme + UI mode before paint (classic light is the default).
       try {
+        var t = localStorage.getItem("ch-theme");
+        if (t === "nebula" || t === "aurora" || t === "horizon")
+          document.documentElement.setAttribute("data-theme", t);
         var m = localStorage.getItem("ch-mode");
         if (m === "dark" || m === "light")
           document.documentElement.setAttribute("data-mode", m);

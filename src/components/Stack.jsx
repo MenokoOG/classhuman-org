@@ -1,14 +1,14 @@
 /* The product stack — TACO is the root layer. Shared by Home + Product.
    Ag3nt24 & HADES white papers are IN DRAFTING (Handler, 2026-07-06) — copy
    below reflects the true design intent from docs/upcoming-layers/ but
-   details may evolve until the papers are final. */
+   details may evolve until the papers are final. Colors are theme vars. */
 
 export const STACK = [
   {
     name: "TACO",
     layer: "Layer 0 · root",
     pill: "BUILDING · MVP",
-    color: "#C0492C",
+    color: "var(--ch-primary)",
     emphasis: true,
     desc: "The decision-control loop. Take in unknowns, bound uncertainty, gate every action, keep a tamper-evident trace.",
   },
@@ -16,7 +16,7 @@ export const STACK = [
     name: "Ag3nt24",
     layer: "Layer 1",
     pill: "NEXT",
-    color: "#5A88BE",
+    color: "var(--ch-cool)",
     hook: "How do you prove what an AI agent said it did is what it actually did?",
     desc: "The proof layer. Agent actions pass through gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Agents inherit TACO's guardrails; a failed gate routes the agent to HADES.",
   },
@@ -24,7 +24,7 @@ export const STACK = [
     name: "HADES",
     layer: "Layer 2",
     pill: "HORIZON",
-    color: "#8B7F6E",
+    color: "var(--ch-muted)",
     hook: "It doesn't punish. It gates authority and preserves truth.",
     desc: "Human Assisted Diagnostic Evaluation System. A failing agent is contained in a sandbox, diagnosed, and — if it passes — validated and returned to service. If it can't be, its experience and lessons are harvested and HADES becomes the Human Authorized Deactivation Evidence Sequence. Either way, every step is documented to the on-chain ledger.",
   },

@@ -1,17 +1,17 @@
 import { RISK_CLASSES } from "../lib/taco-controls.ts";
 
 const QUEUE = [
-  { title: "Approve $2,400 refund — order #48812", risk: "0.61", cls: "HIGH", state: "HELD", dot: "#E39A3B" },
-  { title: "Send redlined MSA to Acme Corp", risk: "0.68", cls: "HIGH", state: "HELD", dot: "#E39A3B" },
-  { title: "Roll back deploy 7f3a on api-gw", risk: "0.82", cls: "CRITICAL", state: "HELD", dot: "#D9603F" },
-  { title: "Closed ticket #9921 — billing", risk: "0.14", cls: "LOW", state: "DONE", dot: "#6FA6AE" },
+  { title: "Approve $2,400 refund — order #48812", risk: "0.61", cls: "HIGH", state: "HELD", dot: "var(--ch-accent)" },
+  { title: "Send redlined MSA to Acme Corp", risk: "0.68", cls: "HIGH", state: "HELD", dot: "var(--ch-accent)" },
+  { title: "Roll back deploy 7f3a on api-gw", risk: "0.82", cls: "CRITICAL", state: "HELD", dot: "var(--ch-primary-bright)" },
+  { title: "Closed ticket #9921 — billing", risk: "0.14", cls: "LOW", state: "DONE", dot: "var(--ch-cool-alt)" },
 ];
 
 export default function GuardrailGate() {
   return (
     <div className="grid gap-12 lg:grid-cols-2">
       <div>
-        <p className="ch-stage-text font-mono text-xs font-bold tracking-[0.25em]" style={{ "--stage": "#6FA6AE" }}>
+        <p className="ch-stage-text font-mono text-xs font-bold tracking-[0.25em]" style={{ "--stage": "var(--ch-cool-alt)" }}>
           GUARDRAIL GATE · RISK ROUTING
         </p>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -67,7 +67,7 @@ export default function GuardrailGate() {
               </span>
               <span
                 className="ch-stage-text font-mono text-xs font-bold tracking-widest"
-                style={{ "--stage": q.state === "HELD" ? "#E39A3B" : "#6FA6AE" }}
+                style={{ "--stage": q.state === "HELD" ? "var(--ch-accent)" : "var(--ch-cool-alt)" }}
               >
                 {q.state}
               </span>

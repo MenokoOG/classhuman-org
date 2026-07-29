@@ -28,7 +28,7 @@ export default function TacoLoop() {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-md font-mono text-base font-bold"
                     style={
                       isActive
-                        ? { background: s.color, color: s.letter === "C" ? "#1C1813" : "#FFFFFF" }
+                        ? { background: s.color, color: s.letter === "C" || s.letter === "A" ? "var(--ch-on-accent)" : "#FFFFFF" }
                         : { background: "color-mix(in srgb, var(--ch-on-surface) 8%, transparent)", color: "var(--ch-on-surface)" }
                     }
                   >

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import Wordmark from "./Wordmark.jsx";
-import ModeToggle from "./ModeToggle.jsx";
+import ThemeSwitcher from "./ThemeSwitcher.jsx";
 import { Monogram } from "./marks.jsx";
 import { PRODUCTS } from "../lib/products.js";
 
@@ -101,7 +101,7 @@ export default function Header() {
               {label}
             </NavLink>
           ))}
-          <ModeToggle />
+          <ThemeSwitcher />
         </nav>
       </div>
     </header>

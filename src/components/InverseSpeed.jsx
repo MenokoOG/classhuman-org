@@ -2,9 +2,9 @@ import { useState } from "react";
 import { inverseSpeed } from "../lib/taco-controls.ts";
 
 function readoutColor(u) {
-  if (u < 0.4) return "#8FB2DE";
-  if (u < 0.7) return "#E39A3B";
-  return "#D9603F";
+  if (u < 0.4) return "var(--ch-cool)";
+  if (u < 0.7) return "var(--ch-accent)";
+  return "var(--ch-primary-bright)";
 }
 
 export default function InverseSpeed() {
@@ -44,12 +44,12 @@ export default function InverseSpeed() {
           <span
             aria-hidden="true"
             className="inline-block h-2.5 w-2.5 rounded-full"
-            style={{ background: out.slowMode ? "#E39A3B" : "#6FA6AE" }}
+            style={{ background: out.slowMode ? "var(--ch-accent)" : "var(--ch-cool-alt)" }}
           />
           <span className="text-muted-safe">LOOP MODE</span>
           <span
             className="ch-stage-text"
-            style={{ "--stage": out.slowMode ? "#E39A3B" : "#6FA6AE" }}
+            style={{ "--stage": out.slowMode ? "var(--ch-accent)" : "var(--ch-cool-alt)" }}
           >
             {out.slowMode ? "SLOW · gather context" : "NORMAL"}
           </span>
@@ -58,14 +58,14 @@ export default function InverseSpeed() {
 
       {/* Output bars */}
       <div>
-        <Bar label="Decision speed" value={`${speedPct}%`} width={speedPct} color="#5A88BE" />
+        <Bar label="Decision speed" value={`${speedPct}%`} width={speedPct} color="var(--ch-cool)" />
         <Bar
           label="Verification depth"
           value={`${out.verifyPasses} ${out.verifyPasses === 1 ? "pass" : "passes"}`}
           width={(out.verifyPasses / 5) * 100}
-          color="#6FA6AE"
+          color="var(--ch-cool-alt)"
         />
-        <Bar label="Action scope" value={`${scopePct}%`} width={scopePct} color="#E39A3B" />
+        <Bar label="Action scope" value={`${scopePct}%`} width={scopePct} color="var(--ch-accent)" />
         <p
           className="mt-6 border-t border-border-brand pt-4 leading-relaxed text-on-surface/85"
           aria-live="polite"

@@ -7,6 +7,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.5.0] — 2026-07-29
+### Added
+- **Three dark "cosmic" themes** — Nebula, Aurora, Event Horizon — alongside the existing
+  Classic light/dark + seasonal system. Selectable from a new Theme control in the nav
+  (glowing dot per theme + Classic light/dark). Choice persisted in localStorage and
+  restored pre-paint. Each theme is a `[data-theme]` block overriding the `--ch-*` tokens,
+  so every page + Banshee recolors from one swap. New `src/components/ThemeSwitcher.jsx`.
+- Tokens `--ch-cool-alt`, `--ch-cool-bright`, `--ch-primary-bright` (classic-derived; cosmic
+  themes set them directly) + Tailwind mappings.
+
+### Changed
+- **Full color sweep to theme vars** — removed the last hardcoded brand hexes from
+  taco-controls (stages + risk classes), InverseSpeed (readout + bars), GuardrailGate
+  (queue dots), products.js, Stack.jsx, the TacoLoop badge, and the index.css slider.
+  Semantic mapping: T→cool, A→cool-alt, C→accent, O→primary; risk LOW/MED/HIGH/CRIT →
+  cool-alt/cool/accent/primary-bright. One theme swap now recolors 100% of the page.
+- The nav's light/dark toggle moved under "Classic" inside the new Theme menu.
+
 ## [1.4.1] — 2026-07-28
 ### Changed
 - **Story page rewrite.** Tougher, clearer, less sentimental. Removed the vending-machine
