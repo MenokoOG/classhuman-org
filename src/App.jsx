@@ -8,6 +8,7 @@ import Asymptote from "./pages/Asymptote.jsx";
 import Ag3nt24 from "./pages/Ag3nt24.jsx";
 import Hades from "./pages/Hades.jsx";
 import Demos from "./pages/Demos.jsx";
+import Legacy from "./pages/Legacy.jsx";
 import Story from "./pages/Story.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -19,7 +20,12 @@ const PAGE_META = {
   "/": {
     title: "classHuman AI — driven by LAHA",
     description:
-      "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build the control layer where humans keep final authority over their agents. TACO Loop, Asymptote, Ag3nt24, HADES.",
+      "classHuman AI builds AI agents and agentic systems for your business — on the industry's best tools and on your legacy stack — with humans keeping final authority. Custom agents, agentic workflows, and legacy modernization.",
+  },
+  "/legacy": {
+    title: "Legacy Modernization — " + SITE,
+    description:
+      "Modern AI agents on your legacy stack, with no rip-and-replace. classHuman uses a strangler-fig migration and protocol-droid interfaces to modernize legacy software while it keeps running. Senior + CTO-level experience on any stack.",
   },
   "/product": {
     title: "TACO Loop — " + SITE,
@@ -96,6 +102,7 @@ export default function App() {
         <Route path="/ag3nt24" element={<Ag3nt24 />} />
         <Route path="/hades" element={<Hades />} />
         <Route path="/demos" element={<Demos />} />
+        <Route path="/legacy" element={<Legacy />} />
         <Route path="/story" element={<Story />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

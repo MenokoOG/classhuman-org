@@ -1,6 +1,6 @@
 # CLASSHUMAN.md — Canonical Context (Source of Truth)
 
-**Version:** 1.2 · **Updated:** 2026-07-19
+**Version:** 1.3 · **Updated:** 2026-07-29
 **Read this first. This file overrides any older COIL/OKO Forge context.**
 
 ---
@@ -8,7 +8,8 @@
 ## Company
 
 - **Name:** classHuman AI
-- **What we are:** a **Generative Software Engineering firm.** We build our own software for the agentic systems we create — TACO Loop, Ag3nt24, HADES all flow from this identity. This is the public positioning to use everywhere.
+- **What we are:** a **Generative AI Software Engineering, Development & Research LLC.** We build **AI agents and agentic systems for clients** — using the industry's best existing tools plus our own discipline layer — and we build **our own products** too (TACO Loop, Asymptote, Ag3nt24, HADES). **Public positioning:** lead with what we build *for clients*; the products/research are proof of capability, not the headline. (Site is now split: "Work with us" services up front; research/products as a distinct secondary area.)
+- **Services (client-facing):** custom AI agents; agentic systems & workflows; **legacy modernization** — strangler-fig migration + "protocol-droid" adapter interfaces (our specialty; backed by senior/CTO-level and COBOL-lineage experience); and equipping client teams with agent skills & tools. Humans always keep final authority.
 - **Tagline:** classHuman AI — driven by LAHA (Love All Humans Always)
 - **Status:** LLC registration planned August 2026
 - **Prior entity:** OKO Forge LLC d/b/a Crimson Obsidian Industries and Labs (COIL) — **paused. Do not plan or build around COIL products.**

@@ -96,5 +96,32 @@ Never mention health details.
 - **Email:** lawrencejefferson@classhuman.org (confirmed by Lawrence, 2026-07-05).
 - Keep it simple: short form or a mailto. No trackers.
 
+## Services / Work with us (Home — up front)
+- **Eyebrow:** WORK WITH US
+- **Heading:** What we build for you.
+- **Sub:** We use the best tools the industry already has — and our own discipline layer on
+  top — to ship agents you can trust in production.
+- **Offerings:**
+  1. **Custom AI agents** — built on the tools you already use; wired into your systems and data.
+  2. **Agentic systems & workflows** — multi-step, multi-agent, with guardrails and human approval.
+  3. **Legacy modernization** — modern agents on old systems, no rip-and-replace → `/legacy`.
+  4. **Agent skills & tools for your team** — we can hand you the keys to keep modernizing.
+- **Positioning rule:** lead with services; the products/research are a *separate secondary
+  area* ("We build for ourselves too") shown as proof, not the headline.
+
+## Legacy modernization page (`/legacy`)
+- **Eyebrow:** SERVICE · LEGACY MODERNIZATION
+- **Heading:** Modern agents on your legacy stack. No rip-and-replace.
+- **Approach:** the **strangler-fig pattern** (grow the new system around the old one, replacing
+  it capability by capability while it keeps running) + **protocol-droid interfaces** (adapter
+  agents fluent in both the legacy system's protocols and a modern agentic stack — the "trick").
+- **Why us (truthful, no invented metrics):** 24 years U.S. Army operational discipline; senior +
+  CTO-level engineering; a COBOL lineage (Lawrence's father, 1960s) so mainframe-era systems
+  aren't foreign; law-enforcement rigor on process/evidence.
+- **Flow:** Map → Wrap → Route → Replace → Hand off. Every consequential change routes through a
+  human (TACO discipline applied to migration).
+- **You keep the keys:** optionally equip the client's team with agent skills + tools to run the
+  migration themselves.
+
 ---
 *LAHA — Love All Humans Always.*

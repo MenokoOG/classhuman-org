@@ -1,7 +1,41 @@
 import { Link } from "react-router-dom";
-import StackRows from "../components/Stack.jsx";
 import { Eyebrow, GradientText, Reveal, TraceField, StatusPill } from "../components/ui.jsx";
 import { PRODUCTS } from "../lib/products.js";
+
+const SERVICES = [
+  {
+    title: "Custom AI agents",
+    hook: "Built on the tools you already use.",
+    body: "Purpose-built agents wired into your systems, your data, and the frameworks you've standardized on — using the best the industry already offers, not a science project.",
+    color: "var(--ch-primary)",
+    to: "/contact",
+    cta: "Start a build",
+  },
+  {
+    title: "Agentic systems & workflows",
+    hook: "Multi-step, multi-agent — still accountable.",
+    body: "Pipelines where agents plan and act across your stack, with guardrails and human approval on the calls that matter. Powerful, and never off the leash.",
+    color: "var(--ch-cool)",
+    to: "/product",
+    cta: "The discipline layer",
+  },
+  {
+    title: "Legacy modernization",
+    hook: "Modern agents on old systems. No rip-and-replace.",
+    body: "We wrap and evolve legacy software with a strangler-fig migration and protocol-droid interfaces — modern AI on top of what you already run, while it keeps running.",
+    color: "var(--ch-cool-alt)",
+    to: "/legacy",
+    cta: "How we do it",
+  },
+  {
+    title: "Agent skills & tools for your team",
+    hook: "We can hand you the keys.",
+    body: "Prefer to own the upgrade? We equip your team with the agent skills and tools to keep modernizing after we're gone — you own it, not a retainer.",
+    color: "var(--ch-muted)",
+    to: "/contact",
+    cta: "Ask us",
+  },
+];
 
 export default function Home() {
   return (
@@ -21,40 +55,40 @@ export default function Home() {
           </div>
 
           <h1 className="mt-7 max-w-4xl text-5xl font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-            We build the <GradientText>control layer</GradientText> where humans keep final
-            authority over their agents.
+            We build the <GradientText>agents and agentic systems</GradientText> your business
+            runs on.
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-on-surface/85 sm:text-xl">
-            classHuman AI is a Generative AI Software Engineering, Development &amp; Research firm.
-            We write our own software for the agentic systems we create — human warmth, machine
-            discipline, and a spine of accountability under every decision.
+            classHuman AI designs, builds, and ships production AI agents and agentic
+            workflows — on the industry&apos;s best tools and on your legacy stack — with a
+            spine of accountability so humans always keep final authority.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
-              to="/product"
+              to="/contact"
               className="rounded-md bg-primary px-6 py-3 font-bold text-on-primary shadow-lg shadow-primary/20 hover:opacity-90"
             >
-              Explore TACO Loop
+              Work with us
             </Link>
             <Link
-              to="/demos"
+              to="/legacy"
               className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
-              See it working — Demos
+              Modernize a legacy system →
             </Link>
           </div>
 
           <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
             {[
-              ["4", "products in the stack"],
-              ["v0.1", "Asymptote shipped"],
-              ["> 0.50", "risk routes to a human"],
-              ["SHA-256", "hash-chained audit"],
+              ["Agents & workflows", "built to your spec"],
+              ["Legacy → modern", "no rip-and-replace"],
+              ["Human-in-the-loop", "by architecture"],
+              ["Your tools", "and our own"],
             ].map(([v, l]) => (
               <div key={l}>
-                <dt className="text-2xl font-extrabold sm:text-3xl">{v}</dt>
+                <dt className="text-lg font-extrabold leading-tight sm:text-xl">{v}</dt>
                 <dd className="mt-1 font-mono text-[10px] font-bold uppercase tracking-widest text-muted-safe">
                   {l}
                 </dd>
@@ -64,114 +98,140 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── LAHA ───────────────────────────────────────────── */}
+      {/* ── Services · Work with us ────────────────────────── */}
       <section className="border-y border-border-brand bg-card/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <Eyebrow>OUR LAW</Eyebrow>
+            <Eyebrow>WORK WITH US</Eyebrow>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              <GradientText>Love All Humans Always.</GradientText>
+              What we build <GradientText>for you.</GradientText>
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/85">
-              LAHA is the reason the company exists. We build human-AI collaboration where
-              people, not models, hold final authority over the decisions that matter. Every
-              system we ship is measured against it: does it keep humans in command, and treat
-              them with care?
-            </p>
-            <p className="mt-6">
-              <Link
-                to="/story"
-                className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
-              >
-                Where LAHA comes from — our story
-              </Link>
+            <p className="mt-3 max-w-2xl text-on-surface/85">
+              We use the best tools the industry already has — and our own discipline layer on
+              top — to ship agents you can trust in production.
             </p>
           </Reveal>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.title} delay={i * 70}>
+                <div
+                  className="ch-card flex h-full flex-col rounded-lg border border-border-brand bg-surface p-6"
+                  style={{ "--stage": s.color }}
+                >
+                  <h3 className="text-xl font-extrabold" style={{ color: s.color }}>
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-on-surface">{s.hook}</p>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-on-surface/80">{s.body}</p>
+                  <p className="mt-4">
+                    <Link
+                      to={s.to}
+                      className="font-mono text-xs font-bold tracking-widest text-cool-safe hover:text-accent-safe"
+                    >
+                      {s.cta.toUpperCase()} →
+                    </Link>
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Products constellation ─────────────────────────── */}
+      {/* ── LAHA ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <Reveal>
-          <Eyebrow>THE STACK · FOUR PRODUCTS</Eyebrow>
+          <Eyebrow>OUR LAW</Eyebrow>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            One discipline, built in layers.
+            <GradientText>Love All Humans Always.</GradientText>
           </h2>
-          <p className="mt-3 max-w-2xl text-on-surface/85">
-            TACO is the root. Everything above inherits its guardrails — proof, diagnosis,
-            and the tools that keep the whole thing honest.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface/85">
+            LAHA is the reason the company exists. Every system we build for you is measured
+            against it: does it keep humans in command of the decisions that matter, and treat
+            them with care? That&apos;s not a tagline — it&apos;s the spine under the software.
+          </p>
+          <p className="mt-6">
+            <Link
+              to="/story"
+              className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+            >
+              Where LAHA comes from — our story
+            </Link>
           </p>
         </Reveal>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {PRODUCTS.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 70}>
-              <Link
-                to={`/${p.slug}`}
-                className="ch-card group block h-full rounded-lg border border-border-brand bg-card p-6"
-                style={{ "--stage": p.color }}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-extrabold" style={{ color: p.color }}>
-                      {p.name}
-                    </h3>
-                    <p className="mt-0.5 font-mono text-[11px] tracking-widest text-muted-safe">
-                      {p.layer}
-                    </p>
-                  </div>
-                  <StatusPill color={p.color}>{p.status}</StatusPill>
-                </div>
-                <p className="mt-4 text-sm font-semibold text-on-surface">
-                  &ldquo;{p.hook}&rdquo;
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-on-surface/80">{p.blurb}</p>
-                <p className="mt-4 font-mono text-xs font-bold tracking-widest text-cool-safe group-hover:text-accent-safe">
-                  OPEN {p.name.toUpperCase()} →
-                </p>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
-      {/* ── TACO law ───────────────────────────────────────── */}
-      <section className="border-t border-border-brand">
+      {/* ── Our own research & products (secondary area) ───── */}
+      <section className="border-t border-border-brand bg-card/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <Eyebrow>CORE PRODUCT LAW</Eyebrow>
-            <blockquote className="mt-4 max-w-3xl border-l-4 border-accent pl-6 text-2xl font-bold leading-snug sm:text-3xl">
-              Unknown data must increase decision discipline — <GradientText>not model
-              confidence.</GradientText>
-            </blockquote>
-            <p className="mt-6 max-w-2xl text-on-surface/85">
-              It&apos;s the law behind every product: bound the uncertainty, slow down when the
-              evidence is weak, and route every consequential call to a person.
+            <Eyebrow>WE BUILD FOR OURSELVES TOO</Eyebrow>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Our own research &amp; products.
+            </h2>
+            <p className="mt-3 max-w-2xl text-on-surface/85">
+              We don&apos;t just build for clients — we build our own agentic systems and the
+              discipline that governs them. It&apos;s proof we ship this in production, not
+              slideware. Our core law:{" "}
+              <span className="font-semibold">
+                unknown data must increase decision discipline, not model confidence.
+              </span>
             </p>
           </Reveal>
-          <StackRows />
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {PRODUCTS.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 70}>
+                <Link
+                  to={`/${p.slug}`}
+                  className="ch-card group block h-full rounded-lg border border-border-brand bg-surface p-6"
+                  style={{ "--stage": p.color }}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-extrabold" style={{ color: p.color }}>
+                        {p.name}
+                      </h3>
+                      <p className="mt-0.5 font-mono text-[11px] tracking-widest text-muted-safe">
+                        {p.layer}
+                      </p>
+                    </div>
+                    <StatusPill color={p.color}>{p.status}</StatusPill>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-on-surface/80">{p.blurb}</p>
+                  <p className="mt-4 font-mono text-xs font-bold tracking-widest text-cool-safe group-hover:text-accent-safe">
+                    OPEN {p.name.toUpperCase()} →
+                  </p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── CTA ────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-t border-border-brand bg-card/60">
+      <section className="relative overflow-hidden border-t border-border-brand">
         <div className="ch-aurora pointer-events-none absolute inset-0 -z-10 opacity-60" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Humans hold <GradientText>final authority.</GradientText>
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-on-surface/85">
+            Tell us what you want built — or what you&apos;re trying to modernize.
+          </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              to="/product"
+              to="/contact"
               className="rounded-md bg-primary px-6 py-3 font-bold text-on-primary hover:opacity-90"
             >
-              Explore TACO Loop
+              Work with us
             </Link>
             <Link
-              to="/contact"
+              to="/legacy"
               className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
-              Get in touch
+              Legacy modernization
             </Link>
           </div>
         </div>

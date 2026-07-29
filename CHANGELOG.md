@@ -7,6 +7,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+## [1.6.0] — 2026-07-29
+### Added
+- **Legacy Modernization page** (`/legacy`): strangler-fig migration + protocol-droid
+  interfaces, the Map → Wrap → Route → Replace → Hand off flow, senior/CTO-level + COBOL-lineage
+  credibility, and a "you keep the keys" option. Wired into the nav, sitemap, and PAGE_META.
+- **Services grounding for Banshee** (`src/banshee/knowledge.js`): new "services" and "legacy"
+  knowledge entries; the company entry reworded to lead with client work.
+
+### Changed
+- **Positioning refactor (split model).** Home now leads with client services — "Work with us:
+  what we build for you" (custom AI agents, agentic systems & workflows, legacy modernization,
+  agent skills & tools) — with the in-house products/research moved to a distinct secondary area
+  ("We build for ourselves too"). Hero, stat row, and CTAs reframed toward attracting customers.
+- Canonical context updated to match: `CLASSHUMAN.md` "What we are" + a client Services section;
+  `docs/CONTENT.md` gains approved Services + Legacy copy.
+
 ## [1.5.0] — 2026-07-29
 ### Added
 - **Three dark "cosmic" themes** — Nebula, Aurora, Event Horizon — alongside the existing

@@ -16,7 +16,21 @@ export const KNOWLEDGE = [
     title: "classHuman AI — who we are",
     path: "/about",
     keywords: ["company", "classhuman", "who", "what", "about", "llc", "firm", "engineering", "research", "generative", "positioning", "mission"],
-    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build our own software for the agentic systems we create. Our positioning: we build the control layer where humans keep final authority over their agents. It is a two-person company — Lawrence Jefferson II (CEO/CTO/architect) and Nicale Jefferson (CFO, HR & operations, AI ethics & governance). LLC registration is planned for August 2026.",
+    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build AI agents and agentic systems for clients — using the industry's best existing tools plus our own discipline layer — and we build our own products too. Across everything, humans keep final authority over their agents. It is a two-person company — Lawrence Jefferson II (CEO/CTO/architect) and Nicale Jefferson (CFO, HR & operations, AI ethics & governance). LLC registration is planned for August 2026.",
+  },
+  {
+    id: "services",
+    title: "What classHuman builds for clients",
+    path: "/",
+    keywords: ["services", "build", "client", "clients", "hire", "custom", "workflow", "workflows", "agentic", "tools", "work", "help", "business", "develop", "development", "make"],
+    text: "classHuman AI builds AI agents and agentic systems for clients, using the industry's best existing tools plus its own discipline layer. Services: custom AI agents wired into your systems and data; multi-agent agentic workflows with guardrails and human approval; legacy modernization; and equipping your team with agent skills and tools to keep going after we leave. Humans always keep final authority. To start a build, use the contact page.",
+  },
+  {
+    id: "legacy",
+    title: "Legacy modernization",
+    path: "/legacy",
+    keywords: ["legacy", "modernize", "modernization", "old", "mainframe", "cobol", "migrate", "migration", "strangler", "fig", "protocol", "droid", "droids", "interface", "upgrade", "rewrite"],
+    text: "classHuman modernizes legacy software without a rip-and-replace. Approach: the strangler-fig pattern (grow the new system around the old one, replacing it capability by capability while it keeps running) and protocol-droid interfaces (adapter agents fluent in both the legacy system's protocols and a modern agentic stack). Backed by senior and CTO-level experience — 24 years U.S. Army operational discipline, senior full-stack engineering, and a COBOL lineage — so no stack is too old. Optionally, classHuman hands your team the agent skills and tools to run the migration themselves. See the Legacy page.",
   },
   {
     id: "laha",
