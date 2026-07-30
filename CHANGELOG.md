@@ -35,6 +35,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
   digital twin, how to work with classHuman, why classHuman (the discipline layer), and
   credentials/track record; corrected two stale facts (LLC now registered; Nicale's role).
 
+### Security
+- **React Router advisories assessed and documented** (`docs/adr/0003-react-router-advisories.md`).
+  The Dependabot alerts (open-redirect; SSR `deserializeErrors`) are not exploitable in this
+  client-only SPA (no SSR/RSC, hardcoded internal routes); the v7 upgrade is deferred because
+  7.18.x introduces an unpatched RSC-CSRF high with no clean version available. Pinned at
+  `react-router-dom@6.30.4`; alerts to be dismissed as "not affected."
+
 ## [1.6.0] — 2026-07-29
 ### Added
 - **Legacy Modernization page** (`/legacy`): strangler-fig migration + protocol-droid
