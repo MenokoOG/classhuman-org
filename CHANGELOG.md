@@ -14,12 +14,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
   phone validation, batched DB I/O). Each card carries the "OKO Forge LLC, now classHuman AI LLC"
   attribution and an external link. Styled with existing brand tokens and the shared UI kit; no
   new dependencies.
+- **Founder digital-twin entry points.** A "Chat with Lawrence's digital twin" link in the Home
+  hero (`ljefferson-menoko-site.netlify.app`), and Banshee can route visitors there
+  conversationally. Banshee sources now support external links (optional `href` on knowledge
+  entries; rendered as a new-tab chip in the widget).
 
 ### Fixed
 - **Tonya photo not rendering on mobile** (`/story`). `public/images/tonya.jpg` was a
   progressive JPEG carrying an embedded ICC color profile — it rendered on desktop but blank on
   iOS Safari. Re-encoded to a clean baseline sRGB JPEG (profile stripped, colors preserved, same
   945×945). No markup change.
+
+### Changed
+- **Banshee upgraded to a proactive classHuman expert.** Rewrote the serverless system prompt to
+  give the agent latitude — synthesize across topics, proactively offer the best next step, and
+  ask one clarifying question when needed (up to ~140 words) — while keeping the hard guardrails
+  (grounded-only facts, no commitments, no private/health details, no actions). Generation budget
+  raised (temp 0.4, 420 tokens).
+- **Deeper Banshee knowledge pack** (`src/banshee/knowledge.js`): new entries for the founder's
+  digital twin, how to work with classHuman, why classHuman (the discipline layer), and
+  credentials/track record; corrected two stale facts (LLC now registered; Nicale's role).
 
 ## [1.6.0] — 2026-07-29
 ### Added

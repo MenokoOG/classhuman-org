@@ -6,7 +6,7 @@
         (e.g. `vite` dev with no functions, or a network failure).
    No DOM, no Node APIs — safe in both runtimes. */
 
-import { KNOWLEDGE, CONTACT_EMAIL, QUICK_FACTS } from "./knowledge.js";
+import { KNOWLEDGE, CONTACT_EMAIL, QUICK_FACTS, DIGITAL_TWIN } from "./knowledge.js";
 
 const STOP = new Set([
   "the", "a", "an", "and", "or", "but", "of", "to", "in", "on", "for", "is",
@@ -62,6 +62,9 @@ function isThanks(q) {
 function isContactIntent(q) {
   return /\b(contact|email|reach|hire|quote|engage|pricing|price|cost|timeline|get in touch|talk to)\b/i.test(q || "");
 }
+function isTwinIntent(q) {
+  return /\b(digital twin|twin|talk to lawrence|lawrence'?s twin|talk to the founder)\b/i.test(q || "");
+}
 
 export const SUGGESTIONS = [
   "What does classHuman AI do?",
@@ -95,6 +98,16 @@ export function answerOffline(query) {
     return { text: "Anytime. Anything else you'd like to know about classHuman AI?", sources: [], mode: "offline" };
   }
 
+  // Personal-conversation intent → point to the founder's digital twin.
+  if (isTwinIntent(q)) {
+    const twin = KNOWLEDGE.find((e) => e.id === "twin");
+    return {
+      text: `${twin.text}`,
+      sources: [{ title: twin.title, path: twin.path, href: twin.href || DIGITAL_TWIN }],
+      mode: "offline",
+    };
+  }
+
   const hits = retrieve(q, 3);
   const confident = hits.length > 0 && hits[0].score >= CONFIDENT;
 
@@ -116,7 +129,7 @@ export function answerOffline(query) {
   const top = hits[0].entry;
   const sources = hits
     .filter((h) => h.score >= Math.max(CONFIDENT, hits[0].score * 0.5))
-    .map((h) => ({ title: h.entry.title, path: h.entry.path }));
+    .map((h) => ({ title: h.entry.title, path: h.entry.path, href: h.entry.href }));
 
   return { text: top.text, sources, mode: "offline" };
 }

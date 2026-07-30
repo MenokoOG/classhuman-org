@@ -37,16 +37,28 @@ function Sources({ sources, onNavigate }) {
   if (!sources?.length) return null;
   return (
     <div className="mt-2 flex flex-wrap gap-2">
-      {sources.map((s) => (
-        <Link
-          key={s.path + s.title}
-          to={s.path}
-          onClick={onNavigate}
-          className="rounded-sm border border-border-brand bg-surface px-2 py-0.5 font-mono text-[10px] font-bold tracking-wide text-cool-safe hover:border-accent hover:text-accent-safe"
-        >
-          {s.title} →
-        </Link>
-      ))}
+      {sources.map((s) =>
+        s.href ? (
+          <a
+            key={s.href + s.title}
+            href={s.href}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-sm border border-border-brand bg-surface px-2 py-0.5 font-mono text-[10px] font-bold tracking-wide text-cool-safe hover:border-accent hover:text-accent-safe"
+          >
+            {s.title} ↗
+          </a>
+        ) : (
+          <Link
+            key={s.path + s.title}
+            to={s.path}
+            onClick={onNavigate}
+            className="rounded-sm border border-border-brand bg-surface px-2 py-0.5 font-mono text-[10px] font-bold tracking-wide text-cool-safe hover:border-accent hover:text-accent-safe"
+          >
+            {s.title} →
+          </Link>
+        )
+      )}
     </div>
   );
 }

@@ -80,6 +80,18 @@ export default function Home() {
             </Link>
           </div>
 
+          <p className="mt-5 text-sm text-on-surface/70">
+            Rather explore first?{" "}
+            <a
+              href="https://ljefferson-menoko-site.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-accent-safe underline decoration-dotted underline-offset-4 hover:opacity-80"
+            >
+              Chat with Lawrence&apos;s digital twin &rarr;
+            </a>
+          </p>
+
           <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
             {[
               ["Agents & workflows", "built to your spec"],

@@ -9,6 +9,7 @@
    Shared by the browser (client fallback) and the Netlify function (server). */
 
 export const CONTACT_EMAIL = "lawrencejefferson@classhuman.org";
+export const DIGITAL_TWIN = "https://ljefferson-menoko-site.netlify.app";
 
 export const KNOWLEDGE = [
   {
@@ -16,7 +17,7 @@ export const KNOWLEDGE = [
     title: "classHuman AI — who we are",
     path: "/about",
     keywords: ["company", "classhuman", "who", "what", "about", "llc", "firm", "engineering", "research", "generative", "positioning", "mission"],
-    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build AI agents and agentic systems for clients — using the industry's best existing tools plus our own discipline layer — and we build our own products too. Across everything, humans keep final authority over their agents. It is a two-person company — Lawrence Jefferson II (CEO/CTO/architect) and Nicale Jefferson (CFO, HR & operations, AI ethics & governance). LLC registration is planned for August 2026.",
+    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build AI agents and agentic systems for clients — using the industry's best existing tools plus our own discipline layer — and we build our own products too. Across everything, humans keep final authority over their agents. It's a father-and-daughter, two-person company: Lawrence Jefferson II (CEO, CTO, and architect — he owns the engineering and product) and Nicale Jefferson (UX/UI designer, head of HR & operations, and AI ethics & governance — she authors the governance framework). classHuman AI is a registered Washington LLC (July 2026).",
   },
   {
     id: "services",
@@ -85,8 +86,37 @@ export const KNOWLEDGE = [
     id: "team",
     title: "The team",
     path: "/about",
-    keywords: ["team", "founders", "lawrence", "jefferson", "nicale", "who", "people", "ceo", "cfo", "menoko", "luxgirl"],
-    text: "Lawrence Jefferson II (Menoko OG, 'Original Geek') is CEO, CTO, and architect — 24 years U.S. Army, senior backend and full-stack engineer, AI systems builder. Nicale Jefferson (LuxGirl OG) is CFO, Head of HR & Operations, and admin for AI ethics and governance; she authors the governance framework behind classHuman. The company practices accessibility-first design. Recognition: Scrimba 'Portfolio of the Week', May 2026. Nicale's page: luxgirlog.netlify.app.",
+    keywords: ["team", "founders", "lawrence", "jefferson", "nicale", "who", "people", "ceo", "menoko", "luxgirl", "twin"],
+    text: "Lawrence Jefferson II (Menoko OG, 'Original Geek') is CEO, CTO, and architect — 24 years U.S. Army, senior backend and full-stack engineer, AI systems builder; he owns the engineering and product. You can even talk to his digital twin at ljefferson-menoko-site.netlify.app. Nicale Jefferson (LuxGirl OG) is UX/UI designer, Head of HR & Operations, and admin for AI ethics & governance; she authors the governance framework behind classHuman. The company practices accessibility-first design. Recognition: Scrimba 'Portfolio of the Week', May 2026. Nicale's page: luxgirlog.netlify.app.",
+  },
+  {
+    id: "twin",
+    title: "Talk to Lawrence's digital twin",
+    path: "/",
+    href: DIGITAL_TWIN,
+    keywords: ["twin", "digital", "lawrence", "founder", "chat", "conversation", "person", "portfolio", "menoko", "himself"],
+    text: `Want a more personal conversation? You can talk to Lawrence Jefferson II's digital twin — an AI version of the founder that goes deep on his background, projects, and how classHuman thinks about building agents. It lives at ${DIGITAL_TWIN}, and there's a link right in the hero on the home page. For anything that needs a commitment, a real human still handles it.`,
+  },
+  {
+    id: "engagement",
+    title: "How to work with classHuman",
+    path: "/contact",
+    keywords: ["engage", "engagement", "start", "started", "getting", "process", "onboard", "onboarding", "discovery", "pilot", "scope", "steps", "begin", "project", "timeline"],
+    text: `Getting started is simple: email ${CONTACT_EMAIL} with what you want to build or the system you need to modernize. The usual path is a short discovery to scope the problem, then a focused build, then a handoff — and, if you want it, classHuman equips your team with the agent skills and tools to keep going on their own. A human handles every commitment (scope, timeline, price); the site and I never commit the company to terms.`,
+  },
+  {
+    id: "why",
+    title: "Why classHuman — the discipline layer",
+    path: "/product",
+    keywords: ["why", "different", "difference", "differentiator", "better", "trust", "discipline", "compare", "versus", "unique", "value", "accountability", "safe", "reliable"],
+    text: "What sets classHuman apart is the discipline layer under the agents. Every build keeps humans in final authority, degrades gracefully to an offline path so it never hard-fails, and leaves an audit trail — signed receipts, observable outcomes, no black boxes. The bench is senior/CTO-level: 24 years of Army operational discipline, a COBOL data-integrity lineage, and deep failure literacy (Agent Autopsy — 12 production agent failure modes, each broken and fixed). Not demos — production-shaped systems that hold up under pressure.",
+  },
+  {
+    id: "credentials",
+    title: "Credentials & track record",
+    path: "/legacy",
+    keywords: ["credentials", "proof", "track", "record", "experience", "gunkustom", "powalert", "whitepaper", "paper", "scrimba", "autopsy", "shipped", "built", "case"],
+    text: "Track record: the TACO Loop White Paper v1.0 (July 2026) and Mathematical Model v0.1; Ag3nt24 v1.0.0 (a deterministic integrity kernel with signed decision certificates); and Asymptote shipped (v0.1, MIT). Production platform work includes GunKustom.com — a full rebuild where Lawrence joined as senior backend engineer and became CTO within six months — and PowAlert.com, a real-time snowfall alert platform. Recognition: Scrimba 'Portfolio of the Week', May 2026. The Legacy page has the production case studies.",
   },
   {
     id: "contact",

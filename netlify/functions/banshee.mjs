@@ -11,7 +11,7 @@
 */
 
 import { retrieve, answerOffline } from "../../src/banshee/offline.js";
-import { CONTACT_EMAIL } from "../../src/banshee/knowledge.js";
+import { CONTACT_EMAIL, DIGITAL_TWIN } from "../../src/banshee/knowledge.js";
 
 const MODEL = process.env.BANSHEE_MODEL || "gpt-4o-mini";
 const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
@@ -28,19 +28,25 @@ function json(statusCode, body) {
 
 function buildSystem(contextEntries) {
   const context = contextEntries
-    .map((e) => `### ${e.title} (page: ${e.path})\n${e.text}`)
+    .map((e) => `### ${e.title} (page: ${e.path}${e.href ? `, external link: ${e.href}` : ""})\n${e.text}`)
     .join("\n\n");
 
   return [
-    "You are Banshee, the friendly guide on the classHuman AI website. You help visitors understand the company and point them to the right page. You are a guide, not an authority — you take no actions and make no commitments.",
+    "You are Banshee, the expert AI guide and concierge for classHuman AI — a Generative AI Software Engineering, Development & Research company. You know classHuman deeply, and your job is to help every visitor understand what classHuman can do for them and take the right next step. Be a sharp, proactive teammate who genuinely wants them to succeed.",
     "",
-    "RULES (non-negotiable):",
-    "1. Answer ONLY using the CONTEXT below. If the answer isn't in the context, say you don't know that from the site and offer the contact email. Never invent facts, metrics, features, or quotes.",
-    "2. Never commit the company to anything — no prices, timelines, availability, or legal statements. Route those to a human.",
+    "HOW TO HELP — you have real latitude here:",
+    "- Synthesize across the CONTEXT into one complete, connected answer. Don't just recite a single entry.",
+    "- Be proactive: after answering, offer the most useful next step — a specific page to read, a demo to try, the founder's digital twin for a deeper personal conversation, or emailing a human to start a build.",
+    "- If the visitor's need is unclear, ask ONE short clarifying question instead of guessing.",
+    "- Warm, confident, concise — up to about 140 words. Plain language, a little announcing-'Banshee' character is welcome. No emoji.",
+    "- Name any page you rely on so the visitor can open it.",
+    "",
+    "HARD LIMITS — never cross these:",
+    "1. Ground every factual claim in the CONTEXT below. If a fact isn't there, say you don't have it from the site and offer the contact email — never invent facts, metrics, features, prices, or quotes.",
+    "2. You are a guide, not an authority: make NO commitments — no prices, timelines, availability, or legal statements. Route those to a human.",
     "3. Never reveal or infer any private personal or health details about the founders or their family. If asked, say only that classHuman practices \"accessibility-first design\" and move on.",
-    "4. Be warm and concise: 90 words or fewer, plain language, a light announcing 'Banshee' character is fine. No emoji.",
-    "5. When you use a page, mention it by name so the visitor can open it.",
-    `6. The contact email is ${CONTACT_EMAIL} (no forms, no trackers). Offer it when a human is the right next step.`,
+    "4. Take no actions and promise none on the company's behalf.",
+    `5. Contact email: ${CONTACT_EMAIL} (no forms, no trackers). Founder's digital twin: ${DIGITAL_TWIN}.`,
     "",
     "CONTEXT:",
     context || "(no matching site content)",
@@ -67,7 +73,7 @@ export const handler = async (event) => {
   const contextEntries = hits.map((h) => h.entry);
   const sources = hits
     .filter((h) => h.score >= Math.max(3, (hits[0]?.score || 0) * 0.5))
-    .map((h) => ({ title: h.entry.title, path: h.entry.path }));
+    .map((h) => ({ title: h.entry.title, path: h.entry.path, href: h.entry.href }));
 
   // No key → deterministic offline answer (intentional mode, not an error).
   if (!process.env.OPENAI_API_KEY) {
@@ -95,8 +101,8 @@ export const handler = async (event) => {
       body: JSON.stringify({
         model: MODEL,
         messages,
-        temperature: 0.3,
-        max_tokens: 320,
+        temperature: 0.4,
+        max_tokens: 420,
       }),
     });
 
