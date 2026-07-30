@@ -11,15 +11,15 @@
 - **What we are:** a **Generative AI Software Engineering, Development & Research LLC.** We build **AI agents and agentic systems for clients** — using the industry's best existing tools plus our own discipline layer — and we build **our own products** too (TACO Loop, Asymptote, Ag3nt24, HADES). **Public positioning:** lead with what we build *for clients*; the products/research are proof of capability, not the headline. (Site is now split: "Work with us" services up front; research/products as a distinct secondary area.)
 - **Services (client-facing):** custom AI agents; agentic systems & workflows; **legacy modernization** — strangler-fig migration + "protocol-droid" adapter interfaces (our specialty; backed by senior/CTO-level and COBOL-lineage experience); and equipping client teams with agent skills & tools. Humans always keep final authority.
 - **Tagline:** classHuman AI — driven by LAHA (Love All Humans Always)
-- **Status:** LLC registration planned August 2026
+- **Status:** classHuman AI LLC — WA LLC, registered 2026-07-29 (UBI 606 269 742). Single-member (Lawrence 100%). EIN obtained 2026-07-29 (on file in Admin\classHuman-2026\llc-docs).
 - **Prior entity:** OKO Forge LLC d/b/a Crimson Obsidian Industries and Labs (COIL) — **paused. Do not plan or build around COIL products.**
 
 ## Team & Roles
 
 | Person | Roles |
 |---|---|
-| Lawrence Jefferson II (Menoko OG "Original Geek" / M3n0ko0g) | CEO, CTO, Top Engineer, Architect |
-| Nicale Jefferson (LuxgirlOG) | CFO, Head of HR & Operations, Admin (AI ethics, governance) |
+| Lawrence Jefferson II (Menoko OG "Original Geek" / M3n0ko0g) | Sole member/owner (100%). CEO, CTO, Top Engineer, Architect. Owns all engineering, product, and operations outside Nicale's remit — everything else. |
+| Nicale Jefferson (LuxgirlOG) | UX/UI Designer, Head of HR & Operations, Admin (AI ethics & governance). Author of the classHuman governance framework — the rules, ethics, and guardrails a system needs before it is handed real authority. (Operational lead / appointed officer, not a member/owner.) |
 
 - **Security:** shared responsibility between Lawrence and Nicale.
 - **Privacy rule:** Nicale's personal health details are private. In any external or public material, say only "accessibility-first design." Non-negotiable.
@@ -67,7 +67,8 @@
 - [ ] Logos
 - [ ] Brand identity
 - [ ] Business plan
-- [ ] LLC registration (August 2026)
+- [x] LLC registration — done 2026-07-29 (WA); EIN obtained 2026-07-29
+- [ ] WA Initial Report — due by ~2026-11-26; WA Business License (DOR); business bank account
 - [ ] Art line product name
 
 ## Engineering Standards (carried forward — TBI-leverage rules)
