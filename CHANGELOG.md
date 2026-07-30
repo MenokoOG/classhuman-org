@@ -15,6 +15,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
   attribution and an external link. Styled with existing brand tokens and the shared UI kit; no
   new dependencies.
 
+### Fixed
+- **Tonya photo not rendering on mobile** (`/story`). `public/images/tonya.jpg` was a
+  progressive JPEG carrying an embedded ICC color profile — it rendered on desktop but blank on
+  iOS Safari. Re-encoded to a clean baseline sRGB JPEG (profile stripped, colors preserved, same
+  945×945). No markup change.
+
 ## [1.6.0] — 2026-07-29
 ### Added
 - **Legacy Modernization page** (`/legacy`): strangler-fig migration + protocol-droid
