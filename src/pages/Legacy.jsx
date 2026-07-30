@@ -18,6 +18,23 @@ const why = [
   ["Evidence over vibes", "Law-enforcement rigor on process and proof. Every migration step is documented and reversible."],
 ];
 
+const projects = [
+  {
+    title: "GunKustom.com",
+    kind: "Full platform rebuild",
+    href: "https://gunkustom.com",
+    attribution: "OKO Forge LLC, now classHuman AI LLC",
+    body: "Joined as senior backend engineer; CTO within six months. Inherited non-functional codebases on a monolithic build that could not ship. Briefed the engineering team, secured buy-in on a complete rebuild, and delivered v1 to production in twelve months. Architected a hybrid NestJS + Python system to normalize messy multi-format vendor feeds at scale — orchestration and APIs in NestJS, ingestion and ML categorization in Python, canonical inventory in MongoDB. Introduced a modular-monolith gateway pattern that gave the team microservice-style domain separation without microservice operational cost, and a two-tier product model with idempotent upserts and alias-driven matching that improved its own accuracy with every vendor feed.",
+  },
+  {
+    title: "PowAlert.com",
+    kind: "Real-time snowfall alert platform",
+    href: "https://powalert.com",
+    attribution: "OKO Forge LLC, now classHuman AI LLC",
+    body: "Built for the managing partner of a Texas-based capital management firm. A MERN application that pulls resort-level snowfall data from a commercial weather API and pushes alerts to users by SMS and email based on their own thresholds and resort preferences. The engineering problem was reliability at the edges, not the happy path: cron-driven fetch cycles, 24-hour duplicate suppression so a user never gets hit twice for the same storm, phone-number validation before hitting the SMS provider, and batched database reads and writes to keep processing flat as the user base grows.",
+  },
+];
+
 export default function Legacy() {
   return (
     <main>
@@ -130,6 +147,50 @@ export default function Legacy() {
           Every consequential change routes through a human — the TACO discipline, applied to
           migration. Reversible, traceable, and evidenced at each step.
         </p>
+      </section>
+
+      {/* Proof — in production */}
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <Reveal>
+          <Eyebrow>PROOF · IN PRODUCTION</Eyebrow>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
+            The pattern, <GradientText>shipped.</GradientText>
+          </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
+            Not theory. The same instincts — move capability across piece by piece, tame messy
+            inputs at the seam, and keep the system running the whole time — in two production
+            builds.
+          </p>
+        </Reveal>
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          {projects.map((p, i) => (
+            <Reveal key={p.title} delay={i * 55}>
+              <article
+                className="ch-card flex h-full flex-col rounded-lg border border-border-brand bg-card p-6"
+                style={{ "--stage": ACCENT }}
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-xl font-extrabold tracking-tight">{p.title}</h3>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 font-mono text-xs text-cool-safe hover:text-accent-safe"
+                  >
+                    visit &rarr;
+                  </a>
+                </div>
+                <p className="mt-1 font-mono text-xs font-bold tracking-widest" style={{ color: ACCENT }}>
+                  {p.kind.toUpperCase()}
+                </p>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-on-surface/85">{p.body}</p>
+                <p className="mt-5 border-t border-border-brand pt-3 font-mono text-[11px] text-muted-safe">
+                  {p.attribution}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* Why classHuman */}

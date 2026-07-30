@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 **Every PR includes a CHANGELOG entry. Non-negotiable.**
 
 ## [Unreleased]
+### Added
+- **Proof section on the Legacy Modernization page** (`/legacy`): a "PROOF · IN PRODUCTION"
+  block with two production case-study cards — GunKustom.com (full platform rebuild; NestJS +
+  Python vendor-feed normalization, modular-monolith gateway, two-tier idempotent product model)
+  and PowAlert.com (MERN real-time snowfall alerts; cron fetch cycles, 24h duplicate suppression,
+  phone validation, batched DB I/O). Each card carries the "OKO Forge LLC, now classHuman AI LLC"
+  attribution and an external link. Styled with existing brand tokens and the shared UI kit; no
+  new dependencies.
 
 ## [1.6.0] — 2026-07-29
 ### Added
