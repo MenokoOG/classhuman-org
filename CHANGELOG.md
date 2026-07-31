@@ -7,6 +7,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **`/services` — "Work With Us."** The commercial headline of the site: four kinds of
+  engagement (agents and agentic systems on modern platforms and open-source frameworks; legacy
+  modernization; custom work — our own harness and security-agent software; enabling client
+  teams), plus the five-gate control layer — registration, validation, revocation, escalation,
+  human-in-the-loop — written out with the failure each gate prevents. Fail-closed throughout.
+  Linked from the header, both Home CTA groups, and the Ag3nt24 page.
+- **`/skills` — free, installable agent skills.** Publishes the skills classHuman uses on real
+  engagements: `legacy-modernization-scout` and `agent-gate-review`. Each is downloadable as a
+  `.skill` package and as a plain `SKILL.md`, served from `public/skills/`. No signup, no email
+  gate, no tracker.
+- **Banshee knowledge entry for `/skills`**, and a rewritten `services` entry covering the four
+  engagement types and the five gates.
 - **Proof section on the Legacy Modernization page** (`/legacy`): a "PROOF · IN PRODUCTION"
   block with two production case-study cards — GunKustom.com (full platform rebuild; NestJS +
   Python vendor-feed normalization, modular-monolith gateway, two-tier idempotent product model)
@@ -25,7 +37,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
   iOS Safari. Re-encoded to a clean baseline sRGB JPEG (profile stripped, colors preserved, same
   945×945). No markup change.
 
+### Removed
+- **HADES (`/hades`) removed from the site.** Founder ruling 2026-07-31: HADES is scrapped and
+  archived. Deleted `src/pages/Hades.jsx`, its route and page metadata in `App.jsx`, its entry in
+  `src/lib/products.js`, its Layer 2 row in `src/components/Stack.jsx`, and its Banshee knowledge
+  entry. `/hades` now 301s to `/services` in `public/_redirects`, and the sitemap drops it.
+  The escalation and human-in-the-loop capabilities HADES carried are **not** scrapped — they are
+  re-homed as part of the client security-agent offering on `/services`. See
+  `docs/adr/0004-scrap-hades-lead-with-client-engineering.md`.
+
 ### Changed
+- **Ag3nt24's fourth step is now Deny, not Route.** With HADES gone, a failed gate no longer
+  routes anywhere: it denies the action, writes the refusal to the chain, and escalates to a
+  named human. Updated on `/ag3nt24` (flow heading, step 4, hero CTA, "where it sits"), in
+  `products.js`, in `Stack.jsx`, and in the Banshee knowledge pack.
+- **Positioning copy leads with client engineering.** TACO Loop and Ag3nt24 are presented as R&D —
+  the discipline underneath the work — rather than as the thing being sold. Adjusted on `/story`,
+  `/demos`, the Ag3nt24 eyebrow, and `QUICK_FACTS` in the Banshee knowledge pack.
+- **Header navigation** gains "Work With Us" and "Skills".
 - **Banshee upgraded to a proactive classHuman expert.** Rewrote the serverless system prompt to
   give the agent latitude — synthesize across topics, proactively offer the best next step, and
   ask one clarifying question when needed (up to ~140 words) — while keeping the hard guardrails

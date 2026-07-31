@@ -6,9 +6,10 @@ import Home from "./pages/Home.jsx";
 import Product from "./pages/Product.jsx";
 import Asymptote from "./pages/Asymptote.jsx";
 import Ag3nt24 from "./pages/Ag3nt24.jsx";
-import Hades from "./pages/Hades.jsx";
 import Demos from "./pages/Demos.jsx";
 import Legacy from "./pages/Legacy.jsx";
+import Services from "./pages/Services.jsx";
+import Skills from "./pages/Skills.jsx";
 import Story from "./pages/Story.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -42,10 +43,15 @@ const PAGE_META = {
     description:
       "Ag3nt24 gates agent actions through proof gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Built on TACO Loop.",
   },
-  "/hades": {
-    title: "HADES — Diagnostic & Authority Gating — " + SITE,
+  "/services": {
+    title: "Work With Us — Agents & Agentic Systems — " + SITE,
     description:
-      "HADES, the Human Assisted Diagnostic Evaluation System: contain, diagnose, and validate a failing agent — or authorize its deactivation with a human in the loop. Every step to the on-chain ledger.",
+      "classHuman AI builds agents and agentic systems on modern platforms and open-source frameworks, modernizes legacy stacks, and ships custom harness and security-agent software: registration, validation, revocation, escalation, human-in-the-loop.",
+  },
+  "/skills": {
+    title: "Skills — Free Agent Skills from classHuman — " + SITE,
+    description:
+      "Free, installable Claude Skills from classHuman AI's own practice — legacy modernization scouting and agent gate review. Our working method, published, not a sales sheet.",
   },
   "/demos": {
     title: "Demos — Human-in-the-loop by architecture — " + SITE,
@@ -100,9 +106,10 @@ export default function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/asymptote" element={<Asymptote />} />
         <Route path="/ag3nt24" element={<Ag3nt24 />} />
-        <Route path="/hades" element={<Hades />} />
         <Route path="/demos" element={<Demos />} />
         <Route path="/legacy" element={<Legacy />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/skills" element={<Skills />} />
         <Route path="/story" element={<Story />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

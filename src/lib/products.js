@@ -1,4 +1,8 @@
-/* The classHuman AI product catalog — single source of truth.
+/* The classHuman AI research & tooling catalog — single source of truth.
+   R&D is TACO Loop and Ag3nt24 only, each scoped to what it was built for.
+   Asymptote stays as a standalone tool, not part of the stack. HADES was
+   scrapped and archived 2026-07-31 — do not re-add it here.
+   The commercial headline is client engineering; see pages/Services.jsx.
    Consumed by the Header (Products menu), Home (products grid), and the
    Footer. Colors are theme vars (used for per-product accenting via the
    --stage custom property) so products recolor with the active theme. */
@@ -35,18 +39,7 @@ export const PRODUCTS = [
     color: "var(--ch-cool)", // Slate-blue
     hook: "How do you prove what an agent said it did is what it actually did?",
     blurb:
-      "Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. A failed gate routes the agent to HADES.",
-  },
-  {
-    slug: "hades",
-    name: "HADES",
-    tag: "Human Assisted Diagnostic Evaluation System",
-    layer: "Layer 2",
-    status: "HORIZON · paper drafting",
-    color: "var(--ch-muted)", // Stone
-    hook: "It doesn't punish. It gates authority and preserves truth.",
-    blurb:
-      "A failing agent is contained, diagnosed, and — if it passes — returned to service. If not, its lessons are harvested before an authorized deactivation. Every step written to the on-chain ledger.",
+      "Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. Fail-closed: a failed gate denies the action, records it, and escalates to a named human.",
   },
 ];
 

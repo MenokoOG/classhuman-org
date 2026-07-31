@@ -1,1 +1,5 @@
+# HADES was scrapped and archived 2026-07-31. The escalation and
+# human-in-the-loop work it carried now lives in the client harness.
+/hades   /services   301
+
 /*    /index.html   200

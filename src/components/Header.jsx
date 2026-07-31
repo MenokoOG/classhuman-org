@@ -6,7 +6,9 @@ import { Monogram } from "./marks.jsx";
 import { PRODUCTS } from "../lib/products.js";
 
 const topLinks = [
+  { to: "/services", label: "Work With Us" },
   { to: "/legacy", label: "Legacy" },
+  { to: "/skills", label: "Skills" },
   { to: "/demos", label: "Demos" },
   { to: "/story", label: "Story" },
   { to: "/about", label: "About" },

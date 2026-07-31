@@ -81,7 +81,8 @@ export default function Demos() {
             <p className="mt-6 max-w-2xl leading-relaxed text-on-surface/85">
               That&apos;s LAHA in a shipped product: the AI adds convenience, the human keeps
               authority, and the system stays trustworthy even when the model isn&apos;t there.
-              The same discipline our products formalize as TACO, Ag3nt24, and HADES.
+              The same discipline our research formalizes as TACO and Ag3nt24, and that we build
+              into every client system as a harness with real gates.
             </p>
             <p className="mt-8 flex flex-wrap gap-4">
               <Link to="/product" className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90">
