@@ -22,9 +22,9 @@ export const KNOWLEDGE = [
   {
     id: "services",
     title: "What classHuman builds for clients",
-    path: "/",
-    keywords: ["services", "build", "client", "clients", "hire", "custom", "workflow", "workflows", "agentic", "tools", "work", "help", "business", "develop", "development", "make"],
-    text: "classHuman AI builds AI agents and agentic systems for clients, using the industry's best existing tools plus its own discipline layer. Services: custom AI agents wired into your systems and data; multi-agent agentic workflows with guardrails and human approval; legacy modernization; and equipping your team with agent skills and tools to keep going after we leave. Humans always keep final authority. To start a build, use the contact page.",
+    path: "/services",
+    keywords: ["services", "build", "client", "clients", "hire", "custom", "workflow", "workflows", "agentic", "tools", "work", "help", "business", "develop", "development", "make", "harness", "security", "registration", "validation", "revocation", "escalation", "gates"],
+    text: "classHuman AI builds AI agents and agentic systems for clients on modern platforms and open-source frameworks — the client keeps their tooling, their cloud, and their exit options. Four kinds of engagement: agents and agentic systems (build); legacy modernization (migrate); custom work — our own harness and security-agent software (custom); and enabling your team to keep going without us (hand off). The security-agent layer is five controls: registration (is this agent known?), validation (is this action legitimate, checked before it happens?), revocation (can authority be withdrawn right now?), escalation (what happens when confidence is low?), and human-in-the-loop (is final authority actually held by a person?). Fail-closed throughout: a failed gate denies the action, records the refusal, and escalates to a named human. See the Work With Us page.",
   },
   {
     id: "legacy",
@@ -59,14 +59,14 @@ export const KNOWLEDGE = [
     title: "Ag3nt24 — the proof layer",
     path: "/ag3nt24",
     keywords: ["ag3nt24", "agent24", "aurora", "proof", "receipt", "receipts", "signed", "gate", "gates", "append", "audit", "layer"],
-    text: "Ag3nt24 is the proof layer (Layer 1, built on TACO). It answers: how do you prove what an AI agent said it did is what it actually did? Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. Flow: Act, Gate, Receipt, Route. A failed gate routes the agent to HADES. Renamed from Aurora 24 / A-24. Status: next; white paper in drafting.",
+    text: "Ag3nt24 is the proof layer (Layer 1, built on TACO). It answers: how do you prove what an AI agent said it did is what it actually did? Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. Flow: Act, Gate, Receipt, Deny. It is fail-closed by construction — every uncertainty resolves to deny. A failed gate denies the action, writes the refusal to the chain, and escalates to a named human. Renamed from Aurora 24 / A-24. Status: R&D; white paper in drafting.",
   },
   {
-    id: "hades",
-    title: "HADES — diagnostic & authority gating",
-    path: "/hades",
-    keywords: ["hades", "diagnostic", "evaluation", "deactivation", "rehabilitation", "sandbox", "contain", "ledger", "on-chain", "authority"],
-    text: "HADES is the Human Assisted Diagnostic Evaluation System (Layer 2). A failing agent is contained in a sandbox, diagnosed, and — if it passes — validated and returned to service. If it cannot be repaired, its experience and lessons are harvested, then HADES becomes the Human Authorized Deactivation Evidence Sequence. Either path is documented to the on-chain ledger; a human holds final authority. It doesn't punish — it gates authority and preserves truth. Status: horizon; white paper in drafting.",
+    id: "skills",
+    title: "Free agent skills from classHuman",
+    path: "/skills",
+    keywords: ["skill", "skills", "download", "free", "install", "claude", "open", "method", "scout", "gate", "review", "checklist", "resources"],
+    text: "classHuman publishes the skills it uses on real engagements, free and installable. Two are available now. legacy-modernization-scout maps a legacy system before anyone commits to a rewrite — it inventories the surfaces, finds the seams, designs the adapters, and ranks strangler-fig slices by value against reversibility, marking every finding Confirmed, Inferred, or Unknown; it produces MODERNIZATION-SCOUT.md. agent-gate-review reviews an agent against the five authority gates — registration, validation, revocation, escalation, human-in-the-loop — rating each Enforced, Advisory, Absent, or Unknown with a concrete failure scenario; it produces AGENT-GATE-REVIEW.md. Both ship as a .skill package and a plain SKILL.md. No signup, no email gate. See the Skills page.",
   },
   {
     id: "demos",
@@ -130,5 +130,5 @@ export const KNOWLEDGE = [
 /* One-line facts Banshee may state directly (used to seed the offline greeting). */
 export const QUICK_FACTS = {
   positioning: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC.",
-  products: "TACO Loop, Asymptote, Ag3nt24, and HADES.",
+  products: "Client work first — agents, agentic systems, legacy modernization, and our own harness and security-agent software. R&D: TACO Loop and Ag3nt24. Asymptote is a standalone tool.",
 };

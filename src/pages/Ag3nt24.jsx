@@ -8,14 +8,14 @@ const steps = [
   ["1 · Act", "An agent proposes an action inside a workflow.", "The agent inherits TACO's guardrails — nothing bypasses the loop."],
   ["2 · Gate", "The action passes through a proof gate.", "Permission, scope, safety, and reversibility are checked before anything runs."],
   ["3 · Receipt", "A signed, append-only receipt is written.", "What the agent did becomes provable — not just logged. Tamper-evident by construction."],
-  ["4 · Route", "A failed gate routes the agent to HADES.", "Misbehavior isn't dropped or hidden; it's contained and diagnosed."],
+  ["4 · Deny", "A failed gate denies the action and escalates.", "Fail-closed by construction: every uncertainty resolves to deny. The refusal is written to the chain and routed to a named human — nothing is dropped, nothing proceeds on the model's own judgment."],
 ];
 
 export default function Ag3nt24() {
   return (
     <main>
       <ProductHero
-        eyebrow="PRODUCT · AG3NT24 · LAYER 1"
+        eyebrow="R&D · AG3NT24 · LAYER 1"
         color={P.color}
         title={
           <>
@@ -34,8 +34,8 @@ export default function Ag3nt24() {
           <Link to="/product" className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90">
             Built on TACO Loop
           </Link>
-          <Link to="/hades" className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe">
-            Where failed gates go — HADES
+          <Link to="/services" className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe">
+            The same gates, in client work
           </Link>
         </div>
       </ProductHero>
@@ -60,7 +60,7 @@ export default function Ag3nt24() {
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Reveal>
           <Eyebrow>HOW A GATED ACTION FLOWS</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">Act → Gate → Receipt → Route.</h2>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">Act → Gate → Receipt → Deny.</h2>
         </Reveal>
         <ol className="mt-8 space-y-3.5">
           {steps.map(([title, what, why], i) => (
@@ -91,7 +91,8 @@ export default function Ag3nt24() {
             </h2>
             <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
               Agents inherit TACO&apos;s guardrails; Ag3nt24 makes their actions provable; a
-              failed gate routes the agent down to HADES for diagnosis. One system, in layers.
+              failed gate denies, records, and escalates to a human. Two layers, one discipline
+              — and the same discipline is what we bring to client builds.
             </p>
             <p className="mt-8 flex flex-wrap gap-4">
               <Link to="/product" className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90">

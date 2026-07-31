@@ -119,8 +119,8 @@ export function StatusPill({ children, color, className = "" }) {
   );
 }
 
-/* Standard product-page hero — used by TACO/Asymptote/Ag3nt24/HADES so the
-   product line reads as one system. */
+/* Standard product-page hero — used by TACO/Asymptote/Ag3nt24 and the service
+   pages so the whole site reads as one system. */
 export function ProductHero({ eyebrow, title, lead, color, children }) {
   return (
     <section className="relative overflow-hidden">

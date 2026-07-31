@@ -100,7 +100,8 @@ export default function Story() {
             one condition: humans keep final authority, and agents stay accountable for what they
             do. That&apos;s the whole reason classHuman builds a{" "}
             <GradientText>control layer</GradientText> instead of another agent — TACO Loop for the
-            discipline, Ag3nt24 for the proof, HADES for the authority.
+            discipline, Ag3nt24 for the proof, and a harness in every client build that decides
+            what an agent is allowed to do before it does it.
           </P>
         </Reveal>
 

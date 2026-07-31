@@ -73,6 +73,12 @@ export default function Home() {
               Work with us
             </Link>
             <Link
+              to="/services"
+              className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+            >
+              What we build →
+            </Link>
+            <Link
               to="/legacy"
               className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
@@ -240,10 +246,16 @@ export default function Home() {
               Work with us
             </Link>
             <Link
-              to="/legacy"
+              to="/services"
               className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
-              Legacy modernization
+              What we build
+            </Link>
+            <Link
+              to="/skills"
+              className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+            >
+              Free agent skills
             </Link>
           </div>
         </div>

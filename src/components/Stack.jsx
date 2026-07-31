@@ -1,7 +1,9 @@
-/* The product stack — TACO is the root layer. Shared by Home + Product.
-   Ag3nt24 & HADES white papers are IN DRAFTING (Handler, 2026-07-06) — copy
-   below reflects the true design intent from docs/upcoming-layers/ but
-   details may evolve until the papers are final. Colors are theme vars. */
+/* The research stack — TACO is the root layer, Ag3nt24 enforces it. Shared by
+   Home + Product. HADES was scrapped and archived 2026-07-31; the escalation
+   and human-in-the-loop work it carried now lives in the client harness (see
+   pages/Services.jsx). Do not re-add a Layer 2 here.
+   The Ag3nt24 white paper is IN DRAFTING — copy below reflects design intent
+   from docs/upcoming-layers/ but may evolve. Colors are theme vars. */
 
 export const STACK = [
   {
@@ -18,15 +20,7 @@ export const STACK = [
     pill: "NEXT",
     color: "var(--ch-cool)",
     hook: "How do you prove what an AI agent said it did is what it actually did?",
-    desc: "The proof layer. Agent actions pass through gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Agents inherit TACO's guardrails; a failed gate routes the agent to HADES.",
-  },
-  {
-    name: "HADES",
-    layer: "Layer 2",
-    pill: "HORIZON",
-    color: "var(--ch-muted)",
-    hook: "It doesn't punish. It gates authority and preserves truth.",
-    desc: "Human Assisted Diagnostic Evaluation System. A failing agent is contained in a sandbox, diagnosed, and — if it passes — validated and returned to service. If it can't be, its experience and lessons are harvested and HADES becomes the Human Authorized Deactivation Evidence Sequence. Either way, every step is documented to the on-chain ledger.",
+    desc: "The proof layer. Agent actions pass through gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Agents inherit TACO's guardrails, and the kernel is fail-closed: every uncertainty resolves to deny. A failed gate denies the action, writes it to the chain, and escalates to a named human.",
   },
 ];
 
@@ -70,7 +64,7 @@ export default function StackRows() {
       ))}
       </ol>
       <p className="mt-4 font-mono text-xs text-muted-safe">
-        Ag3nt24 and HADES white papers are in active drafting — details may evolve.
+        The Ag3nt24 white paper is in active drafting — details may evolve.
       </p>
     </>
   );
