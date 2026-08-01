@@ -12,6 +12,7 @@ import Services from "./pages/Services.jsx";
 import Skills from "./pages/Skills.jsx";
 import Story from "./pages/Story.jsx";
 import About from "./pages/About.jsx";
+import Credentials from "./pages/Credentials.jsx";
 import Contact from "./pages/Contact.jsx";
 import BansheeWidget from "./banshee/BansheeWidget.jsx";
 
@@ -68,6 +69,11 @@ const PAGE_META = {
     description:
       "A two-person company with a spine. Lawrence and Nicale Jefferson — a Generative AI Software Engineering, Development & Research LLC. Accessibility-first design, humans holding final authority.",
   },
+  "/credentials": {
+    title: "Credentials — Education, Training & Certifications — " + SITE,
+    description:
+      "The training behind the work: Lawrence Jefferson II's education, engineering training, and certifications — 24 years U.S. Army, full-stack engineering programs, and current-generation AI-agent credentials from AWS, Vanderbilt, Google, IBM, and the Python Institute.",
+  },
   "/contact": {
     title: "Contact — " + SITE,
     description: "Talk to classHuman AI. No forms, no trackers — just email.",
@@ -112,6 +118,7 @@ export default function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/story" element={<Story />} />
         <Route path="/about" element={<About />} />
+        <Route path="/credentials" element={<Credentials />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>

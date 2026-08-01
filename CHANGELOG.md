@@ -7,6 +7,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **`/credentials` — Education, Training & Certifications.** A data-driven page listing
+  Lawrence's education (AMU associate's degree, 24 years U.S. Army), intensive engineering
+  programs (V School / UVU full-stack JavaScript, Syracuse University boot camp), 2026
+  AI-agent professional certificates and specializations (AWS Generative AI & AI Agents with
+  Amazon Bedrock; Vanderbilt Generative AI Software Engineering and AI Agents with Model
+  Context Protocol; Google AI Professional Certificate; Google Cybersecurity Certificate),
+  Python Institute PCAP/PCEP, ITIL 4 Foundation, Udemy AI-engineering courses, and IBM
+  SkillsBuild badges. Linked from an "Education & Certifications" button on Lawrence's card
+  on `/about`; route, page metadata, and sitemap entry added. Names, issuers, and dates
+  only — no transcripts or personal documents. Styled with the existing UI kit; no new
+  dependencies.
 - **`/services` — "Work With Us."** The commercial headline of the site: four kinds of
   engagement (agents and agentic systems on modern platforms and open-source frameworks; legacy
   modernization; custom work — our own harness and security-agent software; enabling client
