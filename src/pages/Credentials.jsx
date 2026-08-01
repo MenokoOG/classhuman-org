@@ -104,6 +104,25 @@ const CREDENTIALS = [
   { title: "Crash Course on Python", org: "Google · Coursera", date: "Oct 2022" },
 ];
 
+/* Currently in progress — update as milestones land. */
+const IN_PROGRESS = [
+  {
+    title: "Cybersecurity Program — Lakewood University",
+    org: "VET TEC 2.0 · Aug – Nov 2026",
+    note: "Four-course program in progress: Introduction to Computers, Networking Fundamentals, IT Project Management, and Network Security Management.",
+  },
+  {
+    title: "Google Generative AI Leader Professional Certificate",
+    org: "Google · Coursera",
+    note: "In progress alongside the Lakewood program.",
+  },
+  {
+    title: "AI Engineer Path",
+    org: "Scrimba",
+    note: "Ongoing — Scrimba also featured Lawrence's work as \"Portfolio of the Week\" (May 2026).",
+  },
+];
+
 const IBM_BADGES = [
   "Foundations in Generative AI",
   "Introduction to Large Language Models",
@@ -267,8 +286,24 @@ export default function Credentials() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* In progress */}
       <section className="mx-auto max-w-5xl px-6 py-16">
+        <Reveal>
+          <Eyebrow>IN PROGRESS · 2026</Eyebrow>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
+            The training never stops.
+          </h2>
+        </Reveal>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {IN_PROGRESS.map((c, i) => (
+            <CredentialCard key={c.title} {...c} delay={i * 60} />
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t border-border-brand bg-card/60">
+        <div className="mx-auto max-w-5xl px-6 py-16">
         <Reveal>
           <Eyebrow>WHAT THIS BUYS YOU</Eyebrow>
           <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight">
@@ -293,6 +328,7 @@ export default function Credentials() {
             </Link>
           </p>
         </Reveal>
+        </div>
       </section>
     </main>
   );

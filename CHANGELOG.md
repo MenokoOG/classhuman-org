@@ -7,6 +7,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **"In Progress · 2026" section on `/credentials`.** Adds current training: the Lakewood
+  University Cybersecurity Program (VET TEC 2.0, Aug–Nov 2026 — COMP100, NETF200, PJMG100,
+  NETM200), the Google Generative AI Leader Professional Certificate (Coursera), and the
+  Scrimba AI Engineer path. Founder ruling 2026-08-01: the Algorythm DSA bootcamp is dropped
+  in favor of the VET TEC program and is not listed.
 - **"How we build" section on `/services`.** Publishes the build stack: Strands Agents
   (strandsagents.com) named as the primary framework for custom and production agent builds —
   open-source, model-driven, provider-portable — alongside big-tech agent tooling. States
