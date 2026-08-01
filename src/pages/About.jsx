@@ -44,6 +44,14 @@ export default function About() {
                 <li><a href="https://linkedin.com/in/lawrence-jefferson-ii-46497075" target="_blank" rel="noopener noreferrer" className={linkClass}>LINKEDIN</a></li>
                 <li><a href="https://github.com/MenokoOG" target="_blank" rel="noopener noreferrer" className={linkClass}>GITHUB</a></li>
               </ul>
+              <p className="mt-5">
+                <Link
+                  to="/credentials"
+                  className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-bold text-on-primary hover:opacity-90"
+                >
+                  Education &amp; Certifications →
+                </Link>
+              </p>
             </article>
           </Reveal>
 
