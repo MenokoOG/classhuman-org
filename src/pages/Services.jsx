@@ -66,6 +66,16 @@ const gates = [
   ],
 ];
 
+/* The build stack we publish: Strands Agents is the primary framework for
+   custom/production agent builds; the platform grid is what we're fluent on.
+   Keep truthful — only list platforms we actually work with. */
+const platforms = [
+  ["AWS", ["Amazon Bedrock", "SageMaker", "Kiro"]],
+  ["Google", ["Google AI Studio"]],
+  ["IBM", ["watsonx", "IBM Bob"]],
+  ["Microsoft", ["Microsoft Agent Framework"]],
+];
+
 export default function Services() {
   return (
     <main>
@@ -168,6 +178,64 @@ export default function Services() {
           escalates to a named human. There is no &ldquo;warn and continue&rdquo; — a warning
           nobody blocks on is a log line.
         </p>
+      </section>
+
+      {/* How we build — framework & platforms */}
+      <section className="border-t border-border-brand bg-card/60">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <Reveal>
+            <Eyebrow>HOW WE BUILD · FRAMEWORK & PLATFORMS</Eyebrow>
+            <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight">
+              One framework at the core, <GradientText>fluent across the stack.</GradientText>
+            </h2>
+            <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
+              Our primary framework for custom and production agent builds is{" "}
+              <a
+                href="https://strandsagents.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                Strands Agents
+              </a>{" "}
+              — the open-source, model-driven agent SDK. It keeps our builds portable across
+              model providers, observable in production, and governable by the five gates
+              above — with big-tech agent tooling alongside wherever the job calls for it.
+            </p>
+            <p className="mt-4 max-w-2xl leading-relaxed text-on-surface/85">
+              We work with — and are at home in — all the foundation and frontier models and
+              their pipelines, on the platforms your team already runs:
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {platforms.map(([vendor, tools], i) => (
+              <Reveal key={vendor} delay={i * 55}>
+                <article
+                  className="ch-card h-full rounded-lg border border-border-brand bg-surface p-6"
+                  style={{ "--stage": ACCENT }}
+                >
+                  <p className="font-mono text-xs font-bold tracking-widest" style={{ color: ACCENT }}>
+                    {vendor.toUpperCase()}
+                  </p>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {tools.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-md border border-border-brand bg-card px-3 py-1.5 text-sm font-semibold"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-safe">
+            Framework and platform are the tools; the five gates and TACO discipline are what
+            make the result safe to hand authority. Both travel with every build.
+          </p>
+        </div>
       </section>
 
       {/* The discipline underneath */}
