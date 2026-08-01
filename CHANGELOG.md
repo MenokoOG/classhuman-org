@@ -7,6 +7,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **"How we build" section on `/services`.** Publishes the build stack: Strands Agents
+  (strandsagents.com) named as the primary framework for custom and production agent builds —
+  open-source, model-driven, provider-portable — alongside big-tech agent tooling. States
+  fluency across foundation and frontier models and their pipelines, with a platform grid:
+  AWS (Amazon Bedrock, SageMaker, Kiro), Google (AI Studio), IBM (watsonx, IBM Bob), and
+  Microsoft (Agent Framework). Existing tokens and UI kit; no new dependencies.
 - **`/credentials` — Education, Training & Certifications.** A data-driven page listing
   Lawrence's education (AMU associate's degree, 24 years U.S. Army), intensive engineering
   programs (V School / UVU full-stack JavaScript, Syracuse University boot camp), 2026
