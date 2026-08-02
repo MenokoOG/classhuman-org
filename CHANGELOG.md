@@ -7,6 +7,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **GitHub Spec Kit added to the build stack on `/services`.** New GitHub row in the
+  platform grid and a spec-first line in the "How we build" copy: define what to build
+  before building it — spec, plan, tasks, then implementation.
 - **"In Progress · 2026" section on `/credentials`.** Adds current training: the Lakewood
   University Cybersecurity Program (VET TEC 2.0, Aug–Nov 2026 — COMP100, NETF200, PJMG100,
   NETM200), the Google Generative AI Leader Professional Certificate (Coursera), and the

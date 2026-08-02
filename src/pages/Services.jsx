@@ -74,6 +74,7 @@ const platforms = [
   ["Google", ["Google AI Studio"]],
   ["IBM", ["watsonx", "IBM Bob"]],
   ["Microsoft", ["Microsoft Agent Framework"]],
+  ["GitHub", ["Spec Kit — spec-driven development"]],
 ];
 
 export default function Services() {
@@ -201,6 +202,17 @@ export default function Services() {
               — the open-source, model-driven agent SDK. It keeps our builds portable across
               model providers, observable in production, and governable by the five gates
               above — with big-tech agent tooling alongside wherever the job calls for it.
+              The work itself runs spec-first with{" "}
+              <a
+                href="https://github.github.com/spec-kit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                GitHub&apos;s Spec Kit
+              </a>
+              : define what to build before building it — spec, plan, tasks, then
+              implementation.
             </p>
             <p className="mt-4 max-w-2xl leading-relaxed text-on-surface/85">
               We work with — and are at home in — all the foundation and frontier models and
