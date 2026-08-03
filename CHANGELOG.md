@@ -7,6 +7,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **Proficient AI Engineer program certificate on `/credentials`** (Ed Donner, Aug 2026 —
+  full-curriculum completion with six tracks: Core, Agentic, MLOps, AI Coder, AI Builder,
+  AI Leadership). The three individual Ed Donner course entries are removed — superseded by
+  the program certificate. The Algorythm in-progress line was already dropped per the
+  2026-08-01 ruling; in-progress list unchanged.
+- **"Our daily agentic stack" section on Home and `/services`** (`src/components/DailyStack.jsx`,
+  one shared component, same single-source pattern as `StackRows`): the agentic IDEs, models, and
+  frameworks in daily use — Claude / Claude Code, OpenAI Codex, Cursor, Grok, Gemini / Gemini CLI,
+  Google AI Studio, Kiro, Microsoft Agent Framework, GitHub Copilot (VS Code), Microsoft 365
+  Copilot, NotebookLM. Founder-supplied list, 2026-08-02. Text chips only, no logos (trademark).
 - **GitHub Spec Kit added to the build stack on `/services`.** New GitHub row in the
   platform grid and a spec-first line in the "How we build" copy: define what to build
   before building it — spec, plan, tasks, then implementation.
