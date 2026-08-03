@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Eyebrow, GradientText, Reveal, TraceField, StatusPill } from "../components/ui.jsx";
 import { PRODUCTS } from "../lib/products.js";
+import DailyStack from "../components/DailyStack.jsx";
 
 const SERVICES = [
   {
@@ -156,6 +157,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Daily agentic stack ────────────────────────────── */}
+      <DailyStack />
 
       {/* ── LAHA ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-6 py-20">

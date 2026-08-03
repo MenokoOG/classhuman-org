@@ -37,6 +37,21 @@ const PROGRAMS = [
 /* Professional certificates & specializations — multi-course credentials. */
 const CERTIFICATES = [
   {
+    title: "Proficient AI Engineer — Full Program Completion",
+    org: "Ed Donner · proficientaiengineer.com",
+    date: "Aug 2026",
+    kind: "PROGRAM CERTIFICATE",
+    note: "Completion of Ed Donner's full AI curriculum and deployment of an AI application. Supersedes the individual course certificates listed in earlier versions of this page.",
+    courses: [
+      "AI Engineer Core Track — LLM Engineering, RAG, QLoRA, Agents",
+      "AI Engineer Agentic Track — Agent Architectures, Frameworks & MCP",
+      "AI Engineer MLOps Track — Vercel, AWS, GCP, Azure, LangFlow",
+      "AI Coder — Agentic Engineering with Coding Agents",
+      "AI Builder — Create Agents and Voice Agents with n8n",
+      "AI Leadership — Commercial Value with AI",
+    ],
+  },
+  {
     title: "AWS Generative AI and AI Agents with Amazon Bedrock",
     org: "Amazon Web Services · Coursera",
     date: "Jul 2026",
@@ -97,9 +112,6 @@ const CREDENTIALS = [
   { title: "PCAP — Certified Associate in Python Programming", org: "Python Institute", },
   { title: "PCEP — Certified Entry-Level Python Programmer", org: "Python Institute", date: "Dec 2022" },
   { title: "ITIL 4® Foundation", org: "PeopleCert · ACI Learning / LeaderQuest", date: "Mar 2022" },
-  { title: "AI Coder: Complete Claude Code & Coding Agents Course", org: "Ed Donner · Ligency · Udemy" },
-  { title: "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents", org: "Ed Donner · Ligency · Udemy" },
-  { title: "AI Leader: Generative AI & Agentic AI for Leaders & Founders", org: "Ed Donner · Ligency · Udemy" },
   { title: "Complete Python Developer: Zero to Mastery", org: "Andrei Neagoie · Udemy" },
   { title: "Crash Course on Python", org: "Google · Coursera", date: "Oct 2022" },
 ];

@@ -8,6 +8,7 @@
 
 import { Link } from "react-router-dom";
 import { Eyebrow, GradientText, Reveal, ProductHero, StatusPill } from "../components/ui.jsx";
+import DailyStack from "../components/DailyStack.jsx";
 
 const ACCENT = "var(--ch-primary)";
 
@@ -139,6 +140,9 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* Daily agentic stack */}
+      <DailyStack lead="Every tool in this row is in our hands daily — agentic IDEs, models, and frameworks across every major ecosystem. That breadth is why we can build on your stack instead of forcing ours, and pick the right tool for each job on the evidence." />
 
       {/* The five gates */}
       <section className="mx-auto max-w-5xl px-6 py-16">
