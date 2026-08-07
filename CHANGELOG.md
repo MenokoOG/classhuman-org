@@ -7,6 +7,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 ### Added
+- **"The Instrument" — new `/instrument` route** (`src/instrument/`), built from the
+  `brand/classHuman AI brand identity/design_handoff_instrument/` handoff. A single
+  interactive page that enforces the Core Product Law on itself: one uncertainty slider
+  governs a plotted graph (Fig. 01), a live decision gate (Fig. 02), a scroll-driven
+  sticky loop stack (Fig. 03), and the non-claims table (Fig. 04). Past θ = 0.50 the
+  decision rows blur, stamp `HELD`, and withhold their contents until a human clicks
+  **Release**. `instrument.ts` from the handoff is used verbatim — all formulas, data,
+  and plot geometry come from it; none of the math is reimplemented.
+
+  The route mounts **outside** the site `Layout`, so it carries its own masthead, ticker,
+  and colophon and inherits no seasonal header, footer, or Banshee widget. All styling is
+  scoped under a `.instrument` root class in `src/instrument/instrument.css`, with its own
+  local `--paper`/`--ink`/`--ember` tokens — the 4-season brand in `brand/tokens.css`
+  remains canonical for every other page and is untouched. Verified in-browser: zero
+  rounded corners, zero gradients, zero box-shadows across the rendered subtree; slider
+  keyboard-operable; no console errors.
+
+- **Hanken Grotesk weight 300** added to the Google Fonts request in `index.html`. The
+  Instrument's large statements are set at light weight; existing pages are unaffected.
+
 - **Proficient AI Engineer program certificate on `/credentials`** (Ed Donner, Aug 2026 —
   full-curriculum completion with six tracks: Core, Agentic, MLOps, AI Coder, AI Builder,
   AI Leadership). The three individual Ed Donner course entries are removed — superseded by
@@ -73,6 +93,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
   945×945). No markup change.
 
 ### Removed
+- **Tonya's photo removed from `/story`.** Founder request 2026-08-07. Dropped the whole
+  `<figure>` — the image and its "Tonya. The reason for LAHA." caption, since a figcaption
+  with no figure is broken markup. Every other mention stays: the hero's "In memory of
+  Tonya," the account of July 27th, and the closing memorial line. `public/images/tonya.jpg`
+  is left on disk but is no longer referenced anywhere in the codebase.
+
 - **HADES (`/hades`) removed from the site.** Founder ruling 2026-07-31: HADES is scrapped and
   archived. Deleted `src/pages/Hades.jsx`, its route and page metadata in `App.jsx`, its entry in
   `src/lib/products.js`, its Layer 2 row in `src/components/Stack.jsx`, and its Banshee knowledge
