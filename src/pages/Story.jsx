@@ -26,13 +26,6 @@ export default function Story() {
       </section>
 
       <div className="mx-auto max-w-2xl px-6 pb-24 text-lg">
-        <figure className="mt-8">
-          <img src="/images/tonya.jpg" alt="Tonya" className="mx-auto w-full max-w-sm rounded-lg" />
-          <figcaption className="mt-3 text-center font-mono text-xs text-muted-safe">
-            Tonya. The reason for LAHA.
-          </figcaption>
-        </figure>
-
         <Reveal>
           <H2>The year the ground gave out</H2>
           <P>

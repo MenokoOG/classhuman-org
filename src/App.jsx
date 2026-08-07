@@ -15,6 +15,7 @@ import About from "./pages/About.jsx";
 import Credentials from "./pages/Credentials.jsx";
 import Contact from "./pages/Contact.jsx";
 import BansheeWidget from "./banshee/BansheeWidget.jsx";
+import Instrument from "./instrument/Instrument.jsx";
 
 const SITE = "classHuman AI";
 
@@ -121,6 +122,13 @@ export default function App() {
         <Route path="/credentials" element={<Credentials />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
+
+      {/*
+        "The Instrument" sits outside Layout on purpose: it carries its own
+        masthead, ticker, and colophon, and must not inherit the seasonal
+        header, footer, or brand tokens.
+      */}
+      <Route path="/instrument" element={<Instrument />} />
     </Routes>
   );
 }
