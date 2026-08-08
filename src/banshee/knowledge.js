@@ -17,21 +17,21 @@ export const KNOWLEDGE = [
     title: "classHuman AI — who we are",
     path: "/about",
     keywords: ["company", "classhuman", "who", "what", "about", "llc", "firm", "engineering", "research", "generative", "positioning", "mission"],
-    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build AI agents and agentic systems for clients — using the industry's best existing tools plus our own discipline layer — and we build our own products too. Across everything, humans keep final authority over their agents. It's a father-and-daughter, two-person company: Lawrence Jefferson II (CEO, CTO, and architect — he owns the engineering and product) and Nicale Jefferson (UX/UI designer, head of HR & operations, and AI ethics & governance — she authors the governance framework). classHuman AI is a registered Washington LLC (July 2026).",
+    text: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC. We build and run AI agents and agentic systems for clients using the best tools the field already has — the client keeps their tooling and their exit options. We do research too, but it is a separate, secondary line and it does not go into client builds until it is proven. Across everything, humans keep final authority over their agents. It's a father-and-daughter, two-person company: Lawrence Jefferson II (CEO, CTO, and architect — he owns the engineering and product) and Nicale Jefferson (UX/UI designer, head of HR & operations, and AI ethics & governance — she authors the governance framework). classHuman AI is a registered Washington LLC (July 2026).",
   },
   {
     id: "services",
     title: "What classHuman builds for clients",
     path: "/services",
     keywords: ["services", "build", "client", "clients", "hire", "custom", "workflow", "workflows", "agentic", "tools", "work", "help", "business", "develop", "development", "make", "harness", "security", "registration", "validation", "revocation", "escalation", "gates"],
-    text: "classHuman AI builds AI agents and agentic systems for clients on modern platforms and open-source frameworks — the client keeps their tooling, their cloud, and their exit options. Four kinds of engagement: agents and agentic systems (build); legacy modernization (migrate); custom work — our own harness and security-agent software (custom); and enabling your team to keep going without us (hand off). The security-agent layer is five controls: registration (is this agent known?), validation (is this action legitimate, checked before it happens?), revocation (can authority be withdrawn right now?), escalation (what happens when confidence is low?), and human-in-the-loop (is final authority actually held by a person?). Fail-closed throughout: a failed gate denies the action, records the refusal, and escalates to a named human. See the Work With Us page.",
+    text: "classHuman AI builds AI agents and agentic systems for clients on modern platforms and open-source frameworks — the client keeps their tooling, their cloud, and their exit options. Four kinds of engagement: agents and agentic systems (build); legacy modernization (migrate); custom work shaped to the client's own stack (custom); and enabling your team to keep going without us (hand off). Every build is held to five authority controls: registration (is this agent known?), validation (is this action legitimate, checked before it happens?), revocation (can authority be withdrawn right now?), escalation (what happens when confidence is low?), and human-in-the-loop (is final authority actually held by a person?). Fail-closed throughout: a failed gate denies the action, records the refusal, and escalates to a named human. These are enforced with proven, off-the-shelf tooling — classHuman does not put its own unproven research into client systems. See the Work With Us page.",
   },
   {
     id: "legacy",
     title: "Legacy modernization",
     path: "/legacy",
     keywords: ["legacy", "modernize", "modernization", "old", "mainframe", "cobol", "migrate", "migration", "strangler", "fig", "protocol", "droid", "droids", "interface", "upgrade", "rewrite"],
-    text: "classHuman modernizes legacy software without a rip-and-replace. Approach: the strangler-fig pattern (grow the new system around the old one, replacing it capability by capability while it keeps running) and protocol-droid interfaces (adapter agents fluent in both the legacy system's protocols and a modern agentic stack). Backed by senior and CTO-level experience — 24 years U.S. Army operational discipline, senior full-stack engineering, and a COBOL lineage — so no stack is too old. Optionally, classHuman hands your team the agent skills and tools to run the migration themselves. See the Legacy page.",
+    text: "classHuman modernizes legacy software, usually without a rip-and-replace. There is no single prescribed method — we read the system first, then pick the pattern that fits. The working set includes strangler fig (grow the new system around the old one, capability by capability, while it keeps running), branch by abstraction, parallel run, event interception, an anti-corruption layer, encapsulation behind a facade, and a straight rewrite when that is honestly the cheapest path — we will say so if it is. Protocol-droid interfaces (adapter agents fluent in both the legacy system's protocols and a modern agentic stack) are how we bridge the two sides. Backed by senior and CTO-level experience — 24 years U.S. Army operational discipline, senior full-stack engineering, and a COBOL lineage — so no stack is too old. Optionally, classHuman hands your team the agent skills and tools to run the migration themselves. See the Legacy page.",
   },
   {
     id: "laha",
@@ -45,7 +45,7 @@ export const KNOWLEDGE = [
     title: "TACO Loop — decision-control architecture",
     path: "/product",
     keywords: ["taco", "loop", "decision", "control", "architecture", "product", "guardrail", "uncertainty", "stages", "take", "assess", "choose", "operate"],
-    text: "TACO Loop is a decision-control architecture for unknown-data environments — a control layer for agents, humans, and workflows, not another agent. TACO = Take In unknowns, Assess and align, Choose correctly, Operate and observe outcome. Its Core Product Law: unknown data must increase decision discipline, not model confidence. Risk above 0.50 routes to a human; actions are bounded, reversible, and traceable with a SHA-256 hash-chained audit trail. Credentials: White Paper v1.0 (published July 2026) and Mathematical Model v0.1. Status: building, MVP.",
+    text: "TACO Loop is a decision-control architecture for unknown-data environments — a control layer for agents, humans, and workflows, not another agent. TACO = Take In unknowns, Assess and align, Choose correctly, Operate and observe outcome. Its Core Product Law: unknown data must increase decision discipline, not model confidence. Risk above 0.50 routes to a human; actions are bounded, reversible, and traceable with a SHA-256 hash-chained audit trail. Credentials: White Paper v1.0 (published July 2026) and Mathematical Model v0.1. Status: research, currently PAUSED while classHuman builds the company. It is not a product you can buy and it is not used in client builds.",
   },
   {
     id: "asymptote",
@@ -59,7 +59,28 @@ export const KNOWLEDGE = [
     title: "Ag3nt24 — the proof layer",
     path: "/ag3nt24",
     keywords: ["ag3nt24", "agent24", "aurora", "proof", "receipt", "receipts", "signed", "gate", "gates", "append", "audit", "layer"],
-    text: "Ag3nt24 is the proof layer (Layer 1, built on TACO). It answers: how do you prove what an AI agent said it did is what it actually did? Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. Flow: Act, Gate, Receipt, Deny. It is fail-closed by construction — every uncertainty resolves to deny. A failed gate denies the action, writes the refusal to the chain, and escalates to a named human. Renamed from Aurora 24 / A-24. Status: R&D; white paper in drafting.",
+    text: "Ag3nt24 is the proof layer (Layer 1, built on TACO). It answers: how do you prove what an AI agent said it did is what it actually did? Agent actions pass through gates that produce signed, append-only receipts — provable, not just logged. Flow: Act, Gate, Receipt, Deny. It is fail-closed by construction — every uncertainty resolves to deny. A failed gate denies the action, writes the refusal to the chain, and escalates to a named human. Renamed from Aurora 24 / A-24. Status: research, currently PAUSED; white paper v1.0 in review. Not sold, not used in client builds.",
+  },
+  {
+    id: "hades",
+    title: "HADES — the platform layer",
+    path: "/research",
+    keywords: ["hades", "platform", "flagship", "layer", "diagnostic", "evaluation", "rehabilitation", "deactivation", "scrapped", "archived", "revived"],
+    text: "HADES — Human Assisted Diagnostic Evaluation System — is Layer 2, the platform layer that TACO Loop and Ag3nt24 were built to make possible. It sits ABOVE Ag3nt24, not below it; older descriptions of it as a place failed gates route down into are out of date. HADES was archived in July 2026 and revived on 2026-08-05. Its scope is still an open decision and nothing is being built yet. Like the rest of classHuman's research it is currently PAUSED while the company build comes first. It is not a product, not for sale, and not part of any client engagement.",
+  },
+  {
+    id: "tools",
+    title: "The tools classHuman uses",
+    path: "/tools",
+    keywords: ["tools", "stack", "framework", "frameworks", "sdk", "orchestration", "observability", "grafana", "prometheus", "eval", "evals", "retrieval", "rag", "open", "source", "technology", "tech"],
+    text: "classHuman builds with what the field has already proven — established agent frameworks and SDKs, orchestration, retrieval and memory, evaluation and testing, observability and telemetry, deployment infrastructure, and data storage — chosen per project rather than prescribed. The client keeps their tooling, their cloud, and their exit options. classHuman's own research (TACO Loop, Ag3nt24, HADES) is deliberately kept out of client builds until it is proven on merit. The Tools page lists the working set.",
+  },
+  {
+    id: "education",
+    title: "Lawrence's education",
+    path: "/about",
+    keywords: ["education", "school", "college", "degree", "university", "amu", "bachelor", "bs", "studying", "student", "qualified", "qualification", "learning"],
+    text: "Lawrence Jefferson II is in college pursuing a BS in Artificial Intelligence at American Military University. The coursework covers fundamentals of AI, prompt engineering, AI software foundations, machine learning, data science, algorithms and data structures, database systems, statistics, user experience design, collaborative tools, and AI impacts, risks and ethics, through to an AI capstone. He also holds the Proficient AI Engineer certification and was recognised with Scrimba's 'Portfolio of the Week' in May 2026.",
   },
   {
     id: "skills",
@@ -109,7 +130,7 @@ export const KNOWLEDGE = [
     title: "Why classHuman — the discipline layer",
     path: "/product",
     keywords: ["why", "different", "difference", "differentiator", "better", "trust", "discipline", "compare", "versus", "unique", "value", "accountability", "safe", "reliable"],
-    text: "What sets classHuman apart is the discipline layer under the agents. Every build keeps humans in final authority, degrades gracefully to an offline path so it never hard-fails, and leaves an audit trail — signed receipts, observable outcomes, no black boxes. The bench is senior/CTO-level: 24 years of Army operational discipline, a COBOL data-integrity lineage, and deep failure literacy (Agent Autopsy — 12 production agent failure modes, each broken and fixed). Not demos — production-shaped systems that hold up under pressure.",
+    text: "What sets classHuman apart is how the work is run, not a proprietary stack. We build with proven, widely-used tools so the client keeps their tooling and their exit options — and then we hold every build to the same discipline: humans in final authority, graceful degradation to an offline path so nothing hard-fails, and an audit trail with observable outcomes and no black boxes. The bench is senior/CTO-level: 24 years of Army operational discipline, a COBOL data-integrity lineage, and deep failure literacy (Agent Autopsy — 12 production agent failure modes, each broken and fixed). Not demos — production-shaped systems that hold up under pressure.",
   },
   {
     id: "credentials",
@@ -130,5 +151,5 @@ export const KNOWLEDGE = [
 /* One-line facts Banshee may state directly (used to seed the offline greeting). */
 export const QUICK_FACTS = {
   positioning: "classHuman AI is a Generative AI Software Engineering, Development & Research LLC.",
-  products: "Client work first — agents, agentic systems, legacy modernization, and our own harness and security-agent software. R&D: TACO Loop and Ag3nt24. Asymptote is a standalone tool.",
+  products: "Client work first — agents, agentic systems, legacy modernization, and handing your team the skills to keep going. Built with proven, widely-used tools. Free agent skills are published on the Skills page. Asymptote is a shipped standalone tool. Our own research — TACO Loop, Ag3nt24 and HADES — is currently paused and stays out of client builds.",
 };

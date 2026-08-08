@@ -3,8 +3,14 @@
 **Owner:** Lawrence Jefferson II (Handler) · **Lead:** Rune Onyx · **Status:** ready to build
 
 ## Goal
-Ship a warm, tactical, accessible marketing + product site that explains classHuman AI and
-TACO Loop, and lets people reach out. Reflect LAHA. Humans hold final authority.
+Ship a warm, tactical, accessible marketing site that explains **what classHuman AI builds
+for clients and what it builds with**, and lets people reach out. Reflect LAHA. Humans hold
+final authority.
+
+> **Revised 2026-08-07 (CLASSHUMAN.md v1.6).** The site previously led with TACO Loop as the
+> product. It no longer does. The front door is client services plus the Tools We Use page.
+> Our own research — TACO Loop, Ag3nt24, HADES — is **paused** and lives on `/research`,
+> marked honestly. It never appears as an offering and never appears in client-facing copy.
 
 ## Stack (decided)
 - **Vite + React + Tailwind CSS**
@@ -15,17 +21,31 @@ TACO Loop, and lets people reach out. Reflect LAHA. Humans hold final authority.
   expose keys in the bundle.
 
 ## Pages & sections
-1. **Home (`/`)** — Hero → LAHA → TACO Loop teaser → Roadmap → CTA to Product/Contact.
-2. **Product (`/product`)** — TACO Loop full: definition, core law, four stages (with tests,
-   as an animated/steppable trace loop), credentials (White Paper v1.0, Model v0.1,
-   TACO-UDD). Roadmap of Ag3nt24 / HADES as "later layers" (software only — no Art
-   line on the public site).
-3. **Story (`/story`)** — the founders' story, in memory of Tonya, from
+1. **Home (`/`)** — Hero (services-led) → LAHA → what we build for you → tools teaser →
+   CTA to Services/Contact. **No TACO Loop teaser in the hero.**
+2. **Services (`/services`)** — the commercial front door. Four offerings.
+3. **Tools We Use (`/tools`)** — **NEW.** The frameworks, methods, algorithms, harnesses and
+   patterns we actually use, grouped by purpose. This is the credibility page. Nothing
+   aspirational, nothing of ours that is unproven.
+4. **Legacy (`/legacy`)** — modernization. **Several patterns listed, not one.** Strangler
+   fig is one entry in the list, never the headline method.
+5. **Research & Development (`/research`)** — **NEW.** TACO Loop (L0) → Ag3nt24 (L1) →
+   **HADES (L2)**, all marked paused, with a banner saying so. HADES is restored here, at
+   Layer 2 above Ag3nt24 — not as a rehab destination below it. No detail route for HADES
+   yet (`hasPage: false` in `src/lib/products.js`); surface it on this page only.
+6. **Product (`/product`)** — TACO Loop detail. Route kept for SEO and existing links, but
+   it is now a research page: definition, core law, four stages, credentials (White Paper
+   v1.0, Model v0.1, TACO-UDD), status **R&D · paused**.
+7. **Asymptote (`/asymptote`)** — shipped tooling. Not part of the paused research.
+8. **Skills (`/skills`)** — free agent skills. Free tier ships before any paid bundle.
+9. **Story (`/story`)** — the founders' story, in memory of Tonya, from
    `docs/FOUNDERS-STORY.md` **verbatim**. Quiet, dignified, generous spacing. Linked from
-   Home and About. This anchors the whole site.
-4. **About (`/about`)** — Team (Lawrence, Nicale), how-we-work, Scrimba credential.
-5. **Contact (`/contact`)** — mailto or simple form (no trackers).
-6. **Shared** — Header (wordmark + nav), Footer (tagline, status line, LAHA).
+   Home and About. This anchors the whole site. **No photograph of Tonya.**
+10. **About (`/about`)** — Team (Lawrence, Nicale), how-we-work, **Education section**
+    (BS in AI at AMU + coursework), Scrimba credential. Nicale is **not** listed as CFO.
+11. **Contact (`/contact`)** — mailto or simple form (no trackers).
+12. **Shared** — Header (wordmark + nav), Footer (tagline, status line, LAHA). Nav leads
+    with Services and Tools; Research sits after them, not in the primary position.
 
 All copy comes from `docs/CONTENT.md`. All visual tokens from `docs/DESIGN-SYSTEM.md`.
 

@@ -4,16 +4,32 @@
 > Read `CLAUDE.md`, `docs/PRD-website.md`, `docs/DESIGN-SYSTEM.md`, `docs/CONTENT.md` first.
 
 ## Current focus
-Site complete — all six steps shipped. Next: deploy to Netlify + Lighthouse audit on the
-live URL.
+**Repositioning pass — CLASSHUMAN.md v1.6 (2026-08-07).** The v1 build shipped, but the site
+tells the old story: TACO Loop as the active product, HADES scrapped, strangler fig as *the*
+method. The context layer has been rewritten; the pages have not.
 
-## Steps
+**Context files updated (branch `claude/v1.6-context-realign`):** `CLASSHUMAN.md` (v1.6),
+`docs/CONTENT.md`, `docs/PRD-website.md`, `src/lib/products.js`, `src/banshee/knowledge.js`,
+`docs/adr/0005-company-before-research.md` (0004 marked superseded).
+
+## Steps — v1 build (done)
 - [x] 1. Scaffold Vite + React + Tailwind + React Router; add color/font tokens
 - [x] 2. Header + Footer + wordmark (class/Human split) + light/dark toggle
 - [x] 3. Home page (Hero, LAHA, TACO teaser, Roadmap, CTA)
 - [x] 4. Product page — TACO four-stage loop visual + credentials
 - [x] 5. About + Contact pages
-- [ ] 6. Netlify config, `_redirects`, SEO/meta, favicon, Lighthouse pass
+- [x] 6. Netlify config, `_redirects`, SEO/meta, favicon (Lighthouse pass still pending live)
+
+## Steps — v1.6 repositioning (next)
+- [x] 0. Rewrite the context layer so nothing contradicts (see Current focus)
+- [ ] 1. **Home** — services-led hero; drop the TACO teaser; tools teaser instead
+- [ ] 2. **`/tools`** — NEW Tools We Use page. **Blocked: needs the actual tool list from Lawrence.**
+- [ ] 3. **`/research`** — NEW R&D page; move TACO / Ag3nt24 / HADES here, paused banner
+- [ ] 4. **`/legacy`** — several patterns, not one; strangler fig demoted to a list entry
+- [ ] 5. **`/about`** — Education section (BS in AI, AMU + coursework); drop Nicale's "CFO"
+- [ ] 6. **`/product`** — reframe as research detail, status R&D · paused (route kept for SEO)
+- [ ] 7. Nav + Footer — lead with Services and Tools; Research after
+- [ ] 8. Sweep `src/pages/*` and `index.html` for surviving old-framing copy; rebuild; deploy
 
 ## Decisions / open questions
 - `docs/upcoming-layers/` holds Ag3nt24 / HADES / CIPSE draft docs — **internal**, moved
@@ -40,8 +56,9 @@ live URL.
 - 2026-07-05 · Step 3 shipped. Home page: Hero, LAHA (links to /story), TACO teaser with
   core law, Roadmap (4 items, TACO marked ACTIVE), closing CTA. All copy from CONTENT.md.
   Build passes.
-- Pending: Handler has photos of Lawrence, Nicale, and Tonya — add to About (team) and
-  Story pages when delivered. Drop into `public/images/`.
+- **Photos: Lawrence and Nicale only.** Tonya's photograph was removed 2026-08-07 by
+  Handler's ruling — the story stays, the picture does not. Do not re-add
+  `public/images/tonya.jpg` or any portrait of her. (The log entries below predate this.)
 - 2026-07-05 · Steps 4–5 shipped. Product page: definition, core law, steppable four-stage
   TACO loop (each stage with its test), credentials, later layers. Story page: founders'
   story verbatim with Tonya's photo. About: team cards with photos + Lawrence's public

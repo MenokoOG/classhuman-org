@@ -1,9 +1,13 @@
 # 0004 — Scrap HADES; lead with client engineering
 
-- **Status:** Accepted
+- **Status:** **SUPERSEDED by [0005](0005-company-before-research.md) (2026-08-07)**
 - **Date:** 2026-07-31
 - **Deciders:** Lawrence Jefferson II (CEO/CTO), classHuman AI
 - **Supersedes:** the 2026-07-27 three-product stack ruling
+
+> ⚠️ **Do not build to this ADR.** The "scrap HADES" half of this decision was reversed on
+> 2026-08-05 — HADES is revived as Layer 2, above Ag3nt24. The "lead with client
+> engineering" half survives and is carried forward, sharpened, in ADR 0005. Read 0005.
 
 ## Context
 

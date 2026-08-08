@@ -7,8 +7,16 @@ then read the linked docs before writing any code.
 ---
 
 ## The one thing
-Build **classHuman.org**: a multi-page marketing + product site for classHuman AI,
-using **Vite + React + Tailwind**, deployed to **Netlify**.
+Build **classHuman.org**: a multi-page marketing site for classHuman AI, using
+**Vite + React + Tailwind**, deployed to **Netlify**.
+
+> **Positioning, as of CLASSHUMAN.md v1.6 (2026-08-07) — read this before writing copy.**
+> The site leads with **client services** and the **Tools We Use** page. classHuman's own
+> research — TACO Loop, Ag3nt24, HADES — is **paused** and lives on `/research`, marked
+> honestly. It is never an offering and never appears in client-facing copy. HADES is
+> **restored** and sits at **Layer 2, above Ag3nt24** — any doc showing it as a
+> rehabilitation destination below Ag3nt24 is stale. Strangler fig is **one** modernization
+> pattern among several, never *the* method. See `docs/adr/0005-company-before-research.md`.
 
 ## Read these before planning (in order)
 1. `CLASSHUMAN.md` — canonical company context. **Source of truth. Overrides everything older.**
