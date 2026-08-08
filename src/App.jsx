@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Product from "./pages/Product.jsx";
 import Asymptote from "./pages/Asymptote.jsx";
 import Ag3nt24 from "./pages/Ag3nt24.jsx";
+import Play from "./pages/Play.jsx";
 import Tools from "./pages/Tools.jsx";
 import Research from "./pages/Research.jsx";
 import Demos from "./pages/Demos.jsx";
@@ -46,6 +47,11 @@ const PAGE_META = {
     title: "Ag3nt24 — The Proof Layer — " + SITE,
     description:
       "Ag3nt24 gates agent actions through proof gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Built on TACO Loop.",
+  },
+  "/play": {
+    title: "FINAL AUTHORITY — play it — " + SITE,
+    description:
+      "A free browser game about being the human in the loop. Six shifts, eighteen AI agent proposals, two investigations each. You do not lose by making a bad call — you lose by no longer making calls. Playable in the page, nothing to install.",
   },
   "/tools": {
     title: "The Tools We Use — " + SITE,
@@ -125,6 +131,7 @@ export default function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/asymptote" element={<Asymptote />} />
         <Route path="/ag3nt24" element={<Ag3nt24 />} />
+        <Route path="/play" element={<Play />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/research" element={<Research />} />
         <Route path="/demos" element={<Demos />} />

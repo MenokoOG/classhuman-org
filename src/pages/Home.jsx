@@ -182,6 +182,50 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ── The hook: play it right here ────────────────────
+          A short game beats a paragraph about human-in-the-loop. This is the
+          one section on Home that asks for three minutes instead of a click. */}
+      <section className="relative overflow-hidden border-t border-border-brand">
+        <div
+          className="ch-aurora-soft pointer-events-none absolute inset-0 -z-10"
+          style={{ "--stage": "var(--ch-accent)" }}
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal>
+            <Eyebrow>TRY IT, DON&apos;T READ ABOUT IT</Eyebrow>
+            <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Everyone says &ldquo;human in the loop.&rdquo;{" "}
+              <GradientText>Here, hold the line yourself.</GradientText>
+            </h2>
+            <p className="mt-4 max-w-2xl text-on-surface/85">
+              <strong>FINAL AUTHORITY</strong> is a free browser game. You handle a fleet of AI
+              agents proposing actions against production. Six shifts, two investigations each,
+              so you cannot check everything. You do not lose it by making a bad call — you lose
+              it by no longer making calls.
+            </p>
+            <p className="mt-4 max-w-2xl text-on-surface/85">
+              Three minutes, nothing to install, and it ends by showing you what percentage of
+              your own decisions you never actually reviewed.
+            </p>
+            <p className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/play"
+                className="rounded-md bg-primary px-6 py-3 font-bold text-on-primary shadow-lg shadow-primary/20 hover:opacity-90"
+              >
+                Play it now →
+              </Link>
+              <Link
+                to="/skills"
+                className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+              >
+                The free skills →
+              </Link>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── Our own research (secondary, and deliberately so) ─
           v1.6: Home leads with services. Research is paused, lives on
           /research, and is never presented here as an offering. */}
