@@ -19,6 +19,7 @@ const topLinks = [
   { to: "/tools", label: "Tools" },
   { to: "/legacy", label: "Legacy" },
   { to: "/skills", label: "Skills" },
+  { to: "/play", label: "Play" },
   { to: "/demos", label: "Demos" },
   { to: "/research", label: "Research" },
   { to: "/story", label: "Story" },

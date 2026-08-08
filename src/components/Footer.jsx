@@ -29,6 +29,7 @@ export default function Footer() {
             <li><Link to="/tools" className="text-on-surface hover:text-primary-safe">The Tools We Use</Link></li>
             <li><Link to="/legacy" className="text-on-surface hover:text-primary-safe">Legacy Modernization</Link></li>
             <li><Link to="/skills" className="text-on-surface hover:text-primary-safe">Free Agent Skills</Link></li>
+            <li><Link to="/play" className="text-on-surface hover:text-primary-safe">Play FINAL AUTHORITY</Link></li>
             <li><Link to="/demos" className="text-on-surface hover:text-primary-safe">Demos</Link></li>
             <li><Link to="/asymptote" className="text-on-surface hover:text-primary-safe">Asymptote</Link></li>
           </ul>
