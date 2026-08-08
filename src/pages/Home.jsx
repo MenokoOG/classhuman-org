@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Eyebrow, GradientText, Reveal, TraceField, StatusPill } from "../components/ui.jsx";
-import { PRODUCTS } from "../lib/products.js";
+import { Eyebrow, GradientText, Reveal, TraceField } from "../components/ui.jsx";
 import DailyStack from "../components/DailyStack.jsx";
 
 const SERVICES = [
@@ -56,14 +55,13 @@ export default function Home() {
           </div>
 
           <h1 className="mt-7 max-w-4xl text-5xl font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-            We build the <GradientText>agents and agentic systems</GradientText> your business
-            runs on.
+            Agents you can put in production, built with{" "}
+            <GradientText>tools you can keep.</GradientText>
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-on-surface/85 sm:text-xl">
-            classHuman AI designs, builds, and ships production AI agents and agentic
-            workflows — on the industry&apos;s best tools and on your legacy stack — with a
-            spine of accountability so humans always keep final authority.
+            classHuman AI builds and runs agentic systems using the best frameworks the field
+            already has — wired into your stack, with humans holding final authority.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -74,10 +72,10 @@ export default function Home() {
               Work with us
             </Link>
             <Link
-              to="/services"
+              to="/tools"
               className="rounded-md border border-cool px-6 py-3 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
             >
-              What we build →
+              See the tools we use →
             </Link>
             <Link
               to="/legacy"
@@ -104,7 +102,7 @@ export default function Home() {
               ["Agents & workflows", "built to your spec"],
               ["Legacy → modern", "no rip-and-replace"],
               ["Human-in-the-loop", "by architecture"],
-              ["Your tools", "and our own"],
+              ["Your stack", "you keep the keys"],
             ].map(([v, l]) => (
               <div key={l}>
                 <dt className="text-lg font-extrabold leading-tight sm:text-xl">{v}</dt>
@@ -126,8 +124,8 @@ export default function Home() {
               What we build <GradientText>for you.</GradientText>
             </h2>
             <p className="mt-3 max-w-2xl text-on-surface/85">
-              We use the best tools the industry already has — and our own discipline layer on
-              top — to ship agents you can trust in production.
+              We use the best tools the industry already has to ship agents you can trust in
+              production — and we hand you the keys, not a dependency.
             </p>
           </Reveal>
 
@@ -184,51 +182,37 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* ── Our own research & products (secondary area) ───── */}
+      {/* ── Our own research (secondary, and deliberately so) ─
+          v1.6: Home leads with services. Research is paused, lives on
+          /research, and is never presented here as an offering. */}
       <section className="border-t border-border-brand bg-card/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <Eyebrow>WE BUILD FOR OURSELVES TOO</Eyebrow>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Our own research &amp; products.
+            <Eyebrow>OUR OWN RESEARCH</Eyebrow>
+            <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+              We research too. It&apos;s paused, and it{" "}
+              <GradientText>stays out of your build.</GradientText>
             </h2>
-            <p className="mt-3 max-w-2xl text-on-surface/85">
-              We don&apos;t just build for clients — we build our own agentic systems and the
-              discipline that governs them. It&apos;s proof we ship this in production, not
-              slideware. Our core law:{" "}
-              <span className="font-semibold">
-                unknown data must increase decision discipline, not model confidence.
-              </span>
+            <p className="mt-4 max-w-2xl text-on-surface/85">
+              TACO Loop, Ag3nt24 and HADES are our own work. They are paused while we build the
+              company, and we do not put unproven work of our own into a client system. We would
+              rather say that plainly than dress research up as a product.
+            </p>
+            <p className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/research"
+                className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+              >
+                See the research &rarr;
+              </Link>
+              <Link
+                to="/asymptote"
+                className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe"
+              >
+                Asymptote — our one shipped tool &rarr;
+              </Link>
             </p>
           </Reveal>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {PRODUCTS.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 70}>
-                <Link
-                  to={`/${p.slug}`}
-                  className="ch-card group block h-full rounded-lg border border-border-brand bg-surface p-6"
-                  style={{ "--stage": p.color }}
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl font-extrabold" style={{ color: p.color }}>
-                        {p.name}
-                      </h3>
-                      <p className="mt-0.5 font-mono text-[11px] tracking-widest text-muted-safe">
-                        {p.layer}
-                      </p>
-                    </div>
-                    <StatusPill color={p.color}>{p.status}</StatusPill>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-on-surface/80">{p.blurb}</p>
-                  <p className="mt-4 font-mono text-xs font-bold tracking-widest text-cool-safe group-hover:text-accent-safe">
-                    OPEN {p.name.toUpperCase()} →
-                  </p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

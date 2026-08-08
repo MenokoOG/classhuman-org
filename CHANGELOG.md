@@ -6,7 +6,131 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 **Every PR includes a CHANGELOG entry. Non-negotiable.**
 
 ## [Unreleased]
+
+## [1.8.0] — 2026-08-08
+
+The rendered pages catch up to CLASSHUMAN.md v1.6. The previous release moved the context
+layer; this one moves what a visitor actually sees — services and tools lead, our own
+research moves to its own page and is honestly marked paused, and legacy modernization stops
+presenting one pattern as the method.
+
+Note: `VERSION` and `package.json` had drifted apart (1.7.0 vs 1.5.0). Both are now 1.8.0.
+
+### Fixed
+- **The HADES nav link went to an empty page in production.** `src/lib/products.js` gained a
+  fourth entry with `hasPage: false`, but **no component ever read `hasPage`** — `Header`,
+  `Footer` and `Home` all mapped over `PRODUCTS` and linked every slug. With no `/hades`
+  route and no catch-all in `App.jsx`, `/hades` matched nothing and `<Outlet/>` rendered
+  null: header, footer, empty space. The guard was a comment, and comments do not enforce
+  anything. Added `LINKABLE = PRODUCTS.filter((p) => p.hasPage)`; every navigation consumer
+  now maps over it. `hasPage` is load-bearing instead of decorative.
+
+  Note on process: the previous session ran `npm run build`, saw it pass, and reported the
+  change verified. A dangling route is invisible to a build. Every route touched in this
+  change was opened in a browser and every altered link clicked.
+- **HADES's accent colour resolved to nothing.** `products.js` set
+  `color: "var(--ch-warm-alt)"`, a custom property that is **defined nowhere** in
+  `index.css` or `brand/tokens.css`. Its heading and status pill silently fell back to
+  inherited colours in every season and every cosmic theme. Now `var(--ch-accent)`, which is
+  defined by all of them and is distinct from TACO (`--ch-primary`) and Ag3nt24 (`--ch-cool`).
+- **`/credentials` published in-progress certifications**, which the v1.6 publishing rule
+  forbids. Removed the `IN_PROGRESS` array and its section (Lakewood, Google Generative AI
+  Leader, Scrimba). Nothing unfinished appears on the site; credentials are added the day
+  they complete, one at a time.
+
 ### Added
+- **`/tools` — the Tools We Use page.** The credibility page: "here is our working set"
+  instead of "trust our stack". Eight groups by purpose — model access, agent building &
+  orchestration, agent skills & spec-driven workflow, model tuning, application backends,
+  data & storage, interfaces, testing & delivery — plus a **Where it runs** section covering
+  your cloud, on-premise, local/air-gapped and hybrid, because "an AI project" is too often
+  assumed to mean the data leaves the building.
+
+  Content lives in `src/lib/tools.js`, where the no-aspirational-entries rule is written
+  down; `Tools.jsx` inlines no tool name. Every entry is grounded — either a dependency
+  actually installed in a classHuman repo (Anthropic/OpenAI/Google SDKs in `Ag3nt24`;
+  PyTorch, Transformers, PEFT and Accelerate in `HADES/repair-workbench`; NestJS, Drizzle
+  and `pg` in `HADES/nest-proxy`; FastAPI, SQLAlchemy and Alembic in
+  `class-human-e-commerce/apps/api`; React, Vite, Tailwind, Vitest, Docker Compose, Netlify
+  across the org) or a tool Lawrence named directly (GitHub Spec Kit, LitGPT, gstack,
+  Langflow, LangChain, Google Skills, Codex Skills Library).
+- **`/research` — the Research & Development page.** TACO Loop (Layer 0) → Ag3nt24
+  (Layer 1) → HADES (Layer 2), rendered from `RND_PAUSED`, with the required "these are
+  research projects, not products" banner. HADES appears here with its real status —
+  archived July 2026, revived 2026-08-05, scope open, nothing being built — and renders
+  **no link**, because `hasPage` is false. Asymptote is deliberately absent: it shipped and
+  belongs with the tooling. Route, `PAGE_META` entry and `sitemap.xml` entry added.
+- **Education on `/about`** — BS in Artificial Intelligence at American Military University
+  with the full 20-course list, published as-is. No expected graduation date, no in-progress
+  certifications. The BS is also now the first entry in the `/credentials` education list.
+
+### Changed
+- **Navigation now leads with services; research comes after.** The `Products` dropdown is
+  deleted — it was the component that shipped the dangling link, and the information
+  architecture it implied ("our research is our product line") contradicts the Operating
+  Doctrine. `Header` is a flat link list ending in `Research`. `Footer`'s `PRODUCTS` column
+  becomes `WHAT WE DO` (services, legacy, skills, demos, Asymptote); `COMPANY` now leads
+  with Research & Development. TACO Loop and Ag3nt24 keep their routes and are reached
+  through `/research`.
+- **Home leads with the service.** Hero is now the approved copy — "Agents you can put in
+  production, built with tools you can keep." The "Our own research & products" card grid is
+  replaced by a short, honest strip that says the research is paused and stays out of client
+  builds, linking to `/research`. Dropped "and our own discipline layer on top" and the
+  "Your tools / and our own" stat, both of which elevated our unproven stack.
+- **`/legacy` presents twelve patterns, not one method.** The "THE PATTERN · STRANGLER FIG"
+  section is replaced by "THE APPROACH — we read the system first, then pick the pattern",
+  ordered roughly least- to most-invasive: lift and shift (rehost), replatform, strangler
+  fig, branch by abstraction, parallel run, shadow traffic, canary & phased rollout, event
+  interception, anti-corruption layer, encapsulation/facade, an honest straight rewrite, and
+  protocol-droid interfaces. Leading with one pattern read as narrow — it is a habit being
+  sold as a method. Added a deployment note: cloud, on-premise, or hardware you own, linking
+  to `/tools`. Removed the TACO Loop CTA and the "the TACO discipline, applied to migration"
+  line — TACO is unproven research and does not appear in client-facing copy. `PAGE_META`
+  description updated to match.
+- **Home's secondary CTA is now "See the tools we use" → `/tools`,** per the approved hero
+  spec in `docs/CONTENT.md`.
+
+### Removed
+- **`public/images/tonya.jpg`.** Ruled 2026-08-07: the story stays, the photograph does not.
+  No code referenced it, but the file was still being copied into `dist/` and deployed.
+  Recoverable from git history at `38b0a5e` if ever needed.
+
+### Changed (previous session)
+- **Repositioned the site's context layer to CLASSHUMAN.md v1.6 — company before research.**
+  The site told a story that is no longer true: TACO Loop as the active product, HADES
+  scrapped, strangler fig as *the* modernization method. Every context file that Claude Code
+  and Banshee read has been rewritten so nothing contradicts. **Rendered pages are not yet
+  updated** — that is the next pass, tracked in `PLAN.md`.
+
+  - `src/lib/products.js` — header comment read *"HADES was scrapped and archived
+    2026-07-31 — do not re-add it here."* Void. HADES restored at **Layer 2, above
+    Ag3nt24** (the pre-scrap docs had it below, as a rehabilitation destination — wrong
+    topology). All three research projects now `R&D · PAUSED`; Asymptote stays separate as
+    shipped tooling. Added `track` and `hasPage` fields plus `RND_PAUSED` / `SHIPPED`
+    selectors; `hasPage: false` on HADES so nothing links to a route that does not exist.
+  - `src/banshee/knowledge.js` — the site agent answers from its own knowledge pack, not
+    from the pages, so it would have kept telling visitors the old story regardless of copy
+    changes. Five entries rewritten; three added (`hades`, `tools`, `education`).
+  - `docs/CONTENT.md` — hero leads with services, not "Explore TACO Loop". New specs for
+    the `/research` and `/tools` pages. Legacy section now lists seven modernization
+    patterns with strangler fig as one entry, plus a rule against presenting it as *the*
+    method. Added the education section (BS in AI, AMU, full coursework) and the
+    no-photograph-of-Tonya rule. Fixed two stale facts: the footer still said "LLC
+    registration planned August 2026", and Nicale was published as **CFO** — a title that
+    is provisional pending the operating agreement.
+  - `docs/PRD-website.md` — page list rebuilt: `/tools` and `/research` added, `/product`
+    reframed as research detail with its route kept for SEO, nav ordering specified.
+  - `CLAUDE.md` — positioning block added at the top so the brief is read before any copy
+    is written.
+  - `PLAN.md` — v1.6 repositioning steps added; the stale "add Tonya's photo when
+    delivered" instruction replaced with the removal ruling.
+  - `CLASSHUMAN.md` — synced to v1.6.1 (remote canonicity: `MenokoOG/*` is source of truth).
+
+### Added
+- **ADR 0005 — company before research** (`docs/adr/0005-company-before-research.md`).
+  Supersedes ADR 0004, which is now marked SUPERSEDED with a "do not build to this" notice.
+  0004 scrapped HADES and led with client engineering; the HADES half was reversed on
+  2026-08-05, the client-engineering half survives and is sharpened in 0005.
 - **"The Instrument" — new `/instrument` route** (`src/instrument/`), built from the
   `brand/classHuman AI brand identity/design_handoff_instrument/` handoff. A single
   interactive page that enforces the Core Product Law on itself: one uncertainty slider

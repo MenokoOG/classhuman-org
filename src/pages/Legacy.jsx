@@ -3,11 +3,34 @@ import { Eyebrow, GradientText, Reveal, ProductHero, StatusPill } from "../compo
 
 const ACCENT = "var(--ch-cool)";
 
+/* The working set of modernization patterns.
+
+   Copy rule (CLASSHUMAN.md v1.6, 2026-08-07): strangler fig is ONE option, not
+   the classHuman method. Presenting a single pattern as the answer is rigid and
+   it does not survive contact with a real client system. Lead with "we pick the
+   pattern that fits," then show the list. Order runs roughly least- to
+   most-invasive; it is not a ranking and not a preference. Most engagements
+   combine several of these at once. */
+const patterns = [
+  ["Lift and shift (rehost)", "Move it as-is onto modern infrastructure first, change nothing about the application. Buys breathing room and a reversible starting position."],
+  ["Replatform", "Same application, better foundation — managed database, container runtime, real deployment pipeline — without touching business logic."],
+  ["Strangler fig", "Grow the new system around the old one, replacing it capability by capability while it keeps running."],
+  ["Branch by abstraction", "Put a seam in, run both sides behind it, then swap what's underneath without the callers noticing."],
+  ["Parallel run", "Old and new side by side on the same inputs. Compare outputs, cut over on evidence rather than on faith."],
+  ["Shadow traffic", "Send real production traffic to the new path with its results discarded. You find out how it behaves under load before anyone depends on it."],
+  ["Canary & phased rollout", "A slice of traffic, a single region, one customer segment. Expand on measurements, roll back on the first bad signal."],
+  ["Event interception", "Tap the events, redirect them, and leave the core untouched. Useful when the core is too risky to open."],
+  ["Anti-corruption layer", "A translation boundary so the new model doesn't inherit the old one's assumptions along with its data."],
+  ["Encapsulation / facade", "Wrap it, expose a clean interface, and defer the rewrite until it's actually worth doing."],
+  ["A straight rewrite", "When the system is small enough or broken enough that rewriting is honestly the cheapest path. We will say so."],
+  ["Protocol-droid interfaces", "Adapter agents fluent in the legacy system's protocols on one side and a modern agentic stack on the other."],
+];
+
 const steps = [
   ["Map", "We inventory the legacy system — its seams, its data, its business logic — and pick the highest-value slice to modernize first."],
   ["Wrap", "We build protocol-droid interfaces around the legacy boundary: adapters that speak the old system's language and a modern agentic stack at the same time."],
   ["Route", "We stand up modern agents and workflows beside the legacy system and redirect one capability at a time — the lights never go off."],
-  ["Replace", "Once the new path is proven, the old one is strangled out, with a human-approved cutover. Reversible, traceable, no drama."],
+  ["Replace", "Once the new path is proven, the old one is retired on a human-approved cutover. Reversible, traceable, no drama."],
   ["Hand off", "Docs, receipts, and — if you want it — the agent skills and tools for your team to keep going without us."],
 ];
 
@@ -51,15 +74,15 @@ export default function Legacy() {
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <StatusPill color={ACCENT}>NO STACK TOO OLD</StatusPill>
           <span className="font-mono text-xs text-muted-safe">
-            strangler-fig migration · protocol-droid interfaces
+            the pattern is chosen per system · never prescribed
           </span>
         </div>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link to="/contact" className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90">
             Tell us what you&apos;re running
           </Link>
-          <Link to="/product" className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe">
-            The discipline behind it — TACO
+          <Link to="/services" className="rounded-md border border-cool px-5 py-2.5 font-semibold text-cool-safe hover:border-accent hover:text-accent-safe">
+            Everything else we build &rarr;
           </Link>
         </div>
       </ProductHero>
@@ -82,20 +105,61 @@ export default function Legacy() {
         </div>
       </section>
 
-      {/* Strangler fig */}
+      {/* The approach — several patterns, chosen per system. Never one method. */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Reveal>
-          <Eyebrow>THE PATTERN · STRANGLER FIG</Eyebrow>
+          <Eyebrow>THE APPROACH</Eyebrow>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
-            We grow the new system <GradientText>around</GradientText> the old one.
+            We read the system first, <GradientText>then pick the pattern.</GradientText>
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
-            Named for the fig that grows around a host tree until it can stand on its own, the
-            strangler-fig pattern replaces a legacy system incrementally. Route by route,
-            capability by capability, we stand up modern agents and workflows alongside the
-            legacy code and redirect traffic to them — until the old system is safely strangled
-            out. You&apos;re never one risky weekend away from disaster.
+            There is no single right way to modernize a legacy system, and any shop that tells
+            you otherwise is selling you their habit. Some systems want to be grown around.
+            Some want a seam and a swap. Some want to be run in parallel until the evidence is
+            in. A few are genuinely better off rewritten — and we will tell you when that&apos;s
+            the case, even though it&apos;s the smaller engagement.
           </p>
+          <p className="mt-4 max-w-2xl leading-relaxed text-on-surface/85">
+            The choice comes from your system, not from our preference. This is the working
+            set, running roughly least- to most-invasive — and most real engagements use
+            several of them at the same time:
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {patterns.map(([name, body], i) => (
+            <Reveal key={name} delay={i * 45}>
+              <div
+                className="ch-card h-full rounded-lg border border-border-brand bg-card p-5"
+                style={{ "--stage": ACCENT }}
+              >
+                <h3 className="font-extrabold" style={{ color: ACCENT }}>
+                  {name}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-on-surface/85">{body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="mt-10 rounded-lg border border-border-brand bg-card p-6">
+            <p className="font-mono text-[11px] font-bold tracking-widest text-accent-safe">
+              AND WHERE IT LANDS IS YOURS TO PICK
+            </p>
+            <p className="mt-3 max-w-3xl leading-relaxed text-on-surface/85">
+              Cloud, on-premise, or entirely on hardware you own. Modernizing does not have to
+              mean moving your data into someone else&apos;s data center — plenty of systems
+              stay exactly where they are and simply get a modern seam, modern agents, and a
+              deployment pipeline that works.{" "}
+              <Link
+                to="/tools"
+                className="font-semibold text-cool-safe underline underline-offset-4 hover:text-accent-safe"
+              >
+                The tools we use, and where they run &rarr;
+              </Link>
+            </p>
+          </div>
         </Reveal>
       </section>
 
@@ -144,8 +208,9 @@ export default function Legacy() {
           ))}
         </ol>
         <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-safe">
-          Every consequential change routes through a human — the TACO discipline, applied to
-          migration. Reversible, traceable, and evidenced at each step.
+          Every consequential change routes through a human approval step. Reversible,
+          traceable, and evidenced at each step — that is our working discipline on any
+          engagement, whichever pattern the system calls for.
         </p>
       </section>
 
@@ -154,7 +219,7 @@ export default function Legacy() {
         <Reveal>
           <Eyebrow>PROOF · IN PRODUCTION</Eyebrow>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
-            The pattern, <GradientText>shipped.</GradientText>
+            The work, <GradientText>shipped.</GradientText>
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
             Not theory. The same instincts — move capability across piece by piece, tame messy
@@ -227,8 +292,8 @@ export default function Legacy() {
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-on-surface/85">
             If you&apos;d rather own the upgrade than depend on a vendor, we can equip your team
-            with the agent skills and tools to run the strangler-fig migration themselves —
-            protocol droids included. You own the modernization, not a retainer.
+            with the agent skills and tools to run the migration themselves — protocol droids
+            included. You own the modernization, not a retainer.
           </p>
           <p className="mt-8 flex flex-wrap gap-4">
             <Link to="/contact" className="rounded-md bg-primary px-5 py-2.5 font-bold text-on-primary hover:opacity-90">

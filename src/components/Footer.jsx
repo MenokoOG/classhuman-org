@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Wordmark from "./Wordmark.jsx";
 import { Monogram } from "./marks.jsx";
-import { PRODUCTS } from "../lib/products.js";
 
 export default function Footer() {
   return (
@@ -21,26 +20,24 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Products">
-          <p className="font-mono text-[11px] font-bold tracking-widest text-muted-safe">PRODUCTS</p>
-          <ul className="mt-3 space-y-2">
-            {PRODUCTS.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  to={`/${p.slug}`}
-                  className="text-sm font-semibold text-on-surface hover:text-primary-safe"
-                >
-                  {p.name}
-                </Link>
-              </li>
-            ))}
+        {/* Services lead; research follows. Ordering is the v1.6 positioning
+            ruling, not a layout preference. */}
+        <nav aria-label="What we do">
+          <p className="font-mono text-[11px] font-bold tracking-widest text-muted-safe">WHAT WE DO</p>
+          <ul className="mt-3 space-y-2 text-sm font-semibold">
+            <li><Link to="/services" className="text-on-surface hover:text-primary-safe">Work With Us</Link></li>
+            <li><Link to="/tools" className="text-on-surface hover:text-primary-safe">The Tools We Use</Link></li>
+            <li><Link to="/legacy" className="text-on-surface hover:text-primary-safe">Legacy Modernization</Link></li>
+            <li><Link to="/skills" className="text-on-surface hover:text-primary-safe">Free Agent Skills</Link></li>
+            <li><Link to="/demos" className="text-on-surface hover:text-primary-safe">Demos</Link></li>
+            <li><Link to="/asymptote" className="text-on-surface hover:text-primary-safe">Asymptote</Link></li>
           </ul>
         </nav>
 
         <nav aria-label="Company">
           <p className="font-mono text-[11px] font-bold tracking-widest text-muted-safe">COMPANY</p>
           <ul className="mt-3 space-y-2 text-sm font-semibold">
-            <li><Link to="/demos" className="text-on-surface hover:text-primary-safe">Demos</Link></li>
+            <li><Link to="/research" className="text-on-surface hover:text-primary-safe">Research &amp; Development</Link></li>
             <li><Link to="/story" className="text-on-surface hover:text-primary-safe">Story</Link></li>
             <li><Link to="/about" className="text-on-surface hover:text-primary-safe">About</Link></li>
             <li><Link to="/contact" className="text-on-surface hover:text-primary-safe">Contact</Link></li>

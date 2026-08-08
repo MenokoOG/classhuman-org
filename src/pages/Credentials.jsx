@@ -10,6 +10,11 @@ const ACCENT = "#C0492C";
 
 const EDUCATION = [
   {
+    title: "BS, Artificial Intelligence",
+    org: "American Military University",
+    note: "In college now — the primary credential going forward. 120 credits across AI fundamentals, prompt engineering, machine learning, data science, algorithms and data structures, database systems, statistics, UX design, and AI impacts, risks and ethics, through to an AI capstone.",
+  },
+  {
     title: "Associate's Degree",
     org: "American Military University",
     note: "Earned while serving. The academic base under everything since.",
@@ -116,24 +121,10 @@ const CREDENTIALS = [
   { title: "Crash Course on Python", org: "Google · Coursera", date: "Oct 2022" },
 ];
 
-/* Currently in progress — update as milestones land. */
-const IN_PROGRESS = [
-  {
-    title: "Cybersecurity Program — Lakewood University",
-    org: "VET TEC 2.0 · Aug – Nov 2026",
-    note: "Four-course program in progress: Introduction to Computers, Networking Fundamentals, IT Project Management, and Network Security Management.",
-  },
-  {
-    title: "Google Generative AI Leader Professional Certificate",
-    org: "Google · Coursera",
-    note: "In progress alongside the Lakewood program.",
-  },
-  {
-    title: "AI Engineer Path",
-    org: "Scrimba",
-    note: "Ongoing — Scrimba also featured Lawrence's work as \"Portfolio of the Week\" (May 2026).",
-  },
-];
+/* NO in-progress array here by design. Publishing rule, CLASSHUMAN.md v1.6:
+   nothing unfinished goes on the site — no expected graduation dates, no
+   in-progress certifications. Add a credential here the day it completes,
+   one at a time. Do not reintroduce an "in progress" list. */
 
 const IBM_BADGES = [
   "Foundations in Generative AI",
@@ -298,20 +289,11 @@ export default function Credentials() {
         </div>
       </section>
 
-      {/* In progress */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <Reveal>
-          <Eyebrow>IN PROGRESS · 2026</Eyebrow>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
-            The training never stops.
-          </h2>
-        </Reveal>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {IN_PROGRESS.map((c, i) => (
-            <CredentialCard key={c.title} {...c} delay={i * 60} />
-          ))}
-        </div>
-      </section>
+      {/* NOTE: there is deliberately no "in progress" section here.
+          Publishing rule (CLASSHUMAN.md v1.6, 2026-08-07): no expected
+          graduation dates and no in-progress certifications. A certification
+          is added only once it is actually finished, one at a time. The
+          in-flight list is tracked privately, not on the site. */}
 
       {/* CTA */}
       <section className="border-t border-border-brand bg-card/60">

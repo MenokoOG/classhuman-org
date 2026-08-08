@@ -56,7 +56,11 @@ export const PRODUCTS = [
     status: "R&D · PAUSED · scope open",
     track: "rnd",
     hasPage: false, // no detail route yet — surfaced on /research only
-    color: "var(--ch-warm-alt)",
+    /* Was `--ch-warm-alt`, which is defined nowhere — the heading and status
+       pill silently fell back to inherited colors in every theme. --ch-accent
+       is defined by the classic seasons AND by every cosmic theme, and it is
+       distinct from TACO (primary) and Ag3nt24 (cool). */
+    color: "var(--ch-accent)",
     hook: "The platform layer the first two were built to make possible.",
     blurb:
       "Revived 2026-08-05 after being archived in July. Layer 2, above Ag3nt24. Scope is an open decision and nothing is being built yet — listed here for honesty about where the research sits, not as an offering.",
@@ -75,6 +79,14 @@ export const PRODUCTS = [
       "Point it at Python and it reports per-function time & space complexity, a confidence score, the evidence — and the blind spots it can't decide. CLI, agent tool, or MCP server.",
   },
 ];
+
+/* Entries that actually have a detail route in App.jsx.
+
+   `hasPage: false` means NO route exists — linking that slug renders an
+   empty page, because there is no catch-all 404 either. Every navigation
+   consumer (Header, Footer, Home) MUST map over LINKABLE, never PRODUCTS.
+   A comment is not a guard; this list is. */
+export const LINKABLE = PRODUCTS.filter((p) => p.hasPage);
 
 /* Everything actively paused. Useful for the /research page's banner. */
 export const RND_PAUSED = PRODUCTS.filter((p) => p.track === "rnd");

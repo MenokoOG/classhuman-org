@@ -1,7 +1,8 @@
 # CLASSHUMAN.md — Canonical Context (Source of Truth)
 
-**Version:** 1.6 · **Updated:** 2026-08-07
-**Read this first. This file overrides v1.5, v1.4, and any older COIL/OKO Forge context.**
+**Version:** 1.6.1 · **Updated:** 2026-08-07
+**Read this first. This file overrides v1.6, v1.5, v1.4, and any older COIL/OKO Forge context.**
+*1.6.1 — remote canonicity ruled: `MenokoOG/*` is the source of truth. See Company.*
 **Canonical copy:** `C:\classHuman\classHuman-M3n0ko0g-Prompt-Agent-mds-library\CLASSHUMAN.md`. Every copy in a project repo is a mirror — edit here, then sync out.
 
 > **v1.6 is a re-sequencing, not a patch.** The company comes before the research. If you read anything that says TACO Loop is "the only actively-building product," or that the L0→L1→L2 stack is what we are building right now, it is stale. See **Roadmap**.
@@ -15,7 +16,7 @@
 - **Client services are the headline and the capital bridge** — they fund everything else. Revenue first, funding later.
 - **Tagline:** classHuman AI — driven by LAHA (Love All Humans Always)
 - **Prior entity:** OKO Forge LLC d/b/a Crimson Obsidian Industries and Labs (COIL) — **paused. Do not plan or build around COIL products.**
-- **GitHub org:** `github.com/classHuman`. Personal `MenokoOG/*` remotes still hold the prompt library and personal-site work. **Remote canonicity is still an open decision** — do not assume either side is authoritative.
+- **GitHub — remote canonicity, RULED 2026-08-07:** **`MenokoOG/*` is the source of truth.** Every classHuman repo lives under the personal account first. The `github.com/classHuman` org **forks from MenokoOG** when a repo needs an org-facing copy — never the reverse. If the two ever disagree, MenokoOG wins. New repos are created under MenokoOG, private by default.
 
 ## Operating Doctrine — proven tools first, our research second (NEW in v1.6)
 
@@ -211,7 +212,6 @@ Sonnet 5 is the default. Haiku 4.5 for high-volume, low-judgment work. Opus 5 on
 ## Open Decisions — sitting with Lawrence
 
 - [ ] **Which 2–3 prompt bundles ship first** — blocking all bundle work
-- [ ] **Remote canonicity** — `MenokoOG/*` vs `classHuman/*`. Blocks TACO Loop's remote and the org cleanup. Ten org repos are forks; four hold classHuman IP and should become standalone org repos. **Never delete — create, push, verify, then archive.**
 - [ ] **Funnel algorithm name**
 - [ ] **Funding thesis** — target investor type, amount, use of funds. Not drafted.
 - [ ] **Iris Lumen** — confirm the designer-lens name or rename
@@ -226,11 +226,18 @@ Sonnet 5 is the default. Haiku 4.5 for high-volume, low-judgment work. Opus 5 on
 - ✅ TACO / Ag3nt24 / HADES move to a Research & Development page, off products
 - ✅ Education goes on classhuman-org only
 - ✅ Tonya's photo removed, story retained
+- ✅ **Remote canonicity: `MenokoOG/*` is SOT.** The classHuman org forks from personal when
+  it needs an org copy, never the reverse. Unblocks TACO Loop and the work journal.
+  Org cleanup rule stands: ten org repos are forks, four hold classHuman IP —
+  **never delete; create, push, verify, then archive.**
 
 ## Immediately Outstanding
 
-- [ ] **Commit zero for `C:\classHuman\taco-loop`** — git init'd 2026-08-07, branch `main`, ~10 files staged, **zero commits**. The repo is in an invalid state. One commit closes it out even with R&D paused.
-- [ ] **Clone `classhuman-org` and `M3n0ko0g-Website` into `C:\classHuman`** — blocks every website task.
+- [ ] **Commit zero for `C:\classHuman\taco-loop`** — git init'd 2026-08-07, branch `main`, **zero commits**, and it holds real work: `taco_agent/` (5 modules), `examples/microwave.py`, the observation spec, ADR 0001, README, VERSION 0.1.0, CHANGELOG. `.gitignore` correctly excludes `.env` and whitelists `.env.example`; no real `.env` present. Remote: **`MenokoOG/taco-loop`, private** (ruled 2026-08-07).
+- [ ] **Work journal remote** — `C:\classHuman\work-journal`, git init'd on `main`, zero commits, one real entry. Remote: **`MenokoOG/work-journal`, private.**
+- [ ] **`gh` CLI is not installed on Windows.** It exists only in WSL, which is off-limits. Creating new GitHub repos needs it — install on the Windows side, Lawrence does the `gh auth login`.
+- [ ] **Site pages** — the classhuman-org context layer is realigned to v1.6 on branch `claude/v1.6-context-realign`; the rendered pages are not. `/tools` is blocked on Lawrence supplying the real tool list.
+- [x] **Clone `classhuman-org` and `M3n0ko0g-Website` into `C:\classHuman`** — done 2026-08-07.
 - [ ] **Rotate the two exposed Supabase credentials.** Exposure does not expire with a product decision. The earlier "delete the Supabase project" reasoning came from HADES being dead and is wrong — PR #6 and that project may still be needed. **Lawrence executes all key work, never Claude.**
 - [ ] **Re-reason the GunKustom engagement from scratch.** Its prior justification ("the HADES-pilot framing is void") is false now. Still related-party (2% ownership), still needs written disclosure + legal review.
 - [ ] **Revisit the M3n0ko0g-Website HADES cleanup (2026-08-03)** — done under the scrapped ruling.
