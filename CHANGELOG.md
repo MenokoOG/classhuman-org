@@ -6,7 +6,42 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 **Every PR includes a CHANGELOG entry. Non-negotiable.**
 
 ## [Unreleased]
+### Changed
+- **Repositioned the site's context layer to CLASSHUMAN.md v1.6 — company before research.**
+  The site told a story that is no longer true: TACO Loop as the active product, HADES
+  scrapped, strangler fig as *the* modernization method. Every context file that Claude Code
+  and Banshee read has been rewritten so nothing contradicts. **Rendered pages are not yet
+  updated** — that is the next pass, tracked in `PLAN.md`.
+
+  - `src/lib/products.js` — header comment read *"HADES was scrapped and archived
+    2026-07-31 — do not re-add it here."* Void. HADES restored at **Layer 2, above
+    Ag3nt24** (the pre-scrap docs had it below, as a rehabilitation destination — wrong
+    topology). All three research projects now `R&D · PAUSED`; Asymptote stays separate as
+    shipped tooling. Added `track` and `hasPage` fields plus `RND_PAUSED` / `SHIPPED`
+    selectors; `hasPage: false` on HADES so nothing links to a route that does not exist.
+  - `src/banshee/knowledge.js` — the site agent answers from its own knowledge pack, not
+    from the pages, so it would have kept telling visitors the old story regardless of copy
+    changes. Five entries rewritten; three added (`hades`, `tools`, `education`).
+  - `docs/CONTENT.md` — hero leads with services, not "Explore TACO Loop". New specs for
+    the `/research` and `/tools` pages. Legacy section now lists seven modernization
+    patterns with strangler fig as one entry, plus a rule against presenting it as *the*
+    method. Added the education section (BS in AI, AMU, full coursework) and the
+    no-photograph-of-Tonya rule. Fixed two stale facts: the footer still said "LLC
+    registration planned August 2026", and Nicale was published as **CFO** — a title that
+    is provisional pending the operating agreement.
+  - `docs/PRD-website.md` — page list rebuilt: `/tools` and `/research` added, `/product`
+    reframed as research detail with its route kept for SEO, nav ordering specified.
+  - `CLAUDE.md` — positioning block added at the top so the brief is read before any copy
+    is written.
+  - `PLAN.md` — v1.6 repositioning steps added; the stale "add Tonya's photo when
+    delivered" instruction replaced with the removal ruling.
+  - `CLASSHUMAN.md` — synced to v1.6.1 (remote canonicity: `MenokoOG/*` is source of truth).
+
 ### Added
+- **ADR 0005 — company before research** (`docs/adr/0005-company-before-research.md`).
+  Supersedes ADR 0004, which is now marked SUPERSEDED with a "do not build to this" notice.
+  0004 scrapped HADES and led with client engineering; the HADES half was reversed on
+  2026-08-05, the client-engineering half survives and is sharpened in 0005.
 - **"The Instrument" — new `/instrument` route** (`src/instrument/`), built from the
   `brand/classHuman AI brand identity/design_handoff_instrument/` handoff. A single
   interactive page that enforces the Core Product Law on itself: one uncertainty slider
