@@ -6,6 +6,8 @@ import Home from "./pages/Home.jsx";
 import Product from "./pages/Product.jsx";
 import Asymptote from "./pages/Asymptote.jsx";
 import Ag3nt24 from "./pages/Ag3nt24.jsx";
+import Tools from "./pages/Tools.jsx";
+import Research from "./pages/Research.jsx";
 import Demos from "./pages/Demos.jsx";
 import Legacy from "./pages/Legacy.jsx";
 import Services from "./pages/Services.jsx";
@@ -28,7 +30,7 @@ const PAGE_META = {
   "/legacy": {
     title: "Legacy Modernization — " + SITE,
     description:
-      "Modern AI agents on your legacy stack, with no rip-and-replace. classHuman uses a strangler-fig migration and protocol-droid interfaces to modernize legacy software while it keeps running. Senior + CTO-level experience on any stack.",
+      "Modern AI agents on your legacy stack, with no rip-and-replace. classHuman picks the modernization pattern that fits your system — strangler fig, branch by abstraction, parallel run, anti-corruption layer, or an honest rewrite — and builds protocol-droid interfaces at the seam. Senior + CTO-level experience on any stack.",
   },
   "/product": {
     title: "TACO Loop — " + SITE,
@@ -44,6 +46,16 @@ const PAGE_META = {
     title: "Ag3nt24 — The Proof Layer — " + SITE,
     description:
       "Ag3nt24 gates agent actions through proof gates that produce signed, append-only receipts — so what an agent did is provable, not just logged. Built on TACO Loop.",
+  },
+  "/tools": {
+    title: "The Tools We Use — " + SITE,
+    description:
+      "The working set classHuman AI actually builds with: Anthropic, OpenAI and Google model SDKs, LangChain and Langflow, MCP, GitHub Spec Kit and agent skills, PyTorch with LoRA/QLoRA tuning, NestJS and FastAPI, PostgreSQL, React. Cloud, on-premise, or entirely on your own hardware.",
+  },
+  "/research": {
+    title: "Research & Development — paused — " + SITE,
+    description:
+      "classHuman AI's own research: TACO Loop (Layer 0), Ag3nt24 (Layer 1) and HADES (Layer 2). Paused while we build the company, and kept out of client systems until proven. Research, not products.",
   },
   "/services": {
     title: "Work With Us — Agents & Agentic Systems — " + SITE,
@@ -113,6 +125,8 @@ export default function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/asymptote" element={<Asymptote />} />
         <Route path="/ag3nt24" element={<Ag3nt24 />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/research" element={<Research />} />
         <Route path="/demos" element={<Demos />} />
         <Route path="/legacy" element={<Legacy />} />
         <Route path="/services" element={<Services />} />
